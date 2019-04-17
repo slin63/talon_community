@@ -10,6 +10,8 @@ from ..utils import (
     is_not_vim,
     numeral_list,
     extract_num_from_m,
+    optional_numerals,
+    repeat_function
 )
 
 ctx = Context("generic_editor", func=is_not_vim)
@@ -211,10 +213,7 @@ ctx.keymap(
         "(delete around this | slurp)": Key("backspace delete"),
         "(delete line left | snip left | snipple)": Key("shift-cmd-left delete"),
         "(delete line right | snip right | snipper)": Key("shift-cmd-right delete"),
-        "(delete [this] line)": Key("shift-cmd-right delete delete ctrl-a cmd-left"),
-        "(delete word left | trough | steffi | carmex)": Key("alt-backspace"),
-        "(delete word right | stippy | kite)": Key("alt-delete"),
-        "(delete [this] word | slurpies)": Key("alt-backspace alt-delete"),
+        "(delete line)" + optional_numerals: repeat_function(2, "cmd-left shift-cmd-right delete shift-down delete", True),
         # selecting
         "(select find right | crew) <dgndictation>": select_text_to_right_of_cursor,
         "(select find left | trail) <dgndictation>": select_text_to_left_of_cursor,
@@ -230,8 +229,8 @@ ctx.keymap(
         "big word preev {generic_editor.n}*": big_word_prev,
         "big word neck {generic_editor.n}*": big_word_neck,
         "(select word number {generic_editor.n}* below | wordneck {generic_editor.n}*)": word_neck,
-        "(select word left | scram)": Key("alt-shift-left"),
-        "(select word right | scrish)": Key("alt-shift-right"),
+        "(select word left | scram | famie)": Key("alt-shift-left"),
+        "(select word right | scrash | fishy)": Key("alt-shift-right"),
         "(select line left | lecksy)": Key("cmd-shift-left"),
         "(select line right | ricksy)": Key("cmd-shift-right"),
     }

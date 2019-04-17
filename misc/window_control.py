@@ -21,6 +21,7 @@ ctx.keymap(
         "([switch] tab (left | previous | preev) | gopreev)": Key("cmd-shift-["),
         "[switch] tab (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
         "[switch] tab (end | rightmost)": Key("cmd-9"),
+        "reopen tab": Key("cmd-shift-t"),
         # zooming
         "zoom in": Key("cmd-="),
         "zoom out": Key("cmd--"),
@@ -34,6 +35,7 @@ ctx.keymap(
         "[switch] space (left | previous | preev)": Key("ctrl-left"),
         "(minimise window | curtail)": Key("cmd-m"),
         "show app windows": Key("ctrl-down"),
+        "force quit over": Key("cmd-q"),
         # application navigation
         "[open] launcher": Key("cmd-space"),
         "([switch] app (next | right) | swick)": Key("cmd-tab"),

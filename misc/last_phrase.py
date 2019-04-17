@@ -7,7 +7,7 @@ from talon_init import TALON_HOME
 
 path = os.path.join(TALON_HOME, "last_phrase")
 WEBVIEW = False
-NOTIFY = True
+NOTIFY = 1
 
 if WEBVIEW:
     webview = webview.Webview()
@@ -35,6 +35,5 @@ def on_phrase(j):
 
     if NOTIFY and cmd == "p.end" and phrase:
         app.notify(body=phrase)
-
 
 engine.register("phrase", on_phrase)

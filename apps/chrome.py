@@ -83,7 +83,8 @@ def forward(m):
 
 def link(m):
     refocus_page(None)
-    press("f")
+    press("cmd-l")
+    press("cmd-c")
 
 
 def jump_tab(m):
@@ -102,8 +103,8 @@ context.keymap(
         "copy url": Key("escape y y"),
         "go back": back,
         "go forward": forward,
-        "reload": Key("cmd-r"),
-        "hard reload": Key("cmd-shift-r"),
+        "refresh": Key("cmd-r"),
+        "hard refresh": Key("cmd-shift-r"),
         "new tab": Key("cmd-t"),
         "close tab": Key("cmd-w"),
         "(reopen | unclose) tab": Key("cmd-shift-t"),

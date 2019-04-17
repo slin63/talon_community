@@ -81,7 +81,7 @@ context.keymap(
         "log": "log",
         "log error": "logE",
         "log object": "logD",
-        "axe": "ImportAxios",
+        # "axe": "ImportAxios",
         "require": "requireMOD",
         # commands for express
         "express import": "ImportExpress",

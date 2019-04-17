@@ -2,7 +2,7 @@ import string
 import collections
 
 from talon import clip, resource
-from talon.voice import Context, Str, press
+from talon.voice import Context, Str, press, Key
 from time import sleep
 import json
 import os
@@ -95,6 +95,10 @@ def text(m):
 
 def snake_text(m):
     insert(join_words(parse_words(m), sep="_").lower())
+
+
+def caps_text(m):
+    insert(join_words(parse_words(m)).title().replace(" ", ""))
 
 
 def spoken_text(m):
@@ -271,7 +275,7 @@ def copy_selected():
 
 # The. following function is used to be able to repeat commands by following it by one or several numbers, e.g.:
 # 'delete' + optional_numerals: repeat_function(1, 'delete'),
-def repeat_function(numberOfWordsBeforeNumber, keyCode, delay=0):
+def repeat_function(numberOfWordsBeforeNumber, keyCode, useKey=False, delay=0):
     def repeater(m):
         line_number = parse_words_as_integer(m._words[numberOfWordsBeforeNumber:])
 
@@ -280,7 +284,10 @@ def repeat_function(numberOfWordsBeforeNumber, keyCode, delay=0):
 
         for i in range(0, line_number):
             sleep(delay)
-            press(keyCode)
+            if useKey:
+                Key(keyCode)(None)
+            else:
+                press(keyCode)
 
     return repeater
 

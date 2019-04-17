@@ -11,6 +11,7 @@ keymap = {
     "(scroll way up | jeepway)": Key("cmd-up"),
     "page up": [Key("pageup")],
     "page down": [Key("pagedown")],
+    "return": Key("cmd-right enter"),
     # searching
     "(search | marco)": Key("cmd-f"),
     "marneck": Key("cmd-g"),

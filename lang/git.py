@@ -44,6 +44,7 @@ ctx.keymap(
         PREFIX + "config list [<dgndictation>]": ["git config --list ", text],
         PREFIX + "diff [<dgndictation>]": ["git diff ", text],
         PREFIX + "fetch": "git fetch ",
+        PREFIX + "remote": "git remote ",
         PREFIX + "history": "git hist ",
         PREFIX + "grep": "git grep ",
         PREFIX + "(in it | init | initialize)": "git init ",
