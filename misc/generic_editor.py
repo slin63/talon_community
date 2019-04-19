@@ -201,7 +201,7 @@ ctx.keymap(
 
         "(go line after end | derek)": Key("cmd-right space"),
         "(go line start | lefty)": Key("cmd-left"),
-        "(go line end | richie)": Key("cmd-right"),
+        "(go line end | ricky)": Key("cmd-right"),
         "(go line before end | smear)": Key("cmd-right left"),
         # insertions
         "([insert] line break | sky turn)": Key("shift-enter"),
@@ -215,7 +215,7 @@ ctx.keymap(
         # "(delete word left | )": Key("shift-cmd-left delete"),
         "(delete line left | snip left | snipple)": Key("shift-cmd-left delete"),
         "(delete line right | snip right | snipper)": Key("shift-cmd-right delete"),
-        "(delete line)" + optional_numerals: repeat_function(2, "cmd-left shift-cmd-right delete shift-down delete", True),
+        "(delete line)" + optional_numerals: repeat_function(2, "cmd-left shift-cmd-right delete cmd-left shift-down delete", True),
         # selecting
         "(select find right | crew) <dgndictation>": select_text_to_right_of_cursor,
         "(select find left | trail) <dgndictation>": select_text_to_left_of_cursor,

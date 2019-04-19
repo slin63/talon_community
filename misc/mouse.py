@@ -35,7 +35,7 @@ def delayed_click(m, button=0, times=1):
     # eye.config.control_mouse = False
     # x, y = click_pos(m)
     # ctrl.mouse(x, y)
-    ctrl.mouse_click(x, y, button=button, times=times, wait=16000)
+    ctrl.mouse_click(x, y, button=button, times=times, wait=2000)
     # time.sleep(0.032)
     # eye.config.control_mouse = old
 
@@ -88,7 +88,7 @@ def mouse_release(m):
 keymap = {
     # jsc modified with some voice-code compatibility
     "righty": delayed_right_click,
-    "(click | chiff)": delayed_click,
+    "click": delayed_click,
     "(dubclick | duke)": delayed_dubclick,
     "(tripclick | triplick)": delayed_tripclick,
     "drag": mouse_drag,

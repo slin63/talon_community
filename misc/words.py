@@ -17,12 +17,13 @@ ctx.keymap(
         "word (dickt | dictionary)": "dict",
         "word shell": "shell",
         "word talon": "talon",
+        "word eye pie": "ipython",
         "word pie": "python",
         "word pie 3": "python3.7 ",
         "word reddit": "reddit",
         "word youtube": "youtube",
         "word (jetlab | gitlab)": "gitlab",
         "word (jethub | github)": "github",
-
+        "word in": "in",
     }
 )

@@ -6,6 +6,7 @@ import os
 running = {}
 launch = {}
 
+PREFIX = "pay"
 
 def switch_app(m=None, name=None):
     if name is None:
@@ -36,14 +37,16 @@ ctx.keymap(
         "launch {switcher.launch}": launch_app,
         # custom switchers here
         "madam": lambda x: switch_app(x, "Atom"),
-        "fox chrome": lambda x: switch_app(x, "Google Chrome"),
-        "fox outlook": lambda x: switch_app(x, "Outlook"),
-        "fox slack": lambda x: switch_app(x, "Slack"),
-        "fox term": lambda x: switch_app(x, "iTerm2"),
-        "fox messages": lambda x: switch_app(x, "Messages"),
-        "fox sublime": lambda x: switch_app(x, "Sublime Text"),
-        "fox skype": lambda x: switch_app(x, "Skype for Business"),
-        "fox signal": lambda x: switch_app(x, "Signal"),
+        PREFIX + " chrome": lambda x: switch_app(x, "Google Chrome"),
+        PREFIX + " spotify": lambda x: switch_app(x, "Spotify"),
+        PREFIX + " audacity": lambda x: switch_app(x, "Audacity"),
+        PREFIX + " outlook": lambda x: switch_app(x, "Outlook"),
+        PREFIX + " slack": lambda x: switch_app(x, "Slack"),
+        PREFIX + " console": lambda x: switch_app(x, "iTerm2"),
+        PREFIX + " messages": lambda x: switch_app(x, "Messages"),
+        PREFIX + " sublime": lambda x: switch_app(x, "Sublime Text"),
+        PREFIX + " skype": lambda x: switch_app(x, "Skype for Business"),
+        PREFIX + " signal": lambda x: switch_app(x, "Signal"),
         "system preferences": lambda x: switch_app(x, "System Preferences"),
     }
 )

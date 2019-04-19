@@ -108,7 +108,12 @@ def spoken_text(m):
 def sentence_text(m):
     raw_sentence = join_words(parse_words(m, True))
     sentence = raw_sentence[0].upper() + raw_sentence[1:]
+
     insert(sentence)
+
+
+def laugh(m):
+    insert("LOL")
 
 
 def word(m):

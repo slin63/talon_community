@@ -7,8 +7,8 @@ keymap = {
     "password": Key("cmd-alt-f"),
 
     # Pane creation and navigation
-    "split horizontal": Key("cmd-shift-d"),
-    "split vertical": Key("cmd-d"),
+    "split horizontal": Key("cmd-d"),
+    "split vertical": Key("cmd-shift-d"),
     "pane next": Key("cmd-]"),
     "pane last": Key("cmd-["),
 }

@@ -99,7 +99,7 @@ def mendeley(m):
 
 context.keymap(
     {
-        "(address bar | focus address | focus url | url)": focus_address_bar,
+        "(address bar | focus address | be bar | url)": focus_address_bar,
         "copy url": Key("escape y y"),
         "go back": back,
         "go forward": forward,
@@ -110,7 +110,7 @@ context.keymap(
         "(reopen | unclose) tab": Key("cmd-shift-t"),
         "(next tab | goneck)": Key("cmd-shift-]"),
         "((last | previous | preev) tab | gopreev)": Key("cmd-shift-["),
-        "jump (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
+        "jay (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
         "(end | rightmost) tab": Key("cmd-9"),
         "marco": Key("cmd-f"),
         "marneck": Key("cmd-g"),

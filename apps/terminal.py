@@ -89,6 +89,8 @@ keymap = {
     "shell home": "~/",
     "lefty": Key("ctrl-a"),
     # "ricky": Key("ctrl-e"),
+    "shell left": Key("ctrl-left"),
+    "shell right": Key("ctrl-right"),
     "fuck this": Key("ctrl-d"),
     "(pain new | split vertical)": Key("cmd-d"),
     "new {global_terminal.servers}": new_server,

@@ -15,6 +15,7 @@ keymap = {
     # "window (previous|prev) screen": Key("ctrl-alt-shift-h"),
     "cycle over": Key("ctrl-pageup"),
     "cycle back": Key("ctrl-pagedown"),
+    "cycle fix": Key("alt-shift-z"),
     "window next": Key("alt-shift-j"),
     "window previous": Key("alt-shift-k"),
     "window move desk": Key("ctrl-alt-shift-h"),
@@ -24,7 +25,7 @@ keymap = {
     "window move main": Key("alt-shift-enter"),
     "window grow": Key("alt-shift-l"),
     "window shrink": Key("alt-shift-h"),
-    "window reevaluate": Key("alt-shift-z"),
+
 }
 
 screen_mapping = {"1": "w", "2": "e", "3": "r", "4": "q"}

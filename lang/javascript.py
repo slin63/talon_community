@@ -29,8 +29,8 @@ def CursorText(s):
 
 context.keymap(
     {
-        "const [<dgndictation>]": ["const ", text],
-        "let [<dgndictation>]": ["let ", text],
+        # "const [<dgndictation>]": ["const ", text],
+        # "let [<dgndictation>]": ["let ", text],
         "static": "static ",
         "args": ["()", Key("left")],
         "index": ["[]", Key("left")],
@@ -55,7 +55,7 @@ context.keymap(
         "state super": "super",
         "comment js": "// ",
         "word no": "null",
-        "arrow": " => ",
+        # "arrow": " => ",
         "assign": " = ",
         "asink": " async ",
         "op (minus | subtract)": " - ",

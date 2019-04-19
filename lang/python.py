@@ -1,4 +1,3 @@
-
 from talon.voice import Context, Key
 
 from ..utils import is_filetype, snake_text, caps_text
@@ -6,7 +5,9 @@ from ..utils import is_filetype, snake_text, caps_text
 FILETYPES = (".py",)
 PYTHON_ALIAS = "( pie | pipe )"
 
-ctx = Context("python", func=is_filetype(FILETYPES))
+ctx = Context("python")
+
+# ctx = Context("python", func=is_filetype(FILETYPES))
 
 ctx.keymap(
     {
@@ -60,7 +61,10 @@ ctx.keymap(
             "if not :",
             Key("left")
         ],
-
+        PYTHON_ALIAS + " elif": [
+            "elif :",
+            Key("left")
+        ],
         PYTHON_ALIAS + " else": [
             "else:",
         ],
@@ -69,6 +73,12 @@ ctx.keymap(
             "for ",
             snake_text,
             " in :",
+            Key("left")
+        ],
+        PYTHON_ALIAS + " while <dgndictation> over": [
+            "while ",
+            snake_text,
+            ":",
             Key("left")
         ],
 
@@ -89,6 +99,7 @@ ctx.keymap(
         PYTHON_ALIAS + " ( tick | dict | dick ) assign": [
             "[] = ",
             Key("left left left left")
-        ]
+        ],
+        PYTHON_ALIAS + " breakpoint": Key("ctrl-shift-b"),
     }
 )

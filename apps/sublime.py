@@ -85,20 +85,23 @@ context.keymap(
         + "until"
         + optional_numerals: select_lines_function,
 
-        "comment line"
-        + optional_numerals
-        + "until"
-        + optional_numerals: comment_lines_function,
+        "(comment | comma) many" + optional_numerals: [
+            repeat_function(2, "shift-down", True),
+            Key("cmd-/"),
+            Key("left"),
+        ],
 
-        # "delete line"
-        # + optional_numerals: repeat_function(2, "cmd-left shift-cmd-right"),
+        "(select) many" + optional_numerals: [
+            repeat_function(2, "shift-down", True),
+        ],
+
         # Finding text
         "find over": Key("cmd-f"),
         "find next": jump_to_next_word_instance,
         # # Clipboard
         # "clone": Key("alt-shift-down"),
         # Navigation
-        "line" + optional_numerals + "over": jump_to_line,
+        "lay" + optional_numerals + "over": jump_to_line,
         "Go to line": Key("ctrl-g"),
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
@@ -122,7 +125,7 @@ context.keymap(
         "stippy": Key("cmd-alt-right"),
         "last tab": Key("cmd-alt-left"),
         "new tab": Key("cmd-n"),
-        "jump" + optional_numerals: jump_tabs,
+        "jay" + optional_numerals: jump_tabs,
         "screen" + optional_numerals: jump_screens,
         # Menu
         "save": Key("cmd+s"),
