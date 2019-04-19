@@ -11,6 +11,8 @@ from ..utils import (
     word,
     parse_words,
     spoken_text,
+    snake_text,
+    caps_text
 )
 
 
@@ -51,7 +53,7 @@ formatters = normalise_keys(
         ),
         "(criff | criffed)": (True, lambda i, word, _: word.capitalize()),
         "tridal": (False, lambda i, word, _: word.capitalize()),
-        "snake": (True, lambda i, word, _: word if i == 0 else "_" + word),
+        # "snake": (True, lambda i, word, _: word if i == 0 else "_" + word),
         "dotsnik": (True, lambda i, word, _: "." + word if i == 0 else "_" + word),
         "smash": (True, lambda i, word, _: word),
         "(spine | kebab)": (True, lambda i, word, _: word if i == 0 else "-" + word),
@@ -119,6 +121,8 @@ ctx.keymap(
         "(comma | ,) <dgndictation> [over]": [", ", spoken_text],
         "period <dgndictation> [over]": [". ", sentence_text],
         "word <dgnwords>": word,
+        "snake <dgndictation>": snake_text,
+        "capital <dgndictation>": caps_text,
         "(%s)+ [<dgndictation>] [over]" % (" | ".join(formatters)): FormatText,
         # to match surrounder command + another command (i.e. not dgndictation)
         "(%s)+" % (" | ".join(surrounders)): FormatText,

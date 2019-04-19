@@ -78,7 +78,7 @@ def back(m):
 def forward(m):
     refocus_page(None)
     press("cmd-]")
-    refocus_page(None)
+    # refocus_page(None)
 
 
 def link(m):
@@ -110,7 +110,7 @@ context.keymap(
         "(reopen | unclose) tab": Key("cmd-shift-t"),
         "(next tab | goneck)": Key("cmd-shift-]"),
         "((last | previous | preev) tab | gopreev)": Key("cmd-shift-["),
-        "tab (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
+        "jump (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
         "(end | rightmost) tab": Key("cmd-9"),
         "marco": Key("cmd-f"),
         "marneck": Key("cmd-g"),
@@ -131,9 +131,9 @@ context.keymap(
         "(refocus | focus) page": refocus_page,
         "[refocus] dev tools": open_focus_devtools,
         # Clipboard
-        "cut": Key("cmd-x"),
-        "copy": Key("cmd-c"),
-        "paste": Key("cmd-v"),
+        # "cut": Key("cmd-x"),
+        # "copy": Key("cmd-c"),
+        # "paste": Key("cmd-v"),
         "paste same style": Key("cmd-alt-shift-v"),
         # "mendeley": Key("cmd-shift-m"),
         "(add | save) to mendeley": mendeley,

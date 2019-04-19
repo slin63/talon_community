@@ -16,7 +16,7 @@ ctx.keymap(
     {
         # tab control
         "(open | new) tab": Key("cmd-t"),
-        "close tab": Key("cmd-w"),
+        "(die | close) tab": Key("cmd-w"),
         "([switch] tab (right | next) | goneck)": Key("cmd-shift-]"),
         "([switch] tab (left | previous | preev) | gopreev)": Key("cmd-shift-["),
         "[switch] tab (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
@@ -29,7 +29,7 @@ ctx.keymap(
         # window control
         "(open | new) window": Key("cmd-n"),
         "window close": Key("cmd-shift-w"),
-        "([switch] window (next | right) | gibby)": Key("cmd-`"),
+        "([switch] window (next | right) | pop)": Key("cmd-`"),
         "([switch] window (left | previous | preev) | shibby)": Key("cmd-shift-`"),
         "[switch] space (right | next)": Key("ctrl-right"),
         "[switch] space (left | previous | preev)": Key("ctrl-left"),

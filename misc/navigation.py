@@ -4,13 +4,13 @@ ctx = Context("navigation")
 
 keymap = {
     # scrolling
-    "scroll down": [Key("down")] * 30,
-    "scroll up": [Key("up")] * 30,
+    "(scroll down | spoon) ": [Key("down")] * 30,
+    "(scroll up | spear)": [Key("up")] * 30,
     # NB home and end do not work in all apps
     "(scroll way down | doomway)": Key("cmd-down"),
     "(scroll way up | jeepway)": Key("cmd-up"),
-    "page up": [Key("pageup")],
-    "page down": [Key("pagedown")],
+    "(page up | puppy)": [Key("pageup")],
+    "(page down | pupper)": [Key("pagedown")],
     "return": Key("cmd-right enter"),
     # searching
     "(search | marco)": Key("cmd-f"),

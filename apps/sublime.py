@@ -27,6 +27,16 @@ def jump_tabs(m):
 
     press("cmd-" + str(line_number))
 
+
+def jump_screens(m):
+    line_number = parse_words_as_integer(m._words[1:])
+
+    if line_number is None:
+        return
+
+    press("ctrl-" + str(line_number))
+
+
 def jump_to_next_word_instance(m):
     press("cmd-d")
 
@@ -49,6 +59,24 @@ def select_lines_function(m):
         press("shift-down")
 
 
+def comment_lines_function(m):
+    divider = 0
+    for word in m._words:
+        if str(word) == "until":
+            break
+        divider += 1
+
+    line_number_from = int(str(parse_words_as_integer(m._words[2:divider])))
+    line_number_until = int(str(parse_words_as_integer(m._words[divider + 1 :])))
+    number_of_lines = line_number_until - line_number_from
+
+    press("ctrl-g")
+    Str(str(line_number_from))(None)
+    press("enter")
+    for i in range(0, number_of_lines + 1):
+        press("shift-down")
+    press("cmd-/")
+
 context.keymap(
     {
         # Selecting text
@@ -56,6 +84,11 @@ context.keymap(
         + optional_numerals
         + "until"
         + optional_numerals: select_lines_function,
+
+        "comment line"
+        + optional_numerals
+        + "until"
+        + optional_numerals: comment_lines_function,
 
         # "delete line"
         # + optional_numerals: repeat_function(2, "cmd-left shift-cmd-right"),
@@ -65,7 +98,7 @@ context.keymap(
         # # Clipboard
         # "clone": Key("alt-shift-down"),
         # Navigation
-        "line" + optional_numerals + "go": jump_to_line,
+        "line" + optional_numerals + "over": jump_to_line,
         "Go to line": Key("ctrl-g"),
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
@@ -81,17 +114,23 @@ context.keymap(
         "command": Key("cmd-shift-p"),
         # "tab clean": [Key("cmd-shift-p"), Str("file: close all"), Key("enter")],
         # tabbing
+        "screen alone": Key("alt-cmd-1"),
+        "screen split": Key("alt-cmd-2"),
+        "screen screen": Key("alt-k"),
         "stiffy": Key("cmd-alt-left"),
         "next tab": Key("cmd-alt-right"),
         "stippy": Key("cmd-alt-right"),
         "last tab": Key("cmd-alt-left"),
         "new tab": Key("cmd-n"),
         "jump" + optional_numerals: jump_tabs,
+        "screen" + optional_numerals: jump_screens,
         # Menu
         "save": Key("cmd+s"),
         "open": Key("cmd+o"),
         # editing
         "comment": [Key("cmd-/")],
+        "help": Key("ctrl-space"),
+
         # "bracken": [Key("cmd-shift-ctrl-right")],
         # various
         # "search all": Key("cmd-shift-f"),

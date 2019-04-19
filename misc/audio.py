@@ -1,5 +1,6 @@
-from talon.voice import Key, Context
+from talon.voice import Key, Context, press
 from talon import applescript
+from ..utils import parse_word
 
 ctx = Context("audio")
 
@@ -69,24 +70,24 @@ def text_to_number(m, numwords={}):
     return result
 
 
-def parse_word(word):
-    word = word.lstrip("\\").split("\\", 1)[0]
-    return word
+# def parse_word(word):
+#     word = word.lstrip("\\").split("\\", 1)[0]
+#     return word
 
 
-def play_pause(m):
-    script = """tell app "iTunes" to playpause"""
-    run_script(script)
+# def play_pause(m):
+#     script = """tell app "iTunes" to playpause"""
+#     run_script(script)
 
 
-def next_track(m):
-    script = """tell app "iTunes" to play next track"""
-    run_script(script)
+# def next_track(m):
+#     script = """tell app "iTunes" to play next track"""
+#     run_script(script)
 
 
-def previous_track(m):
-    script = """tell app "iTunes" to play previous track"""
-    run_script(script)
+# def previous_track(m):
+#     script = """tell app "iTunes" to play previous track"""
+#     run_script(script)
 
 
 def set_volume(m):
@@ -100,9 +101,9 @@ def set_volume(m):
 
 
 keymap = {
-    "play pause": play_pause,
-    "track next": next_track,
-    "track last": previous_track,
+    # "play pause": press("play_or_pause"),
+    # "track next": press("fastfoward"),
+    # "track last": press("rewind"),
     "set volume <dgndictation>": set_volume,
 }
 

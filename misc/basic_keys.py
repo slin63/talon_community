@@ -15,10 +15,10 @@ simple_keys = normalise_keys(
         "( dune | doom )": "down",
         "( backspace | junk )": "backspace",
         "(delete | forward delete | scrap | spunk)": "delete",
-        "(space | skoosh)": "space",
+        "(pace | space)": "space",
         "(tab | tarp)": "tab",
         "( enter | shock )": "enter",
-        "( escape | randall )": "escape",
+        "( cancel | escape | randall )": "escape",
         "home": "home",
         "pagedown": "pagedown",
         "pageup": "pageup",
@@ -124,6 +124,8 @@ ctx.keymap(
         "number {basic_keys.digits}+ [over]": press_keys,
         "tarsh": Key("shift-tab"),
         "tarpy": [Key("tab"), Key("tab")],
+        "email": "shean.lin2018@gmail.com",
+        "tabback": Key("shift-tab"),
     }
 )
 ctx.set_list("alphabet", alphabet.keys())

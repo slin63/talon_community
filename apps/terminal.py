@@ -88,7 +88,8 @@ keymap = {
     "shell Whereami": "pwd ",
     "shell home": "~/",
     "lefty": Key("ctrl-a"),
-    "ricky": Key("ctrl-e"),
+    # "ricky": Key("ctrl-e"),
+    "fuck this": Key("ctrl-d"),
     "(pain new | split vertical)": Key("cmd-d"),
     "new {global_terminal.servers}": new_server,
     # talon
@@ -97,7 +98,8 @@ keymap = {
     # some habits die hard
     "troll char": Key("ctrl-c"),
     "reverse": Key("ctrl-r"),
-    "cd": ["cd ; ls", Key("left"), Key("left"), Key("left"), Key("left")],
+    "change": ["cd ; ls", Key("left"), Key("left"), Key("left"), Key("left")],
+    "change up": ["cd ..", Key("enter")],
     "cd wild": [
         "cd **; ls",
         Key("left"),
