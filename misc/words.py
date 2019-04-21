@@ -25,5 +25,7 @@ ctx.keymap(
         "word (jetlab | gitlab)": "gitlab",
         "word (jethub | github)": "github",
         "word in": "in",
+        "Word Google calendar": "google calendar",
+        "word gmail": "gmail.com",
     }
 )

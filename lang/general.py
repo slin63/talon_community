@@ -78,5 +78,7 @@ ctx.keymap(
         # Comments
         "comment see": "// ",
         "comment py": "# ",
+        "pro test": "\\n",
+        "pro tab": "\\t",
     }
 )

@@ -47,6 +47,9 @@ ctx.keymap(
         PREFIX + " sublime": lambda x: switch_app(x, "Sublime Text"),
         PREFIX + " skype": lambda x: switch_app(x, "Skype for Business"),
         PREFIX + " signal": lambda x: switch_app(x, "Signal"),
+        PREFIX + " messenger": lambda x: switch_app(x, "Messenger"),
+        PREFIX + " quicktime": lambda x: switch_app(x, "QuickTime"),
+        PREFIX + " imovie": lambda x: switch_app(x, "iMovie"),
         "system preferences": lambda x: switch_app(x, "System Preferences"),
     }
 )

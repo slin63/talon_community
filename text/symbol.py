@@ -13,7 +13,7 @@ keymap = {
     "colon": ":",
     "(lparen | [left] paren | precorp )": "(",
     "(rparen | are paren | right paren | precose)": ")",
-    "(brace | left brace | kirksorp)": "{",
+    "(brace | braces | left brace | kirksorp)": "{",
     "(rbrace | are brace | right brace | kirkos)": "}",
     "(angle | left angle | less than)": "<",
     "(rangle | are angle | right angle | greater than)": ">",
@@ -24,7 +24,7 @@ keymap = {
     "at sign": "@",
     "(and sign | ampersand | amper)": "&",
     "(pipe | spike)": "|",
-    "(dubquote | double quote | quatches)": '"',
+    "(dubquote | double quote | double quotes | quatches)": '"',
     # compound
     "mintwice": "--",
     "plustwice": "++",

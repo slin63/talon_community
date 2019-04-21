@@ -189,8 +189,10 @@ ctx.keymap(
     {
         # meta
         "(save it | sage)": Key("cmd-s"),
-        "(undo it | rabbi)": Key("cmd-z"),
-        "(redo it | rabbit)": Key("cmd-shift-z"),
+        # "(undo it | rabbi)": Key("cmd-z"),
+        "undo " + optional_numerals: repeat_function(1, "cmd-z"),
+        "redo " + optional_numerals: repeat_function(1, "cmd-y"),
+        # "(redo it | rabbit)": Key("cmd-shift-z"),
         # clipboard
         "(clip cut | snatch)": Key("cmd-x"),
         "(clip copy | stish)": Key("cmd-c"),
@@ -215,7 +217,7 @@ ctx.keymap(
         # "(delete word left | )": Key("shift-cmd-left delete"),
         "(delete line left | snip left | snipple)": Key("shift-cmd-left delete"),
         "(delete line right | snip right | snipper)": Key("shift-cmd-right delete"),
-        "(delete line)" + optional_numerals: repeat_function(2, "cmd-left shift-cmd-right delete cmd-left shift-down delete", True),
+        "(delete line)" + optional_numerals: repeat_function(2, "space cmd-right shift-cmd-left shift-cmd-left backspace backspace down", True),
         # selecting
         "(select find right | crew) <dgndictation>": select_text_to_right_of_cursor,
         "(select find left | trail) <dgndictation>": select_text_to_left_of_cursor,
@@ -231,8 +233,10 @@ ctx.keymap(
         "big word preev {generic_editor.n}*": big_word_prev,
         "big word neck {generic_editor.n}*": big_word_neck,
         "(select word number {generic_editor.n}* below | wordneck {generic_editor.n}*)": word_neck,
-        "(select word left | scram | famie)": Key("alt-shift-left"),
-        "(select word right | scrash | fishy)": Key("alt-shift-right"),
+        "(select word left | scram)": Key("alt-shift-left"),
+        "(select word right | scrash)": Key("alt-shift-right"),
+        "(fishy)": Key("alt-shift-right delete"),
+        "(famie)": Key("alt-shift-left delete"),
         "(select line left | lecksy)": Key("cmd-shift-left"),
         "(select line right | ricksy)": Key("cmd-shift-right"),
     }
