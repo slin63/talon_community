@@ -11,7 +11,7 @@ ctx.keymap(
         "(new slide | slide new)": Key("ctrl+m"),
         "(duplicate slide | slide duplicate)": [Key("cmd-alt-shift-f"), Key("cmd+d")],
         "undo": Key("cmd+z"),
-        "redo": Key("cmd+y"),
+        # "redo": Key("cmd+y"),
         "copy": Key("cmd+c"),
         "cut": Key("cmd+x"),
         "paste": Key("cmd+v"),

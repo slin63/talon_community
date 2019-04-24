@@ -29,12 +29,12 @@ class History:
             return
         paint = canvas.paint
         paint.filter_quality = paint.FilterQuality.LOW
-        paint.textsize = 13
+        paint.textsize = 16
         paint.antialias = True
 
         # canvas.draw_rect(ui.Rect(x - 50, y - 50, 100, 100))
         x = canvas.x + 20
-        y = canvas.y + 1005
+        y = canvas.y + 900
         text_pad = 0
         rect_pad = 10
 

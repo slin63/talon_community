@@ -133,7 +133,7 @@ context.keymap(
         # editing
         "comment": [Key("cmd-/")],
         "help": Key("ctrl-space"),
-
+        "open workspace": Key("ctrl-alt-o"),
         # "bracken": [Key("cmd-shift-ctrl-right")],
         # various
         # "search all": Key("cmd-shift-f"),

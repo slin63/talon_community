@@ -191,7 +191,7 @@ ctx.keymap(
         "(save it | sage)": Key("cmd-s"),
         # "(undo it | rabbi)": Key("cmd-z"),
         "undo " + optional_numerals: repeat_function(1, "cmd-z"),
-        "redo " + optional_numerals: repeat_function(1, "cmd-y"),
+        "redo " + optional_numerals: repeat_function(1, "cmd-shift-z"),
         # "(redo it | rabbit)": Key("cmd-shift-z"),
         # clipboard
         "(clip cut | snatch)": Key("cmd-x"),
@@ -217,7 +217,7 @@ ctx.keymap(
         # "(delete word left | )": Key("shift-cmd-left delete"),
         "(delete line left | snip left | snipple)": Key("shift-cmd-left delete"),
         "(delete line right | snip right | snipper)": Key("shift-cmd-right delete"),
-        "(delete line)" + optional_numerals: repeat_function(2, "space cmd-right shift-cmd-left shift-cmd-left backspace backspace down", True),
+        "(delete line)" + optional_numerals: ["byebye", repeat_function(2, "cmd-right shift-cmd-left shift-cmd-left backspace backspace down", True)],
         # selecting
         "(select find right | crew) <dgndictation>": select_text_to_right_of_cursor,
         "(select find left | trail) <dgndictation>": select_text_to_left_of_cursor,

@@ -50,6 +50,7 @@ ctx.keymap(
         PREFIX + " messenger": lambda x: switch_app(x, "Messenger"),
         PREFIX + " quicktime": lambda x: switch_app(x, "QuickTime"),
         PREFIX + " imovie": lambda x: switch_app(x, "iMovie"),
+        PREFIX + " kindle": lambda x: switch_app(x, "Kindle"),
         "system preferences": lambda x: switch_app(x, "System Preferences"),
     }
 )

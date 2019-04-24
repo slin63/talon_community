@@ -141,7 +141,7 @@ ctx.keymap(
         "select row " + numerals: select_row,
         "select all": Key("cmd+a"),
         "undo": Key("cmd+z"),
-        "redo": Key("cmd+y"),
+        # "redo": Key("cmd+y"),
         # "find": Key("cmd+f"),
         "find and replace": Key("cmd+shift+h"),
         "fill range": Key("cmd+enter"),

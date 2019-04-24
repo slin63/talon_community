@@ -27,5 +27,12 @@ ctx.keymap(
         "word in": "in",
         "Word Google calendar": "google calendar",
         "word gmail": "gmail.com",
+        "how about you": "hbu",
+        "word sequel": "sql",
+        "word sean": "Shean",
+        "word lin": "Lin",
+        "word my name": "Shean Lin",
+        # Python library specific
+        "word dbs": "DBSession",
     }
 )

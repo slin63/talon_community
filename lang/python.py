@@ -53,29 +53,35 @@ ctx.keymap(
         ],
 
         # Logic and control flow
-        PYTHON_ALIAS + " if": [
-            "if :",
+        PYTHON_ALIAS + " if [<dgndictation>] ": [
+            "if ",
+            snake_text,
+            ":",
             Key("left")
         ],
-        PYTHON_ALIAS + " if not": [
-            "if not :",
+        PYTHON_ALIAS + " if not [<dgndictation>] ": [
+            "if not ",
+            snake_text,
+            ":",
             Key("left")
         ],
-        PYTHON_ALIAS + " elif": [
-            "elif :",
+        PYTHON_ALIAS + " elif [<dgndictation>] ": [
+            "elif ",
+            snake_text,
+            ":",
             Key("left")
         ],
         PYTHON_ALIAS + " else": [
             "else:",
         ],
 
-        PYTHON_ALIAS + " ( 4 | for ) <dgndictation> in [over]": [
+        PYTHON_ALIAS + " ( 4 | for ) [<dgndictation>] in [over]": [
             "for ",
             snake_text,
             " in :",
             Key("left")
         ],
-        PYTHON_ALIAS + " while <dgndictation> over": [
+        PYTHON_ALIAS + " while [<dgndictation>] over": [
             "while ",
             snake_text,
             ":",
@@ -83,13 +89,23 @@ ctx.keymap(
         ],
 
         # Keywords
+        PYTHON_ALIAS + " pass": "pass",
         PYTHON_ALIAS + " none": "None",
         PYTHON_ALIAS + " true": "True",
         PYTHON_ALIAS + " false": "False",
         PYTHON_ALIAS + " self dot": "self.",
-        "pirate": "return",
+        "pirate": "return ",
         PYTHON_ALIAS + " under": "__",
         PYTHON_ALIAS + " not": "not",
+        PYTHON_ALIAS + " import [<dgndictation>] ": [
+            "import ",
+            snake_text,
+        ],
+        PYTHON_ALIAS + " from [<dgndictation>] ": [
+            "from ",
+            snake_text,
+        ],
+
 
         # Objects
         PYTHON_ALIAS + " list": "[]",
@@ -101,5 +117,7 @@ ctx.keymap(
             Key("left left left left")
         ],
         PYTHON_ALIAS + " breakpoint": Key("ctrl-shift-b"),
+        PYTHON_ALIAS + " block": ["()", Key("left enter enter shift-tab up tab")],
+        PYTHON_ALIAS + " argument": [Key("cmd-right"), ",", Key("enter")],
     }
 )

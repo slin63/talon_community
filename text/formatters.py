@@ -119,7 +119,7 @@ ctx.keymap(
     {
         "(phrase | say) <dgndictation> [over]": text,
         # "saturn <dgndictation> waffle stomp": text,
-        "sentence <dgndictation> over": sentence_text,
+        "sentence <dgndictation> [over]": sentence_text,
         "(comma | ,) <dgndictation> [over]": [", ", spoken_text],
         "period <dgndictation> [over]": [". ", sentence_text],
         "word <dgnwords>": word,
