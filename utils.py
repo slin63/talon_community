@@ -97,6 +97,10 @@ def snake_text(m):
     insert(join_words(parse_words(m), sep="_").lower())
 
 
+def dot_text(m):
+    insert(join_words(parse_words(m), sep=".").lower())
+
+
 def caps_text(m):
     insert(join_words(parse_words(m)).title().replace(" ", ""))
 

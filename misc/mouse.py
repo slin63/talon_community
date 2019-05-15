@@ -70,7 +70,7 @@ def delayed_tripclick(m):
 
 def mouse_scroll(amount):
     def scroll(m):
-        ctrl.mouse_scroll(y=amount)
+        ctrl.mouse_scroll(by_lines=False, y=amount)
 
     return scroll
 
@@ -96,8 +96,8 @@ keymap = {
     # jsc added
     "(shift click | shicks)": shift_click,
     "(command click | chom lick)": command_click,
-    "(muck | wheel down)": mouse_scroll(500),
-    "(make | wheel up)": mouse_scroll(-500),
+    "(muh | muck | wheel down)": mouse_scroll(500),
+    "(may | make | wheel up)": mouse_scroll(-500),
 }
 
 ctx.keymap(keymap)

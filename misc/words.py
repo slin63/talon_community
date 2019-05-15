@@ -1,3 +1,4 @@
+from talon.voice import Context, press, Key
 """
 
 """
@@ -20,6 +21,7 @@ ctx.keymap(
         "word eye pie": "ipython",
         "word pie": "python",
         "word pie 3": "python3.7 ",
+        "word eye pie": "ipython",
         "word reddit": "reddit",
         "word youtube": "youtube",
         "word (jetlab | gitlab)": "gitlab",
@@ -34,5 +36,22 @@ ctx.keymap(
         "word my name": "Shean Lin",
         # Python library specific
         "word dbs": "DBSession",
+        "word nosetest": "nosetests",
+        "word canonical": "canonical",
+        "word dockshell": "dockshell",
+        "word geebizz": "gbiz",
+        "word geegeebiz": ["[GBIZ-]", Key("left")],
+        "word (bullying | boolean)": "boolean",
+        "word google calendar": "https://calendar.google.com/calendar/r",
+        "word jason": "json",
+        "word toodo": "# TODO: ",
+        "word dot eye and eye": ".ini",
+        "word localhost": "localhost:",
+        "word debugger": "debugger;",
+        "word views": "views",
+        "word gee dev": "https://us.dev.app.granular.ag",
+        "word postgres": "postgres",
+        "word connection string": "psql -h localhost -U alpine_webapp -d granular",
+        "word password": "501second",
     }
 )

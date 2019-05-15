@@ -1,5 +1,5 @@
-from talon.voice import Context, Key
-from ..utils import text
+from talon.voice import Context, Key, Str
+from ..utils import text, delay
 
 
 ctx = Context("slack", bundle="com.tinyspeck.slackmacgap")
@@ -7,6 +7,7 @@ ctx = Context("slack", bundle="com.tinyspeck.slackmacgap")
 keymap = {
     # Channel
     "channel": Key("cmd-k"),
+    "draft": [Key("cmd-k"), delay(0.1), "Shean Lin", Key("enter")],
     "channel <dgndictation>": [Key("cmd-k"), text, Key("enter")],
     "channel last": Key("alt-up"),
     "([channel] unread last | gopreev)": Key("alt-shift-up"),
@@ -34,10 +35,11 @@ keymap = {
     "unread [messages]": Key("cmd-j"),
     "(go | undo | toggle) full": Key("ctrl-cmd-f"),
     # Messaging
+    "at here": ["@here", Key("tab")],
     "grab left": Key("shift-up"),
     "grab right": Key("shift-down"),
     "add line": Key("shift-enter"),
-    "(slaw | slapper)": [Key("cmd-right"), Key("shift-enter")],
+    "(slaw | slapper | return)": [Key("cmd-right"), Key("shift-enter")],
     "(react | reaction)": Key("cmd-shift-\\"),
     "user": Key("@"),
     "tag channel": Key("#"),
@@ -67,6 +69,8 @@ keymap = {
     "invite": Key("a"),
     # Miscellaneous
     "keyboard shortcuts": Key("cmd-/"),
+    "thumbs": (":+1:"),
+    "celebrate": ":raised_hands:",
 }
 
 ctx.keymap(keymap)

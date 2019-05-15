@@ -80,5 +80,15 @@ ctx.keymap(
         "comment py": "# ",
         "pro test": "\\n",
         "pro tab": "\\t",
+        # NPM
+        "(note | node) run": "npm run ",
+        "(note | node) start": "npm start ",
+        "(note | node) just": "npm run jest -- ",
+        "(note | node) type": "npm run typecheck-dev",
+        "screenshot": Key("ctrl-cmd-shift-4"),
+        "vee eye ": "vim ",
+        "docker pee es": "docker ps",
+        "docker (queue | kill)": "docker kill",
+        "dockshellport": "dockshellport",
     }
 )

@@ -15,7 +15,10 @@ keymap = {
     # "window (previous|prev) screen": Key("ctrl-alt-shift-h"),
     "cycle over": Key("ctrl-pageup"),
     "cycle back": Key("ctrl-pagedown"),
-    "cycle fix": Key("alt-shift-z"),
+    "cycle fix": Key("alt-shift-z alt-shift-z alt-shift-z"),
+    "cycle float": Key("shift-cmd-="),
+    "cycle fullscreen": Key("alt-shift-d"),
+
     "window next": Key("alt-shift-j"),
     "window previous": Key("alt-shift-k"),
     "window move desk": Key("ctrl-alt-shift-h"),

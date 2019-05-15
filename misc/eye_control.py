@@ -6,7 +6,7 @@ ctx = Context("eye_control")
 ctx.keymap(
     {
         "debug overlay": lambda m: eye_mouse.debug_overlay.toggle(),
-        "(control mouse | i track)": lambda m: eye_mouse.control_mouse.toggle(),
+        "(control mouse | i track | i pee | toto)": lambda m: eye_mouse.control_mouse.toggle(),
         "camera overlay": lambda m: eye_mouse.camera_overlay.toggle(),
         "run calibration": lambda m: eye_mouse.calib_start(),
     }

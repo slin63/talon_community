@@ -10,7 +10,7 @@ from ..utils import (
     is_filetype,
 )
 
-JS_EXTENSIONS = (".js", ".jsx")
+JS_EXTENSIONS = (".js", ".jsx", ".ts", ".tsx")
 
 context = Context("javascript", func=is_filetype(JS_EXTENSIONS))
 
@@ -34,7 +34,7 @@ context.keymap(
         "static": "static ",
         "args": ["()", Key("left")],
         "index": ["[]", Key("left")],
-        "block": [" {}", Key("left enter enter up tab")],
+        "block": [" {}", Key("left enter tab")],
         "empty array": "[]",
         "empty object": "{}",
         "call": "()",
@@ -55,7 +55,7 @@ context.keymap(
         "state super": "super",
         "comment js": "// ",
         "word no": "null",
-        # "arrow": " => ",
+        "arrow": " => ",
         "assign": " = ",
         "asink": " async ",
         "op (minus | subtract)": " - ",
@@ -70,7 +70,7 @@ context.keymap(
         "[op] mod equals": " %= ",
         "(op | is) greater [than]": " > ",
         "(op | is) less [than]": " < ",
-        # "(op | is) equal": " === ",
+        "trip sign": " === ",
         # "(op | is) not equal": " !== ",
         "(op | is) greater [than] or equal": " >= ",
         "(op | is) less [than] or equal": " <= ",
@@ -116,5 +116,7 @@ context.keymap(
         "store create": "MakeStore",
         # commands for react-redux
         "combo provider": "ImportProvider",
+        "counsellog": ["console.log()", Key("left")]
+
     }
 )

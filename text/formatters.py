@@ -13,6 +13,7 @@ from ..utils import (
     parse_words,
     spoken_text,
     snake_text,
+    dot_text,
     caps_text
 )
 
@@ -123,7 +124,10 @@ ctx.keymap(
         "(comma | ,) <dgndictation> [over]": [", ", spoken_text],
         "period <dgndictation> [over]": [". ", sentence_text],
         "word <dgnwords>": word,
+        "slash <dgnwords>": ["/", word],
+        "dash <dgnwords>": ["-", word],
         "snake <dgndictation>": snake_text,
+        "point <dgndictation>": dot_text,
         "laugh": laugh,
         "capital <dgndictation>": caps_text,
         "(%s)+ [<dgndictation>] [over]" % (" | ".join(formatters)): FormatText,

@@ -177,7 +177,7 @@ keymap = {
     "(grep | grip)": "grep ",
     # "gripper": ["grep -r  .", Key("left left")],
     "pee socks": "ps aux ",
-    "vi": "vi ",
+    "vi": "vim ",
     # python
     "pip": "pip",
     "pip install": "pip install ",

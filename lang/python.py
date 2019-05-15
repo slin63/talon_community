@@ -81,7 +81,7 @@ ctx.keymap(
             " in :",
             Key("left")
         ],
-        PYTHON_ALIAS + " while [<dgndictation>] over": [
+        PYTHON_ALIAS + " while [<dgndictation>] [over]": [
             "while ",
             snake_text,
             ":",
@@ -90,12 +90,14 @@ ctx.keymap(
 
         # Keywords
         PYTHON_ALIAS + " pass": "pass",
+        PYTHON_ALIAS + " break": "break",
         PYTHON_ALIAS + " none": "None",
         PYTHON_ALIAS + " true": "True",
         PYTHON_ALIAS + " false": "False",
         PYTHON_ALIAS + " self dot": "self.",
         "pirate": "return ",
         PYTHON_ALIAS + " under": "__",
+        PYTHON_ALIAS + " repper": "__repr__",
         PYTHON_ALIAS + " not": "not",
         PYTHON_ALIAS + " import [<dgndictation>] ": [
             "import ",
@@ -108,16 +110,20 @@ ctx.keymap(
 
 
         # Objects
+        PYTHON_ALIAS + " tuple": "()",
         PYTHON_ALIAS + " list": "[]",
         PYTHON_ALIAS + " ( tick | dict | dick )": "{}",
 
         # Shortcuts
+        PYTHON_ALIAS + " peepee": "from pprint import pprint as pp",
+        PYTHON_ALIAS + " com": ", ",
         PYTHON_ALIAS + " ( tick | dict | dick ) assign": [
             "[] = ",
             Key("left left left left")
         ],
-        PYTHON_ALIAS + " breakpoint": Key("ctrl-shift-b"),
+        PYTHON_ALIAS + " breakpoint": Key("ctrl-shift-b "),
         PYTHON_ALIAS + " block": ["()", Key("left enter enter shift-tab up tab")],
         PYTHON_ALIAS + " argument": [Key("cmd-right"), ",", Key("enter")],
+        PYTHON_ALIAS + " dock": ["\"\"\"\"\"\"", Key("left left left")]
     }
 )

@@ -1,6 +1,7 @@
 from talon.voice import Context, press, Key
 import string
-from ..utils import normalise_keys, insert
+from talon.voice import Context, press, Key
+from ..utils import normalise_keys, insert, repeat_function, optional_numerals
 
 alpha_alt = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quiz red sun trap urge vest whale lex yank zip".split()
 alphabet = dict(zip(alpha_alt, string.ascii_lowercase))
@@ -13,8 +14,8 @@ simple_keys = normalise_keys(
         "chris": "right",
         "jeep": "up",
         "( june | doom )": "down",
-        "( backspace | junk )": "backspace",
-        "(delete | forward delete | scrap | spunk)": "delete",
+        # "( backspace | junk | die )": "backspace",
+        # "(delete | forward delete | scrap | spunk)": "delete",
         "(pace | space)": "space",
         "(tab | tarp)": "tab",
         "(press enter | enter | shock )": "enter",
@@ -122,9 +123,13 @@ ctx.keymap(
         "{basic_keys.modifiers}* {basic_keys.keys}+": press_keys,
         "(go | {basic_keys.modifiers}+) {basic_keys.arrows}+": press_keys,
         "number {basic_keys.digits}+ [over]": press_keys,
+        "diaper": [Key("backspace")] * 10,
         "tarsh": Key("shift-tab"),
+        "die " + optional_numerals: repeat_function(1, "backspace"),
+        "(scrap | delete) " + optional_numerals: repeat_function(1, "delete"),
         "tarpy": [Key("tab"), Key("tab")],
         "email": "shean.lin2018@gmail.com",
+        "apple demo": "ga-appledemo@granular.ag",
         "tabback": Key("shift-tab"),
     }
 )
