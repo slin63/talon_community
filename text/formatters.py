@@ -17,7 +17,7 @@ from ..utils import (
     caps_text
 )
 
-PREFIX = "format "
+PREFIX = ""
 
 
 def title_case_capitalize_word(index, word, _):
@@ -132,8 +132,8 @@ ctx.keymap(
         "point <dgndictation>": dot_text,
         "laugh": laugh,
         "capital <dgndictation>": caps_text,
-        "(%s)+ [<dgndictation>] [over]" % (" | ".join(formatters)): FormatText,
+        "(%s)+ [<dgndictation>] over" % (" | ".join(formatters)): FormatText,
         # to match surrounder command + another command (i.e. not dgndictation)
-        "(%s)+" % (" | ".join(surrounders)): FormatText,
+        "(%s)+ over" % (" | ".join(surrounders)): FormatText,
     }
 )
