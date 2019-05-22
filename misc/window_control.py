@@ -33,7 +33,7 @@ ctx.keymap(
         "swaggy right": Key("ctrl-cmd-right"),
         "window close": Key("cmd-shift-w"),
         "([switch] window (next | right) | pop)": Key("cmd-`"),
-        "([switch] window (left | previous | preev) | shibby)": Key("cmd-shift-`"),
+        "([switch] window (left | previous | preev) )": Key("cmd-shift-`"),
         "[switch] space (right | next)": Key("ctrl-right"),
         "[switch] space (left | previous | preev)": Key("ctrl-left"),
         "(minimise window | curtail)": Key("cmd-m"),

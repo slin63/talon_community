@@ -119,7 +119,7 @@ context.keymap(
         "command menu": Key("cmd-shift-p"),
         "next panel": next_panel,
         "(last | previous) panel": last_panel,
-        "goto <dgnwords> ": [Key("cmd-shift-p"), utils.delay(0.05), utils.word, utils.delay(0.05), Key("enter")],
+        "goto <dgnwords> ": [Key("cmd-shift-p"), utils.delay(0.1), utils.word, utils.delay(0.1), Key("enter")],
         "show application [panel]": lambda m: show_panel("Application"),
         "show audit[s] [panel]": lambda m: show_panel("Audits"),
         "show console [panel]": lambda m: show_panel("Console"),

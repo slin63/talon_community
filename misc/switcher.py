@@ -55,6 +55,7 @@ ctx.keymap(
         PREFIX + " code": lambda x: switch_app(x, "Visual Studio Code"),
         PREFIX + " merge": lambda x: switch_app(x, "Sublime Merge"),
         PREFIX + " postman": lambda x: switch_app(x, "Postman"),
+        PREFIX + " finder": lambda x: switch_app(x, "Finder"),
         PREFIX + " maestro": lambda x: switch_app(x, "Keyboard Maestro"),
         "system preferences": lambda x: switch_app(x, "System Preferences"),
     }

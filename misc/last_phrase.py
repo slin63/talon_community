@@ -1,13 +1,18 @@
 import os
+from talon.voice import Context, press, Key
 from atomicwrites import atomic_write
 
 from talon import app, webview
 from talon.engine import engine
 from talon_init import TALON_HOME
 
+from talon.voice import Context
+
+ctx = Context("last_phrase")
+
 path = os.path.join(TALON_HOME, "last_phrase")
 WEBVIEW = False
-NOTIFY = False
+NOTIFY = True
 
 if WEBVIEW:
     webview = webview.Webview()
@@ -37,3 +42,14 @@ def on_phrase(j):
         app.notify(body=phrase)
 
 engine.register("phrase", on_phrase)
+
+def toggle_notify(m):
+    global NOTIFY
+    NOTIFY = not NOTIFY
+    app.notify(body="Notifications: {}".format(NOTIFY))
+
+ctx.keymap(
+    {
+        "notify toggle": toggle_notify
+    }
+)

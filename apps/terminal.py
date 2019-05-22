@@ -41,6 +41,12 @@ directory_shortcuts = {
     "talon user": TALON_USER,
     "talon plug-ins": TALON_PLUGINS,
     "talon community": "~/.talon/user/talon_community",
+    "web": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web",
+    "web client": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web/packages/client",
+    "mobile": "/users/Sheanlin/documents/work/alpine/gb-mobile-api",
+    "mobile test": "/users/Sheanlin/documents/work/alpine/gb-mobile-api/tests/integration/views/ajax/",
+    "model": "/users/Sheanlin/documents/work/alpine/gb-alpine-models",
+    "alp": "/Users/sheanlin/Documents/WORK/ALPINE/Alpine",
 }
 
 
@@ -134,8 +140,8 @@ keymap = {
     ],
     "shell C H mod": "chmod ",
     "shell clear": [Key("ctrl-c"), "clear\n"],
-    "shell copy [<dgndictation>]": ["cp ", text],
-    "shell copy (recursive | curse) [<dgndictation>]": ["cp -r", text],
+    # "shell copy [<dgndictation>]": ["cp ", text],
+    # "shell copy (recursive | curse) [<dgndictation>]": ["cp -r", text],
     "shell kill": Key("ctrl-c"),
     "shell list [<dgndictation>]": ["ls ", text],
     "shell list all [<dgndictation>]": ["ls -la ", text],
@@ -180,6 +186,11 @@ keymap = {
     "vi": "vim ",
     # python
     "pip": "pip",
+    "pippenv": "pipenv",
+    "pippenv run": "pipenv run",
+    "pippenv deploy": "pipenv run deploy/tools/server",
+    "pippenv shell": "pipenv shell",
+    "pippenv stall": "pipenv install",
     "pip install": "pip install ",
     "pip install requirements": "pip install -r ",
     "pip install editable": "pip install -e ",
@@ -188,6 +199,7 @@ keymap = {
     "pip [install] upgrade": "pip install --upgrade ",
     "pip uninstall": "pip uninstall ",
     "pip list": "pip list",
+    "toolbelt": Key('cmd-shift-b'),
     # kubectl
     KUBERNETES_PREFIX + "control": "kubectl ",
     KUBERNETES_PREFIX + "create": "kubectl create ",
@@ -242,6 +254,9 @@ keymap = {
     # other
     "shell make": "make\n",
     "shell jobs": "jobs\n",
+    "shell copy": "| pbcopy",
+    "shell copy last": "echo !! | pbcopy",
+    "shell again": [Key('up enter')]
 }
 
 for action in ("get", "delete", "describe"):

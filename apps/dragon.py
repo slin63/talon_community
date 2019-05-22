@@ -29,4 +29,4 @@ def open_dragon_pad(m):
 
 
 ctx = Context("dragon")
-ctx.keymap({"dragonpad": open_dragon_pad})
+# ctx.keymap({"dragonpad": open_dragon_pad})

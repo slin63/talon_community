@@ -20,9 +20,9 @@ You can say mission control to access all your windows and desktops.
 
 Great, now we’ve got a way to navigate your computer without any clicking.
 
-Next, let’s open up notepad and play around.
+Next, let’s open up textedit and play around.
 
-Say “Launch Notepad”.
+Say “Launch textedit”.
 Cool.
 
 Say “Help Alphabet”.

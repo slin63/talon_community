@@ -121,6 +121,10 @@ ctx.keymap(
             "[] = ",
             Key("left left left left")
         ],
+        PYTHON_ALIAS + " (decorate | decorator)": "@",
+        PYTHON_ALIAS + " fixture": "@pytest.fixture",
+        PYTHON_ALIAS + " default": "=None",
+        PYTHON_ALIAS + " set": "=",
         PYTHON_ALIAS + " breakpoint": Key("ctrl-shift-b "),
         PYTHON_ALIAS + " block": ["()", Key("left enter enter shift-tab up tab")],
         PYTHON_ALIAS + " argument": [Key("cmd-right"), ",", Key("enter")],

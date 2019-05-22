@@ -80,11 +80,11 @@ def comment_lines_function(m):
 context.keymap(
     {
         # Selecting text
-        "select line"
+        "select (lines | line)"
         + optional_numerals
         + "until"
         + optional_numerals: select_lines_function,
-
+        "(die line)" + optional_numerals: [repeat_function(2, "ctrl-shift-k", True)],
         "(comment | comma) many" + optional_numerals: [
             repeat_function(2, "shift-down", True),
             Key("cmd-/"),
@@ -103,6 +103,7 @@ context.keymap(
         # Navigation
         "lay"  + optional_numerals + "[over]": jump_to_line,
         "Go to line": Key("ctrl-g"),
+        "next break": Key('cmd-shift-g'),
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
         # # Navigating Interface

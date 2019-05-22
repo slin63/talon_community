@@ -63,6 +63,7 @@ ctx.keymap(
         PREFIX + "push set up new branch": "git push --set-upstream origin HEAD",
         PREFIX + "rebase continue": "git rebase --continue",
         PREFIX + "rebase [<dgndictation>]": ["git rebase ", text],
+        PREFIX + "rebase origin master": "git rebase origin/master",
         PREFIX + "(remove | R M) [<dgndictation>]": ["git rm ", text],
         PREFIX + "reset [<dgndictation>]": ["git reset ", text],
         PREFIX + "reset hard": "git reset --hard ",
@@ -74,6 +75,8 @@ ctx.keymap(
         PREFIX + "status": "git status ",
         PREFIX + "tag": "git tag ",
         PREFIX + "soup": ["gdna", Key("enter")],
-        PREFIX + "(lent | lint)": "lint ",
+        PREFIX + "soup all": ["gdna -A", Key("enter")],
+        PREFIX + "sort": ["gdisort", Key("enter")],
+        PREFIX + "(lent | lint | check)": ["lint ", Key('enter')]
     }
 )

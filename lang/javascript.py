@@ -37,7 +37,7 @@ context.keymap(
         "block": [" {}", Key("left enter tab")],
         "empty array": "[]",
         "empty object": "{}",
-        "call": "()",
+        "call": ["()", Key("left")],
         "state func": "function ",
         "state return": "return ",
         "state constructor": "constructor ",

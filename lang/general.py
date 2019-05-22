@@ -3,6 +3,7 @@ Commands that write bits of code that is valid for multiple languages
 """
 
 from talon.voice import Context, Key
+from ..utils import word
 
 ctx = Context("general_lang")
 
@@ -13,7 +14,7 @@ ctx.keymap(
         "(op (minus | subtract) | deminus)": " - ",
         "(op (plus | add) | deplush)": " + ",
         "(op (times | multiply) | duster)": " * ",
-        "(op divide | divy)": " / ",
+        # "(op divide | divy)": " / ",
         "op mod": " % ",
         "((op minus | subtract) equals | minus assign)": " -= ",
         "((op plus | add) equals | (plus | add) assign)": " += ",
@@ -49,7 +50,7 @@ ctx.keymap(
         "empty (dict | object)": "{}",
         "(empty array | brackers)": "[]",
         # Blocks
-        "[brace] block": [" {}", Key("left enter enter up tab")],
+        "[brace] block": [" {}", Key("left enter enter up ")],
         "(square | brax) block": ["[", Key("enter")],
         "(paren | prex) block": ["(", Key("enter")],
         # Combos
@@ -82,13 +83,14 @@ ctx.keymap(
         "pro tab": "\\t",
         # NPM
         "(note | node) run": "npm run ",
-        "(note | node) start": "npm start ",
+        "(note | node) start": ["npm start ", Key("enter")],
         "(note | node) just": "npm run jest -- ",
-        "(note | node) type": "npm run typecheck-dev",
+        "(note | node) type": ["npm run typecheck-dev", Key('enter')],
         "screenshot": Key("ctrl-cmd-shift-4"),
         "vee eye ": "vim ",
         "docker pee es": "docker ps",
         "docker (queue | kill)": "docker kill",
         "dockshellport": "dockshellport",
+        "make <dgnwords>": ["make ", word]
     }
 )

@@ -32,7 +32,7 @@ ctx.keymap(
         "how about you": "hbu",
         "word sequel": "sql",
         "word sean": "Shean",
-        "word lin": "Lin",
+        "word (lynn | lin)": "Lin",
         "word my name": "Shean Lin",
         # Python library specific
         "word dbs": "DBSession",
@@ -53,5 +53,8 @@ ctx.keymap(
         "word postgres": "postgres",
         "word connection string": "psql -h localhost -U alpine_webapp -d granular",
         "word password": "501second",
+        "word pie test": "pytest ",
+        "word pippinv": "pipenv ",
+        "word daytime": "datetime",
     }
 )
