@@ -26,7 +26,7 @@ from talon_plugins import speech
 from talon import voice
 
 # Hold this key down to disable talon
-TRIGGER_KEY = "shift-ctrl-a"
+TRIGGER_KEY = "keypad_minus"
 
 
 def on_key(typ, e):

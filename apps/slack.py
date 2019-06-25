@@ -43,7 +43,7 @@ keymap = {
     "(react | reaction)": Key("cmd-shift-\\"),
     "user": Key("@"),
     "tag channel": Key("#"),
-    "(insert command | commandify)": Key("cmd-shift-c"),
+    # "(insert command | commandify)": Key("cmd-shift-c"),
     "insert code": [
         "``````",
         Key("left left left"),

@@ -17,7 +17,7 @@ ctx.keymap(
         # tab control
         "(open | new) tab": Key("cmd-t"),
         "die chai": Key("cmd-w"),
-        "(die | close) tab": Key("cmd-w"),
+        "(pie | close) tab": Key("cmd-w"),
         "([switch] tab (right | next) | goneck)": Key("cmd-shift-]"),
         "([switch] tab (left | previous | preev) | gopreev)": Key("cmd-shift-["),
         "jay (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
@@ -32,6 +32,7 @@ ctx.keymap(
         "swaggy left": Key("ctrl-cmd-left"),
         "swaggy right": Key("ctrl-cmd-right"),
         "window close": Key("cmd-shift-w"),
+        ""
         "([switch] window (next | right) | pop)": Key("cmd-`"),
         "([switch] window (left | previous | preev) )": Key("cmd-shift-`"),
         "[switch] space (right | next)": Key("ctrl-right"),

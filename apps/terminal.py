@@ -41,12 +41,18 @@ directory_shortcuts = {
     "talon user": TALON_USER,
     "talon plug-ins": TALON_PLUGINS,
     "talon community": "~/.talon/user/talon_community",
+    "inputs": "/Users/sheanlin/Documents/WORK/ALPINE/input-service-investigation",
     "web": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web",
     "web client": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web/packages/client",
     "mobile": "/users/Sheanlin/documents/work/alpine/gb-mobile-api",
     "mobile test": "/users/Sheanlin/documents/work/alpine/gb-mobile-api/tests/integration/views/ajax/",
     "model": "/users/Sheanlin/documents/work/alpine/gb-alpine-models",
-    "alp": "/Users/sheanlin/Documents/WORK/ALPINE/Alpine",
+    "alpine": "/Users/sheanlin/Documents/WORK/ALPINE/Alpine",
+    "command": "/Users/sheanlin/Documents/Work/ALPINE/gb-cli",
+    "fixtures": "/users/Sheanlin/documents/work/alpine/gb-fixtures",
+    "tutoring": "/Users/sheanlin/Documents/WORK/tutoring",
+    "go": "/Users/sheanlin/Documents/WORK/tutoring/go",
+    "flask": "/users/Sheanlin/documents/OpenSource/flask",
 }
 
 
@@ -93,6 +99,7 @@ def new_server(m):
 keymap = {
     "shell Whereami": "pwd ",
     "shell home": "~/",
+    "shell history": ["fc -l", Key('enter')],
     "lefty": Key("ctrl-a"),
     # "ricky": Key("ctrl-e"),
     "shell left": Key("ctrl-left"),
@@ -107,7 +114,7 @@ keymap = {
     "troll char": Key("ctrl-c"),
     "reverse": Key("ctrl-r"),
     "change": ["cd ; ls", Key("left"), Key("left"), Key("left"), Key("left")],
-    "change up": ["cd ..", Key("enter")],
+    "change up": ["cd ..; ls", Key("enter")],
     "cd wild": [
         "cd **; ls",
         Key("left"),
@@ -256,7 +263,14 @@ keymap = {
     "shell jobs": "jobs\n",
     "shell copy": "| pbcopy",
     "shell copy last": "echo !! | pbcopy",
-    "shell again": [Key('up enter')]
+    "shell again": [Key('up enter')],
+    "swampy": Key('cmd-left'),
+    "pee serve": "pserve",
+    "pee serve local": "pserve alpine/local.ini --reload",
+    # sql
+    "pee describe": "\d+ ",
+    "pee tables": "\dt ",
+    "gottem": [Key('right'), Key('enter')]
 }
 
 for action in ("get", "delete", "describe"):

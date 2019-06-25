@@ -1,5 +1,5 @@
 from talon.voice import Context, Key, press, Str
-from ..utils import parse_words_as_integer, repeat_function, optional_numerals, text
+from ..utils import parse_words_as_integer, repeat_function, optional_numerals, text, delay
 
 context = Context("Sublime", bundle="com.sublimetext.3")
 
@@ -101,9 +101,9 @@ context.keymap(
         # # Clipboard
         # "clone": Key("alt-shift-down"),
         # Navigation
-        "lay"  + optional_numerals + "[over]": jump_to_line,
+        "(lay | line | lie)"  + optional_numerals + "[over]": jump_to_line,
         "Go to line": Key("ctrl-g"),
-        "next break": Key('cmd-shift-g'),
+        "gogo": [Key('cmd-shift-g'), delay(.1), Key('enter')],
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
         # # Navigating Interface
@@ -120,10 +120,11 @@ context.keymap(
         # tabbing
         "screen alone": Key("alt-cmd-1"),
         "screen split": Key("alt-cmd-2"),
+        "search this": [Key('cmd-c'), Key('cmd-f'), Key('cmd-v')],
         "screen screen": Key("alt-k"),
-        "stiffy": Key("cmd-alt-left"),
+        # "stiffy": Key("cmd-alt-left"),
         "next tab": Key("cmd-alt-right"),
-        "stippy": Key("cmd-alt-right"),
+        # "stippy": Key("cmd-alt-right"),
         "last tab": Key("cmd-alt-left"),
         "new tab": Key("cmd-n"),
         "jay" + optional_numerals: jump_tabs,
@@ -141,5 +142,8 @@ context.keymap(
         # "(drop-down | drop)": Key("ctrl-space"),
         # view
         # ""
+        'fold': Key('cmd-alt-['),
+        'unfold': Key('cmd-alt-]'),
+        'bookmark': Key('ctrl-shift-r')
     }
 )

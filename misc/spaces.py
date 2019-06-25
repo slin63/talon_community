@@ -17,7 +17,7 @@ ctx = Context("spaces")
 keymap = {}
 keymap.update(
     {
-        "day %s" % name: Key("ctrl-alt-%s" % NAMED_DESKTOPS[name])
+        "buy %s" % name: Key("ctrl-alt-%s" % NAMED_DESKTOPS[name])
         for name in NAMED_DESKTOPS.keys()
     }
 )

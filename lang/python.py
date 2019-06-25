@@ -46,7 +46,7 @@ ctx.keymap(
             "(self, ):",
             Key("left left")
         ],
-        PYTHON_ALIAS + " ( call | caw ) <dgndictation> over": [
+        PYTHON_ALIAS + " ( call | caw ) <dgndictation>": [
             snake_text,
             "()",
             Key("left")
@@ -90,7 +90,8 @@ ctx.keymap(
 
         # Keywords
         PYTHON_ALIAS + " pass": "pass",
-        PYTHON_ALIAS + " break": "break",
+        PYTHON_ALIAS + " assert": "assert",
+        # PYTHON_ALIAS + " break": "break",
         PYTHON_ALIAS + " none": "None",
         PYTHON_ALIAS + " true": "True",
         PYTHON_ALIAS + " false": "False",
@@ -121,11 +122,14 @@ ctx.keymap(
             "[] = ",
             Key("left left left left")
         ],
+        PYTHON_ALIAS + " keys": [".keys()", Key('enter')],
         PYTHON_ALIAS + " (decorate | decorator)": "@",
         PYTHON_ALIAS + " fixture": "@pytest.fixture",
         PYTHON_ALIAS + " default": "=None",
+        PYTHON_ALIAS + " type": " -> ",
+        PYTHON_ALIAS + " dundick": ".__dict__",
         PYTHON_ALIAS + " set": "=",
-        PYTHON_ALIAS + " breakpoint": Key("ctrl-shift-b "),
+        PYTHON_ALIAS + " break": Key("ctrl-shift-b "),
         PYTHON_ALIAS + " block": ["()", Key("left enter enter shift-tab up tab")],
         PYTHON_ALIAS + " argument": [Key("cmd-right"), ",", Key("enter")],
         PYTHON_ALIAS + " dock": ["\"\"\"\"\"\"", Key("left left left")]

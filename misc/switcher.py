@@ -1,3 +1,5 @@
+from .. import utils
+from talon.voice import Word, Key, Context, Str, press
 from talon.voice import Context
 from talon import ui
 import time
@@ -55,9 +57,14 @@ ctx.keymap(
         PREFIX + " code": lambda x: switch_app(x, "Visual Studio Code"),
         PREFIX + " merge": lambda x: switch_app(x, "Sublime Merge"),
         PREFIX + " postman": lambda x: switch_app(x, "Postman"),
+        PREFIX + " discord": lambda x: switch_app(x, "Discord"),
         PREFIX + " finder": lambda x: switch_app(x, "Finder"),
         PREFIX + " maestro": lambda x: switch_app(x, "Keyboard Maestro"),
         "system preferences": lambda x: switch_app(x, "System Preferences"),
+
+        # custom switch macros
+        PREFIX + " peter": [Key('cmd-s'), lambda x: switch_app(x, "iTerm2"), utils.delay(.1), Key('up enter')]
+
     }
 )
 

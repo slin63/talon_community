@@ -35,7 +35,7 @@ ctx.keymap(
         PREFIX + "cherry pick [<dgndictation>]": ["git cherry-pick ", text],
         PREFIX + "commit [<dgndictation>]": ['git commit -m ""', Key("left"), text],
         PREFIX + "commit amend [<dgndictation>]": [
-            'git commit --amend -m ""',
+            'git commit --amend',
             Key("left"),
             text,
         ],
@@ -77,6 +77,7 @@ ctx.keymap(
         PREFIX + "soup": ["gdna", Key("enter")],
         PREFIX + "soup all": ["gdna -A", Key("enter")],
         PREFIX + "sort": ["gdisort", Key("enter")],
-        PREFIX + "(lent | lint | check)": ["lint ", Key('enter')]
+        PREFIX + "(lent | lint | check)": ["lint ", Key('enter')],
+        PREFIX + "fast rebase": 'git checkout master;git pull',
     }
 )

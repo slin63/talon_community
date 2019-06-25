@@ -46,9 +46,10 @@ ctx.keymap(
         "[op] (arrow | lambo)": " -> ",
         "[op] fat (arrow | lambo)": " => ",
         # Completed matchables
-        "(empty parens | call)": "()",
+        "call": ["()", Key("left")],
         "empty (dict | object)": "{}",
         "(empty array | brackers)": "[]",
+        "index": ["[]", Key("left")],
         # Blocks
         "[brace] block": [" {}", Key("left enter enter up ")],
         "(square | brax) block": ["[", Key("enter")],
@@ -89,7 +90,8 @@ ctx.keymap(
         "screenshot": Key("ctrl-cmd-shift-4"),
         "vee eye ": "vim ",
         "docker pee es": "docker ps",
-        "docker (queue | kill)": "docker kill",
+        "docker logs": "docker logs -f ",
+        "docker (queue | kill)": "docker kill ",
         "dockshellport": "dockshellport",
         "make <dgnwords>": ["make ", word]
     }

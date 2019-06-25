@@ -1,9 +1,8 @@
 from talon.voice import Context, press, Key
 import string
-from talon.voice import Context, press, Key
 from ..utils import normalise_keys, insert, repeat_function, optional_numerals
 
-alpha_alt = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quiz red sun trap urge vest whale lex yank zip".split()
+alpha_alt = "air bat cap drum each fine gust harp sit jury crunch look made nex odd pit quiz red sun trap urge vest whale lex yank zip".split()
 alphabet = dict(zip(alpha_alt, string.ascii_lowercase))
 
 f_keys = {f"F {i}": f"f{i}" for i in range(1, 13)}

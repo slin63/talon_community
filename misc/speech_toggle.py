@@ -1,6 +1,8 @@
 from talon.voice import Context, ContextGroup
 from talon.engine import engine
 from talon_plugins import speech
+from talon import app
+
 
 sleep_group = ContextGroup("sleepy")
 sleepy = Context("sleepy", group=sleep_group)
@@ -17,7 +19,12 @@ class VoiceType:
     DRAGON = 3
     DICTATION = 4
 
+spaghetti = {1: 'SLEEPING',
+2: 'TALON',
+3: 'DRAGON',
+4: 'DICTATION',}
 
+{}
 voice_type = VoiceType.TALON
 last_voice_type = VoiceType.TALON
 
@@ -50,6 +57,7 @@ def set_voice_type(type):
         dictation_group.enable()
 
 
+    app.notify(body="HELLO I'M " + spaghetti[type])
 sleepy.keymap(
     {
         "talon sleep": lambda m: set_voice_type(VoiceType.SLEEPING),

@@ -129,7 +129,7 @@ ctx.keymap(
         "slash <dgnwords>": ["/", word],
         "dash <dgnwords>": ["-", word],
         "snake <dgndictation>": snake_text,
-        "point <dgndictation>": dot_text,
+        # "point <dgndictation>": dot_text,
         "laugh": laugh,
         "capital <dgndictation>": caps_text,
         "(%s)+ [<dgndictation>] over" % (" | ".join(formatters)): FormatText,

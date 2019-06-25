@@ -290,6 +290,8 @@ def repeat_function(numberOfWordsBeforeNumber, keyCode, useKey=False, delay=0):
 
         if line_number is None:
             line_number = 1
+        if line_number > 100:
+            line_number = 100
 
         for i in range(0, line_number):
             sleep(delay)
