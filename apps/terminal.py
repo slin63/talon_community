@@ -34,6 +34,12 @@ def dash(m):
         Str("-".join(words))(None)
 
 
+def jump_tab(m):
+    tab_number = utils.parse_words_as_integer(m._words[1:])
+    if tab_number is not None and tab_number > 0 and tab_number < 9:
+        press("option-%s" % tab_number)
+
+
 KUBERNETES_PREFIX = "(cube | cube control)"
 
 directory_shortcuts = {
@@ -44,8 +50,8 @@ directory_shortcuts = {
     "inputs": "/Users/sheanlin/Documents/WORK/ALPINE/input-service-investigation",
     "web": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web",
     "web client": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web/packages/client",
-    "mobile": "/users/Sheanlin/documents/work/alpine/gb-mobile-api",
-    "mobile test": "/users/Sheanlin/documents/work/alpine/gb-mobile-api/tests/integration/views/ajax/",
+    "api": "/users/Sheanlin/documents/work/alpine/gb-api",
+    "api test": "/users/Sheanlin/documents/work/alpine/gb-api/tests/integration/views/ajax/",
     "model": "/users/Sheanlin/documents/work/alpine/gb-alpine-models",
     "alpine": "/Users/sheanlin/Documents/WORK/ALPINE/Alpine",
     "command": "/Users/sheanlin/Documents/Work/ALPINE/gb-cli",
@@ -53,14 +59,17 @@ directory_shortcuts = {
     "tutoring": "/Users/sheanlin/Documents/WORK/tutoring",
     "go": "/Users/sheanlin/Documents/WORK/tutoring/go",
     "flask": "/users/Sheanlin/documents/OpenSource/flask",
+    "terraform": "/Users/sheanlin/Documents/WORK/terraform",
+    "proxy": "/Users/sheanlin/Documents/WORK/ALPINE/gb-mobile-proxy",
 }
 
 
 def cd_directory_shortcut(m):
     directory = directory_shortcuts[m[1]]
     insert(f"cd {directory}; ls")
-    for _ in range(4):
-        press("left")
+    press('enter')
+    # for _ in range(4):
+    #     press("left")
 
 
 try:
@@ -267,10 +276,14 @@ keymap = {
     "swampy": Key('cmd-left'),
     "pee serve": "pserve",
     "pee serve local": "pserve alpine/local.ini --reload",
+    "pee infrastructure": "docker-compose -f alpine/docker/infra/docker-compose.yml up -d",
     # sql
     "pee describe": "\d+ ",
     "pee tables": "\dt ",
-    "gottem": [Key('right'), Key('enter')]
+    "gottem": [Key('right'), Key('enter')],
+    "merge": ["smerge .", Key('enter')],
+    "jar (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
+
 }
 
 for action in ("get", "delete", "describe"):

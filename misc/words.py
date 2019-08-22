@@ -58,9 +58,12 @@ ctx.keymap(
         "word daytime": "datetime",
         "word brock db": "brocdb",
         "word delete": "delete",
-        "4 delete": "delete",
+        "word delete": "delete",
         "word oopsy": "error",
         "word low dash": "lodash",
         "word olympic": "alembic",
+        "word gee bee see": "gbcli",
+        "word bootstrap": "bootstrap",
+        "word jaydee": "jwt"
     }
 )

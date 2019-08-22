@@ -91,6 +91,7 @@ keymap = {
     "(click | joe)": delayed_click,
     "(dubclick | duke)": delayed_dubclick,
     "(see duke)": [delayed_dubclick, Key('cmd-c')],
+    "(pee duke)": [delayed_dubclick, Key('cmd-v')],
     "(tripclick | triplick)": delayed_tripclick,
     "drag": mouse_drag,
     "release": mouse_release,

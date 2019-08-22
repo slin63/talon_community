@@ -116,6 +116,9 @@ context.keymap(
         "marneck": Key("cmd-g"),
         "(last | prevous)": Key("cmd-shift-g"),
         "day panel": Key("cmd-alt-i"),
+        "break toggle": Key("cmd-f8"),
+        "break go": Key("f8"),
+
         "command menu": Key("cmd-shift-p"),
         "next panel": next_panel,
         "(last | previous) panel": last_panel,
@@ -147,7 +150,7 @@ context.keymap(
         # "move tab right": Key("ctrl-shift-right"),
         # "move tab left way": Key("ctrl-shift-down"),
         # vimium
-        "link": link,
+        "copy link": link,
         "move tab left": browser.send_to_vimium("<<"),
         "move tab right": browser.send_to_vimium(">>"),
     }

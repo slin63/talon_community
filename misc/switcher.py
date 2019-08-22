@@ -40,6 +40,7 @@ ctx.keymap(
         # custom switchers here
         "madam": lambda x: switch_app(x, "Atom"),
         PREFIX + " chrome": lambda x: switch_app(x, "Google Chrome"),
+        PREFIX + " kay": lambda x: switch_app(x, "Google Chrome"),
         PREFIX + " spotify": lambda x: switch_app(x, "Spotify"),
         PREFIX + " audacity": lambda x: switch_app(x, "Audacity"),
         PREFIX + " outlook": lambda x: switch_app(x, "Outlook"),
@@ -60,6 +61,7 @@ ctx.keymap(
         PREFIX + " discord": lambda x: switch_app(x, "Discord"),
         PREFIX + " finder": lambda x: switch_app(x, "Finder"),
         PREFIX + " maestro": lambda x: switch_app(x, "Keyboard Maestro"),
+        PREFIX + " simulator": lambda x: switch_app(x, "Simulator"),
         "system preferences": lambda x: switch_app(x, "System Preferences"),
 
         # custom switch macros

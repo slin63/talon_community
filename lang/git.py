@@ -78,6 +78,6 @@ ctx.keymap(
         PREFIX + "soup all": ["gdna -A", Key("enter")],
         PREFIX + "sort": ["gdisort", Key("enter")],
         PREFIX + "(lent | lint | check)": ["lint ", Key('enter')],
-        PREFIX + "fast rebase": 'git checkout master;git pull',
+        PREFIX + "fast rebase": ['git checkout master;git pull;git checkout -;git rebase origin/master', Key('enter')],
     }
 )
