@@ -153,5 +153,6 @@ context.keymap(
         "copy link": link,
         "move tab left": browser.send_to_vimium("<<"),
         "move tab right": browser.send_to_vimium(">>"),
+        "portainer": ["localhost:9000", Key('enter')]
     }
 )

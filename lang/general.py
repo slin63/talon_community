@@ -89,7 +89,7 @@ ctx.keymap(
         "(note | node) type": ["npm run typecheck-dev", Key('enter')],
         "screenshot": Key("ctrl-cmd-shift-4"),
         "vee eye ": "vim ",
-        "docker pee es": "docker ps",
+        "dips": "docker ps",
         "docker logs": "docker logs -f ",
         "docker (queue | kill)": "docker kill ",
         "dockshellport": "dockshellport",

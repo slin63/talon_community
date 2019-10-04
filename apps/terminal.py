@@ -6,7 +6,7 @@ from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 from talon import ctrl, ui, resource
 import string
 
-from ..utils import numerals, parse_words, text, is_in_bundles, insert
+from ..utils import numerals, parse_words, text, is_in_bundles, insert, snake_text
 from ..bundle_groups import TERMINAL_BUNDLES
 
 # TODO: move application specific commands into their own files: apt-get, etc
@@ -50,6 +50,7 @@ directory_shortcuts = {
     "inputs": "/Users/sheanlin/Documents/WORK/ALPINE/input-service-investigation",
     "web": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web",
     "web client": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web/packages/client",
+    "fixy": "/Users/sheanlin/Documents/WORK/ALPINE/gb-fix-scripts",
     "api": "/users/Sheanlin/documents/work/alpine/gb-api",
     "api test": "/users/Sheanlin/documents/work/alpine/gb-api/tests/integration/views/ajax/",
     "model": "/users/Sheanlin/documents/work/alpine/gb-alpine-models",
@@ -57,10 +58,10 @@ directory_shortcuts = {
     "command": "/Users/sheanlin/Documents/Work/ALPINE/gb-cli",
     "fixtures": "/users/Sheanlin/documents/work/alpine/gb-fixtures",
     "tutoring": "/Users/sheanlin/Documents/WORK/tutoring",
-    "go": "/Users/sheanlin/Documents/WORK/tutoring/go",
+    "go": "/Users/sheanlin/Documents/WORK/go",
     "flask": "/users/Sheanlin/documents/OpenSource/flask",
-    "terraform": "/Users/sheanlin/Documents/WORK/terraform",
     "proxy": "/Users/sheanlin/Documents/WORK/ALPINE/gb-mobile-proxy",
+    "work": "/users/Sheanlin/documents/work/workJournal",
 }
 
 
@@ -216,6 +217,8 @@ keymap = {
     "pip uninstall": "pip uninstall ",
     "pip list": "pip list",
     "toolbelt": Key('cmd-shift-b'),
+    "shell top": ['htop', Key('enter')],
+    "fuck him up": [Key('f9'), Key('enter')],
     # kubectl
     KUBERNETES_PREFIX + "control": "kubectl ",
     KUBERNETES_PREFIX + "create": "kubectl create ",
@@ -278,11 +281,22 @@ keymap = {
     "pee serve local": "pserve alpine/local.ini --reload",
     "pee infrastructure": "docker-compose -f alpine/docker/infra/docker-compose.yml up -d",
     # sql
-    "pee describe": "\d+ ",
+    "pity [<dgndictation>]": ["\d+ ", snake_text],
+    "connect granular [<dgndictation>]": ["brocdb gran ", snake_text],
+    "connect data warehouse [<dgndictation>]": ["brocdb adw ", snake_text],
+
+    "pexecute [<dgndictation>]": ["\i ", text],
     "pee tables": "\dt ",
     "gottem": [Key('right'), Key('enter')],
     "merge": ["smerge .", Key('enter')],
     "jar (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
+    "command": "gbcli ",
+    "command bootstrap": "gbcli bootstrap",
+    "gee dash": "gb-",
+    "portainer": ["docker volume create portainer_data && docker run -d -p 6969:6969 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer", Key('enter')],
+    "flaky": ["flake8", Key('enter')],
+    "gogo [<dgndictation>]": ["go ", text],
+    "gogo run [<dgndictation>]": ["go run ", text]
 
 }
 

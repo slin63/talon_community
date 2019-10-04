@@ -50,6 +50,7 @@ shrink_map = {
     "frequency": "freq",
     "operations": "ops",
     "initialize": "init",
+    "initial": "init",
     "iterator": "iter",
     "vector": "vec",
     "convolution": "conv",

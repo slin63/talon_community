@@ -119,6 +119,8 @@ context.keymap(
         # "tab clean": [Key("cmd-shift-p"), Str("file: close all"), Key("enter")],
         # tabbing
         "screen alone": Key("alt-cmd-1"),
+        "hello adrian": "hello hello hello",
+
         "screen split": Key("alt-cmd-2"),
         "search this": [Key('cmd-c'), Key('cmd-f'), Key('cmd-v')],
         "screen screen": Key("alt-k"),
