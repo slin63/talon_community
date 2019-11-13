@@ -89,6 +89,11 @@ def insert(s):
     Str(s)(None)
 
 
+def camel_case(m):
+    output = ''.join(x for x in join_words(parse_words(m)).title() if x.isalnum())
+    return insert(output[0].lower() + output[1:])
+
+
 def text(m):
     insert(join_words(parse_words(m)).lower())
 

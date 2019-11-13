@@ -93,6 +93,7 @@ ctx.keymap(
         "docker logs": "docker logs -f ",
         "docker (queue | kill)": "docker kill ",
         "dockshellport": "dockshellport",
-        "make <dgnwords>": ["make ", word]
+        "make <dgnwords>": ["make ", word],
+        "copy menu": Key('alt-cmd-c')
     }
 )

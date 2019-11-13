@@ -29,7 +29,6 @@ keymap = {
     "(back to the future | ford | go forward | fourthly)": Key("cmd-]"),
     "next element": Key("tab"),
     "previous element": Key("shift-tab"),
-    "(my stuff | activity)": Key("cmd-shift-m"),
     "toggle directory": Key("cmd-shift-e"),
     "(starred [items] | stars)": Key("cmd-shift-s"),
     "unread [messages]": Key("cmd-j"),
@@ -40,8 +39,6 @@ keymap = {
     "grab right": Key("shift-down"),
     "add line": Key("shift-enter"),
     "(slaw | slapper | return)": [Key("cmd-right"), Key("shift-enter")],
-    "(react | reaction)": Key("cmd-shift-\\"),
-    "user": Key("@"),
     "tag channel": Key("#"),
     # "(insert command | commandify)": Key("cmd-shift-c"),
     "insert code": [

@@ -19,6 +19,15 @@ def jump_to_line(m):
     press("enter")
 
 
+def jump_screens(m):
+    line_number = parse_words_as_integer(m._words[1:])
+
+    if line_number is None:
+        return
+
+    press("ctrl-" + str(line_number))
+
+
 def jump_tabs(m):
     line_number = parse_words_as_integer(m._words[1:])
 
@@ -77,14 +86,23 @@ context.keymap(
         "source control tab": Key("shift-ctrl-g"),
         "extensions tab": Key("shift-cmd-x"),
         "go to file <dgndictation>": [Key("cmd-p"), text],
+        "go to ( thing | think ) [<dgndictation>]": [Key("cmd-shift-o"), text],
         "master": Key("cmd-p"),
+
         # tabbing
+        "screen split": Key("alt-cmd-2"),
+
         "stiffy": Key("cmd-alt-left"),
         "next tab": Key("cmd-alt-right"),
         "stippy": Key("cmd-alt-right"),
         "last tab": Key("cmd-alt-left"),
         "new tab": Key("cmd-n"),
-        "jump" + optional_numerals: jump_tabs,
+        "jay" + optional_numerals: jump_tabs,
+        "screen" + optional_numerals: jump_screens,
+
+        "screen alone": Key("ctrl-cmd-="),
+        "screen split": Key("ctrl-cmd--"),
+
         # Menu
         "save": Key("cmd+s"),
         "open": Key("cmd+o"),

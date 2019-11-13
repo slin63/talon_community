@@ -47,6 +47,7 @@ directory_shortcuts = {
     "talon user": TALON_USER,
     "talon plug-ins": TALON_PLUGINS,
     "talon community": "~/.talon/user/talon_community",
+    "personal": "/Users/sheanlin/Documents/personal",
     "inputs": "/Users/sheanlin/Documents/WORK/ALPINE/input-service-investigation",
     "web": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web",
     "web client": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web/packages/client",
@@ -203,11 +204,11 @@ keymap = {
     "vi": "vim ",
     # python
     "pip": "pip",
-    "pippenv": "pipenv",
-    "pippenv run": "pipenv run",
-    "pippenv deploy": "pipenv run deploy/tools/server",
-    "pippenv shell": "pipenv shell",
-    "pippenv stall": "pipenv install",
+    "piepie": "pipenv",
+    "piepie run": "pipenv run",
+    "piepie deploy": "pipenv run deploy/tools/server",
+    "piepie shell": "pipenv shell",
+    "piepie stall": "pipenv install",
     "pip install": "pip install ",
     "pip install requirements": "pip install -r ",
     "pip install editable": "pip install -e ",
@@ -286,6 +287,7 @@ keymap = {
     "connect data warehouse [<dgndictation>]": ["brocdb adw ", snake_text],
 
     "pexecute [<dgndictation>]": ["\i ", text],
+    "pee fit": ["\\x auto", Key('enter')],
     "pee tables": "\dt ",
     "gottem": [Key('right'), Key('enter')],
     "merge": ["smerge .", Key('enter')],
@@ -295,8 +297,12 @@ keymap = {
     "gee dash": "gb-",
     "portainer": ["docker volume create portainer_data && docker run -d -p 6969:6969 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer", Key('enter')],
     "flaky": ["flake8", Key('enter')],
+
     "gogo [<dgndictation>]": ["go ", text],
-    "gogo run [<dgndictation>]": ["go run ", text]
+    "gogo run [<dgndictation>]": ["go run ", text],
+
+    "sequel csv": "sqltocsv ",
+
 
 }
 

@@ -6,6 +6,9 @@ from talon.voice import Context, press, Key
 from talon.voice import Context
 
 ctx = Context("words")
+ctx.vocab = [
+    "photocrop"
+]
 
 ctx.keymap(
     {
@@ -60,10 +63,13 @@ ctx.keymap(
         "word delete": "delete",
         "word delete": "delete",
         "word oopsy": "error",
+        "( word counsel | word consul )": "console",
         "word low dash": "lodash",
         "word olympic": "alembic",
         "word gee bee see": "gbcli",
         "word bootstrap": "bootstrap",
-        "word jaydee": "jwt"
+        "word jaydee": "jwt",
+        "word feeflag": "feature flag",
+        "word metatable": "metatable",
     }
 )
