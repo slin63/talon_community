@@ -10,7 +10,9 @@ GO_ALIAS = "go"
 ctx = Context("go")
 ctx.vocab = [
     "goroutine",
-    "nil"
+    "nil",
+    "golang",
+    "waitgroup"
 ]
 
 
@@ -19,6 +21,8 @@ ctx.keymap(
     {
         "state any": ["any()", Key("left")],
         "pirate": "return ",
+
+        # Symbols
         "coal sign": " := ",
         GO_ALIAS + " chan": "chan ",
         GO_ALIAS + " var": "var ",
@@ -27,9 +31,13 @@ ctx.keymap(
         GO_ALIAS + " fee print": ["fmt.Printf()", Key('left')],
         GO_ALIAS + " amp": "&",
         GO_ALIAS + " format": "fmt",
+        GO_ALIAS + " range": "range ",
+        GO_ALIAS + " arrow": " <- ",
+        GO_ALIAS + " arrow short": "<-",
+        GO_ALIAS + " map": ["map[]", Key('left')],
 
         # Goroutines
-        GO_ALIAS + " go (<dgndictation>)": [
+        GO_ALIAS + " go [<dgndictation>]": [
             "go ",
             text
         ],
@@ -46,6 +54,13 @@ ctx.keymap(
             "type ",
             caps_text,
             " interface {"
+        ],
+
+        # Logic and control flow
+        GO_ALIAS + " if [<dgndictation>] ": [
+            "if ",
+            camel_case,
+            " {"
         ],
 
 

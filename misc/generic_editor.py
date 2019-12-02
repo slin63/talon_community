@@ -226,8 +226,12 @@ ctx.keymap(
         "(grab this)": Key("alt-right shift-alt-left cmd-c"),
         "(select this word | word this)": Key("alt-right shift-alt-left"),
         "(select this line | shackle)": Key("cmd-right shift-cmd-left"),
-        "(select above | shift home)": Key("shift-home"),
-        "(select below | shift end)": Key("shift-end"),
+        # "(select above | shift home)": Key("shift-home"),
+        # "(select below | shift end)": Key("shift-end"),
+
+        "(select above | shift home)": Key("cmd-shift-up"),
+        "(select below | shift end)": Key("cmd-shift-down"),
+
         "(select up )": Key("shift-up"),
         "(select down )": Key("shift-down"),
         'unindent': Key('shift-up cmd-shift-right backspace'),

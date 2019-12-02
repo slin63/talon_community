@@ -31,6 +31,9 @@ ctx.keymap(
         "(open | new) window": Key("cmd-n"),
         "swaggy left": Key("ctrl-cmd-left"),
         "swaggy right": Key("ctrl-cmd-right"),
+        "swaggy left half": Key("ctrl-alt-cmd-left"),
+        "swaggy right half": Key("ctrl-alt-cmd-right"),
+        "swaggy ( full | all )": Key('ctrl-alt-cmd-8'),
         "window close": Key("cmd-shift-w"),
         ""
         "([switch] window (next | right) | pop)": Key("cmd-`"),

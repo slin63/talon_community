@@ -55,7 +55,7 @@ ctx.keymap(
         PREFIX + " imovie": lambda x: switch_app(x, "iMovie"),
         PREFIX + " kindle": lambda x: switch_app(x, "Kindle"),
         PREFIX + " zoom": lambda x: switch_app(x, "zoom.us"),
-        PREFIX + " code": lambda x: switch_app(x, "Visual Studio Code"),
+        PREFIX + " code": lambda x: switch_app(x, "Code"),
         PREFIX + " merge": lambda x: switch_app(x, "Sublime Merge"),
         PREFIX + " postman": lambda x: switch_app(x, "Postman"),
         PREFIX + " discord": lambda x: switch_app(x, "Discord"),

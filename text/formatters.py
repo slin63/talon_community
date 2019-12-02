@@ -11,6 +11,7 @@ from ..utils import (
     sentence_text,
     word,
     parse_words,
+    camel_case,
     spoken_text,
     snake_text,
     dot_text,
@@ -34,10 +35,10 @@ formatters = normalise_keys(
     {
         # ""tree": (True, lambda i, word, _: word[0:3] if i == 0 else ""),"
         # "quad": (True, lambda i, word, _: word[0:4] if i == 0 else ""),
-        PREFIX + "camel": (
-            True,
-            lambda i, word, _: word if i == 0 else word.capitalize(),
-        ),
+        # PREFIX + "camel": (
+        #     True,
+        #     lambda i, word, _: word if i == 0 else word.capitalize(),
+        # ),
         PREFIX + "pathway": (True, lambda i, word, _: word if i == 0 else "/" + word),
         PREFIX + "dotsway": (True, lambda i, word, _: word if i == 0 else "." + word),
         PREFIX + "yellsmash": (True, lambda i, word, _: word.upper()),
@@ -129,6 +130,7 @@ ctx.keymap(
         "slash <dgnwords>": ["/", word],
         "dash <dgnwords>": ["-", word],
         "snake <dgndictation>": snake_text,
+        "camel <dgndictation>": camel_case,
         # "point <dgndictation>": dot_text,
         "laugh": laugh,
         "capital <dgndictation>": caps_text,

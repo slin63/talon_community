@@ -67,6 +67,7 @@ keymap = {
     # Miscellaneous
     "keyboard shortcuts": Key("cmd-/"),
     "thumbs": (":+1:"),
+    "wizard": (":party-wizard:"),
     "celebrate": ":raised_hands:",
 }
 

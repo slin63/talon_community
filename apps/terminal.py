@@ -63,6 +63,7 @@ directory_shortcuts = {
     "flask": "/users/Sheanlin/documents/OpenSource/flask",
     "proxy": "/Users/sheanlin/Documents/WORK/ALPINE/gb-mobile-proxy",
     "work": "/users/Sheanlin/documents/work/workJournal",
+    "queries": "/Users/sheanlin/Documents/Work/ALPINE/queries/"
 }
 
 

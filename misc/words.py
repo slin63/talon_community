@@ -7,7 +7,10 @@ from talon.voice import Context
 
 ctx = Context("words")
 ctx.vocab = [
-    "photocrop"
+    "photocrop",
+    "mock",
+    "async",
+    "alembic"
 ]
 
 ctx.keymap(
@@ -71,5 +74,7 @@ ctx.keymap(
         "word jaydee": "jwt",
         "word feeflag": "feature flag",
         "word metatable": "metatable",
+        "word goday": "golang",
+        "word strings": "strings",
     }
 )

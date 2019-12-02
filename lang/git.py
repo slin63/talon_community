@@ -73,6 +73,7 @@ ctx.keymap(
         PREFIX + "stash apply": "git stash apply ",
         PREFIX + "stash pop": "git stash pop ",
         PREFIX + "status": "git status ",
+        PREFIX + "clean": "git clean ",
         PREFIX + "tag": "git tag ",
         PREFIX + "soup": ["gdna", Key("enter")],
         PREFIX + "soup all": ["gdna -A", Key("enter")],

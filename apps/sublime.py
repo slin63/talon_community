@@ -103,7 +103,6 @@ context.keymap(
         # Navigation
         "(lay | line | lie)"  + optional_numerals + "[over]": jump_to_line,
         "Go to line": Key("ctrl-g"),
-        "gogo": [Key('cmd-shift-g'), delay(.1), Key('enter')],
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
         # # Navigating Interface
