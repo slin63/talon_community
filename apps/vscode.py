@@ -14,7 +14,7 @@ def jump_to_line(m):
     if line_number == 0:
         line_number = 1
 
-    press("cmd-g")
+    press("ctrl-g")
     Str(str(line_number))(None)
     press("enter")
 
@@ -86,7 +86,7 @@ context.keymap(
         "clone": Key("alt-shift-down"),
 
         # Navigation
-        "lay" + optional_numerals: jump_to_line,
+        "(pizza | lie)" + optional_numerals: jump_to_line,
         "Go to line": Key("cmd-g"),
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
@@ -103,7 +103,7 @@ context.keymap(
         "extensions tab": Key("shift-cmd-x"),
         "go to file <dgndictation>": [Key("cmd-p"), text],
         "go to ( thing | think ) [<dgndictation>]": [Key("cmd-shift-o"), text],
-        "master": Key("cmd-p"),
+        "master [<dgndictation>]": [Key("cmd-p"), text],
 
         # Workspaces
         "workspaces": Key('cmd-f1'),
@@ -144,8 +144,8 @@ context.keymap(
         ],
         "(select above | shift home)": Key("cmd-shift-up"),
         "(select below | shift end)": Key("cmd-shift-down"),
-        "drop cursor": Key("alt-cmd-down"),
-        "drop cursor up": Key("alt-cmd-up"),
+        "(drop cursor | cursor drop)": Key("alt-cmd-down"),
+        "(drop cursor | cursor drop) up": Key("alt-cmd-up"),
         'fold': Key('cmd-alt-['),
 
 
