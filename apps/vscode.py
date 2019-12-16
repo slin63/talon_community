@@ -92,7 +92,8 @@ context.keymap(
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
 
         # Because tab9 sucks
-        "pock" + optional_numerals: select_suggestion,
+        "tip": Key("tab"),
+        "tip" + optional_numerals: select_suggestion,
 
         # Navigating Interface
         "explore tab": Key("shift-cmd-e"),
