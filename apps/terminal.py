@@ -47,30 +47,15 @@ directory_shortcuts = {
     "talon user": TALON_USER,
     "talon plug-ins": TALON_PLUGINS,
     "talon community": "~/.talon/user/talon_community",
-    "personal": "/Users/sheanlin/Documents/personal",
-    "inputs": "/Users/sheanlin/Documents/WORK/ALPINE/input-service-investigation",
-    "web": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web",
-    "web client": "/Users/sheanlin/Documents/WORK/ALPINE/gb-web/packages/client",
-    "fixy": "/Users/sheanlin/Documents/WORK/ALPINE/gb-fix-scripts",
-    "api": "/users/Sheanlin/documents/work/alpine/gb-api",
-    "api test": "/users/Sheanlin/documents/work/alpine/gb-api/tests/integration/views/ajax/",
-    "model": "/users/Sheanlin/documents/work/alpine/gb-alpine-models",
-    "alpine": "/Users/sheanlin/Documents/WORK/ALPINE/Alpine",
-    "command": "/Users/sheanlin/Documents/Work/ALPINE/gb-cli",
-    "fixtures": "/users/Sheanlin/documents/work/alpine/gb-fixtures",
-    "tutoring": "/Users/sheanlin/Documents/WORK/tutoring",
-    "go": "/Users/sheanlin/Documents/WORK/go",
-    "flask": "/users/Sheanlin/documents/OpenSource/flask",
-    "proxy": "/Users/sheanlin/Documents/WORK/ALPINE/gb-mobile-proxy",
-    "work": "/users/Sheanlin/documents/work/workJournal",
-    "queries": "/Users/sheanlin/Documents/Work/ALPINE/queries/"
+    "grep": "~/projects/go/distributedgrep",
+    "go": "/Users/seanlin/projects/go",
 }
 
 
 def cd_directory_shortcut(m):
     directory = directory_shortcuts[m[1]]
     insert(f"cd {directory}; ls")
-    press('enter')
+    press("enter")
     # for _ in range(4):
     #     press("left")
 
@@ -111,7 +96,7 @@ def new_server(m):
 keymap = {
     "shell Whereami": "pwd ",
     "shell home": "~/",
-    "shell history": ["fc -l", Key('enter')],
+    "shell history": ["fc -l", Key("enter")],
     "lefty": Key("ctrl-a"),
     # "ricky": Key("ctrl-e"),
     "shell left": Key("ctrl-left"),
@@ -218,9 +203,9 @@ keymap = {
     "pip [install] upgrade": "pip install --upgrade ",
     "pip uninstall": "pip uninstall ",
     "pip list": "pip list",
-    "toolbelt": Key('cmd-shift-b'),
-    "shell top": ['htop', Key('enter')],
-    "fuck him up": [Key('f9'), Key('enter')],
+    "toolbelt": Key("cmd-shift-b"),
+    "shell top": ["htop", Key("enter")],
+    "fuck him up": [Key("f9"), Key("enter")],
     # kubectl
     KUBERNETES_PREFIX + "control": "kubectl ",
     KUBERNETES_PREFIX + "create": "kubectl create ",
@@ -277,34 +262,26 @@ keymap = {
     "shell jobs": "jobs\n",
     "shell copy": "| pbcopy",
     "shell copy last": "echo !! | pbcopy",
-    "shell again": [Key('up enter')],
-    "swampy": Key('cmd-left'),
-    "pee serve": "pserve",
-    "pee serve local": "pserve alpine/local.ini --reload",
-    "pee infrastructure": "docker-compose -f alpine/docker/infra/docker-compose.yml up -d",
+    "shell again": [Key("up enter")],
+    "swampy": Key("cmd-left"),
     # sql
     "pity [<dgndictation>]": ["\d+ ", snake_text],
     "connect granular [<dgndictation>]": ["brocdb gran ", snake_text],
     "connect data warehouse [<dgndictation>]": ["brocdb adw ", snake_text],
-
     "pexecute [<dgndictation>]": ["\i ", text],
-    "pee fit": ["\\x auto", Key('enter')],
+    "pee fit": ["\\x auto", Key("enter")],
     "pee tables": "\dt ",
-    "gottem": [Key('right'), Key('enter')],
-    "merge": ["smerge .", Key('enter')],
+    "gottem": [Key("right"), Key("enter")],
+    "merge": ["smerge .", Key("enter")],
     "jar (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)": jump_tab,
-    "command": "gbcli ",
-    "command bootstrap": "gbcli bootstrap",
     "gee dash": "gb-",
-    "portainer": ["docker volume create portainer_data && docker run -d -p 6969:6969 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer", Key('enter')],
-    "flaky": ["flake8", Key('enter')],
-
+    "flaky": ["flake8", Key("enter")],
     "gogo [<dgndictation>]": ["go ", text],
     "gogo run [<dgndictation>]": ["go run ", text],
-
     "sequel csv": "sqltocsv ",
-
-
+    # Docker
+    "docker compose [<dgndictation>]": ["docker-compose ", text],
+    "docker [<dgndictation>]": ["docker ", text],
 }
 
 for action in ("get", "delete", "describe"):

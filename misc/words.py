@@ -1,4 +1,5 @@
 from talon.voice import Context, press, Key
+
 """
 
 """
@@ -6,12 +7,7 @@ from talon.voice import Context, press, Key
 from talon.voice import Context
 
 ctx = Context("words")
-ctx.vocab = [
-    "photocrop",
-    "mock",
-    "async",
-    "alembic"
-]
+ctx.vocab = ["photocrop", "mock", "async", "alembic"]
 
 ctx.keymap(
     {
@@ -76,5 +72,6 @@ ctx.keymap(
         "word metatable": "metatable",
         "word goday": "golang",
         "word strings": "strings",
+        "word bite": "byte",
     }
 )
