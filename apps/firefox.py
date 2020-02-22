@@ -37,6 +37,12 @@ def forward(m):
     # refocus_page(None)
 
 
+def link(m):
+    refocus_page(None)
+    press("cmd-l")
+    press("cmd-c")
+
+
 def command_line(command):
     def function(m):
         refocus_page()
@@ -57,12 +63,12 @@ def command_line(command):
 
 ctx.keymap(
     {
-        "(address bar | focus address | focus url | url)": focus_address_bar,
+        "be bar": focus_address_bar,
         "copy url": Key("escape y y"),
-        "back[ward]": back,
-        "forward": forward,
-        "reload": Key("cmd-r"),
-        "hard reload": Key("cmd-shift-r"),
+        "go back": back,
+        "go forward": forward,
+        "refresh": Key("cmd-r"),
+        "hard refresh": Key("cmd-shift-r"),
         "(last | prevous)": Key("cmd-shift-g"),
         "toggle dev tools": Key("cmd-alt-i"),
         "command menu": Key("cmd-shift-p"),
@@ -97,5 +103,6 @@ ctx.keymap(
             "composite get_current_url | tabopen -c personal"
         ),
         "show add-ons": Key("cmd-shift-a"),
+        "copy link": link,
     }
 )

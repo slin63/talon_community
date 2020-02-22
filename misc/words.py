@@ -7,7 +7,15 @@ from talon.voice import Context, press, Key
 from talon.voice import Context
 
 ctx = Context("words")
-ctx.vocab = ["photocrop", "mock", "async", "alembic"]
+ctx.vocab = [
+    "photocrop",
+    "liveness",
+    "uncomment",
+    "mock",
+    "async",
+    "alembic",
+    "kubernetes",
+]
 
 ctx.keymap(
     {
@@ -41,37 +49,28 @@ ctx.keymap(
         "word nosetest": "nosetests",
         "word canonical": "canonical",
         "word dockshell": "dockshell",
-        "word geebizz": "gbiz",
-        "word geegeebiz": ["[GBIZ-]", Key("left")],
         "word (bullying | boolean)": "boolean",
         "word google calendar": "https://calendar.google.com/calendar/r",
         "word jason": "json",
-        "word toodo": "# TODO: ",
+        "word toodo": "TODO: ",
         "word dot eye and eye": ".ini",
         "word localhost": "localhost:",
         "word debugger": "debugger;",
         "word views": "views",
-        "word gee dev": "https://us.dev.app.granular.ag",
         "word postgres": "postgres",
-        "word connection string": "psql -h localhost -U alpine_webapp -d granular",
-        "word password": "501second",
         "word pie test": "pytest ",
         "word pippinv": "pipenv ",
         "word daytime": "datetime",
         "word brock db": "brocdb",
         "word delete": "delete",
-        "word delete": "delete",
         "word oopsy": "error",
         "( word counsel | word consul )": "console",
-        "word low dash": "lodash",
         "word olympic": "alembic",
-        "word gee bee see": "gbcli",
         "word bootstrap": "bootstrap",
         "word jaydee": "jwt",
         "word feeflag": "feature flag",
-        "word metatable": "metatable",
         "word goday": "golang",
-        "word strings": "strings",
+        "word string": "string",
         "word bite": "byte",
     }
 )

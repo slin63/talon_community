@@ -10,6 +10,7 @@ launch = {}
 
 PREFIX = "pay"
 
+
 def switch_app(m=None, name=None):
     if name is None:
         name = str(m["switcher.running"][0])
@@ -40,12 +41,16 @@ ctx.keymap(
         # custom switchers here
         "madam": lambda x: switch_app(x, "Atom"),
         PREFIX + " chrome": lambda x: switch_app(x, "Google Chrome"),
-        PREFIX + " kay": lambda x: switch_app(x, "Google Chrome"),
+        PREFIX + " kay": lambda x: switch_app(x, "Firefox"),
+        # PREFIX + " kay": lambda x: switch_app(x, "Google Chrome"),
         PREFIX + " spotify": lambda x: switch_app(x, "Spotify"),
         PREFIX + " audacity": lambda x: switch_app(x, "Audacity"),
         PREFIX + " outlook": lambda x: switch_app(x, "Outlook"),
         PREFIX + " slack": lambda x: switch_app(x, "Slack"),
-        PREFIX + " (console | counsel | consul | term | terminal)": lambda x: switch_app(x, "iTerm2"),
+        PREFIX
+        + " (console | counsel | consul | term | terminal)": lambda x: switch_app(
+            x, "iTerm2"
+        ),
         PREFIX + " messages": lambda x: switch_app(x, "Messages"),
         PREFIX + " (sub|sublime)": lambda x: switch_app(x, "Sublime Text"),
         PREFIX + " skype": lambda x: switch_app(x, "Skype for Business"),
@@ -63,10 +68,14 @@ ctx.keymap(
         PREFIX + " maestro": lambda x: switch_app(x, "Keyboard Maestro"),
         PREFIX + " simulator": lambda x: switch_app(x, "Simulator"),
         "system preferences": lambda x: switch_app(x, "System Preferences"),
-
         # custom switch macros
-        PREFIX + " peter": [Key('cmd-s'), lambda x: switch_app(x, "iTerm2"), utils.delay(.1), Key('up enter')]
-
+        PREFIX
+        + " peter": [
+            Key("cmd-s"),
+            lambda x: switch_app(x, "iTerm2"),
+            utils.delay(0.1),
+            Key("up enter"),
+        ],
     }
 )
 

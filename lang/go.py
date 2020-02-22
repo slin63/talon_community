@@ -41,6 +41,7 @@ ctx.keymap(
         GO_ALIAS + " set": "=",
         GO_ALIAS + " argument": [Key("cmd-right"), ",", Key("enter")],
         GO_ALIAS
-        + " ( funk | fuck | fox ) <dgndictation> over": ["func ", camel_case, "() {",],
+        + " ( funk | fuck | fox ) <dgndictation>": ["func ", camel_case, "() {",],
+        GO_ALIAS + "funk": "func ",
     }
 )

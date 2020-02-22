@@ -46,9 +46,10 @@ directory_shortcuts = {
     "talon home": TALON_HOME,
     "talon user": TALON_USER,
     "talon plug-ins": TALON_PLUGINS,
-    "talon community": "~/.talon/user/talon_community",
+    "community": "~/.talon/user/talon_community",
     "grep": "~/projects/go/distributedgrep",
     "go": "/Users/seanlin/projects/go",
+    "chord": "~/projects/go/chord-dfs",
 }
 
 
@@ -261,8 +262,10 @@ keymap = {
     "shell make": "make\n",
     "shell jobs": "jobs\n",
     "shell copy": "| pbcopy",
+    "shell paste": "pbpaste >> ",
     "shell copy last": "echo !! | pbcopy",
     "shell again": [Key("up enter")],
+    "shell code": ["code .", Key("enter")],
     "swampy": Key("cmd-left"),
     # sql
     "pity [<dgndictation>]": ["\d+ ", snake_text],
