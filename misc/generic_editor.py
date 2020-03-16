@@ -7,14 +7,14 @@ from talon.voice import Key, press, Str, Context
 from ..utils import (
     parse_words,
     join_words,
-    is_not_vim,
+    is_not_terminal,
     numeral_list,
     extract_num_from_m,
     optional_numerals,
     repeat_function
 )
 
-ctx = Context("generic_editor", func=is_not_vim)
+ctx = Context("generic_editor", func=is_not_terminal)
 ctx.set_list("n", numeral_list)
 
 
@@ -188,7 +188,7 @@ def word_prev(m, valid_characters=alphanumeric):
 ctx.keymap(
     {
         # meta
-        "(save it | sage)": Key("cmd-s"),
+        "(save it | sage | sage it)": Key("cmd-s"),
         # "(undo it | rabbi)": Key("cmd-z"),
         "undo " + optional_numerals: repeat_function(1, "cmd-z"),
         "redo " + optional_numerals: repeat_function(1, "cmd-shift-z"),
@@ -196,9 +196,9 @@ ctx.keymap(
         # clipboard
         "(clip cut | snatch)": Key("cmd-x"),
         "(clip copy | stish)": Key("cmd-c"),
+        "(clip paste | spark)": Key("cmd-v"),
         'copy all': [Key('cmd-a'), Key('cmd-c')],
         "paste all": [Key('cmd-a'), Key('cmd-v')],
-        "(clip paste | spark)": Key("cmd-v"),
         # motions
         "(go word left | fame | peg)": Key("alt-left"),
         "(go word right | fish | fran)": Key("alt-right"),

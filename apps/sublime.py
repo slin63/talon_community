@@ -1,5 +1,13 @@
+from datetime import datetime
+
 from talon.voice import Context, Key, press, Str
-from ..utils import parse_words_as_integer, repeat_function, optional_numerals, text, delay
+from ..utils import (
+    parse_words_as_integer,
+    repeat_function,
+    optional_numerals,
+    text,
+    delay,
+)
 
 context = Context("Sublime", bundle="com.sublimetext.3")
 
@@ -77,6 +85,8 @@ def comment_lines_function(m):
         press("shift-down")
     press("cmd-/")
 
+GOGURU = "goo"
+
 context.keymap(
     {
         # Selecting text
@@ -85,23 +95,20 @@ context.keymap(
         + "until"
         + optional_numerals: select_lines_function,
         "(die line)" + optional_numerals: [repeat_function(2, "ctrl-shift-k", True)],
-        "(comment | comma) many" + optional_numerals: [
+        "(comment | comma) many"
+        + optional_numerals: [
             repeat_function(2, "shift-down", True),
             Key("cmd-/"),
             Key("left"),
         ],
-
-        "(select) many" + optional_numerals: [
-            repeat_function(2, "shift-down", True),
-        ],
-
+        "(select) many" + optional_numerals: [repeat_function(2, "shift-down", True),],
         # Finding text
         "find over": Key("cmd-f"),
         "find next": jump_to_next_word_instance,
         # # Clipboard
         # "clone": Key("alt-shift-down"),
         # Navigation
-        "(lay | line | lie)"  + optional_numerals + "[over]": jump_to_line,
+        "(lay | line | lie)" + optional_numerals + "[over]": jump_to_line,
         "Go to line": Key("ctrl-g"),
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
@@ -111,16 +118,15 @@ context.keymap(
         # "debug tab": Key("shift-cmd-d"),
         # "source control tab": Key("shift-ctrl-g"),
         # "extensions tab": Key("shift-cmd-x"),
-        "go to file <dgndictation>": [Key("cmd-p"), text],
+        "(go to file|master) <dgndictation>": [Key("cmd-p"), text],
         "go to ( thing | think ) [<dgndictation>]": [Key("cmd-r"), text],
         "master": Key("cmd-p"),
-        "command": Key("cmd-shift-p"),
+        "command [<dgndictation>]": [Key("cmd-shift-p"), text],
         # "tab clean": [Key("cmd-shift-p"), Str("file: close all"), Key("enter")],
         # tabbing
         "screen alone": Key("alt-cmd-1"),
-
         "screen split": Key("alt-cmd-2"),
-        "search this": [Key('cmd-c'), Key('cmd-f'), Key('cmd-v')],
+        "search this": [Key("cmd-c"), Key("cmd-f"), Key("cmd-v")],
         "screen screen": Key("alt-k"),
         # "stiffy": Key("cmd-alt-left"),
         "next tab": Key("cmd-alt-right"),
@@ -136,16 +142,41 @@ context.keymap(
         "comment": [Key("cmd-/")],
         "help": Key("ctrl-space"),
         "open workspace": Key("ctrl-alt-o"),
+        "save workspace": Key("ctrl-alt-shift-s"),
         # "bracken": [Key("cmd-shift-ctrl-right")],
         # various
         # "search all": Key("cmd-shift-f"),
         # "(drop-down | drop)": Key("ctrl-space"),
         # view
         # ""
-        'fold': Key('cmd-alt-['),
-        'unfold': Key('cmd-alt-]'),
-        'bee mar': Key('ctrl-shift-r'),
-        'bee bar': Key('ctrl-r'),
+        "fold": Key("cmd-alt-["),
+        "unfold": Key("cmd-alt-]"),
+        "bee mar": Key("ctrl-shift-r"),
+        "bee bar": Key("ctrl-r"),
+        "drop cursor": Key("cmd-shift-alt-down"),
+        "sub packages add": [Key("cmd-shift-p"), "package install", Key("enter")],
+        "sub packages": [Key("cmd-shift-p"), "package "],
+        "toggle sidebar": [Key('cmd-k'), Key('cmd-b')],
+        "toggle console": Key('ctrl-`'),
 
+        # SendCode
+        "sub send": Key('cmd-enter'),
+
+        # Sublime Merge
+        "sub merge": [Key('cmd-shift-p'), "sublime merge open repository", Key('enter')],
+
+        # goguru because we live in the middle ages
+        GOGURU + "describe ": [Key('cmd-shift-p'), "describe", Key('enter')],
+        GOGURU + "definition ": [Key('cmd-shift-p'), "jump to definition", Key('enter')],
+        GOGURU + "referrences ": [Key('cmd-shift-p'), "referrers", Key('enter')],
+
+
+# Macro for TODO:
+        "remind": [
+            Key("cmd-/"),
+            "TODO (",
+            str(datetime.now().strftime("%m/%d @ %H:%M")),
+            "): ",
+        ],
     }
 )

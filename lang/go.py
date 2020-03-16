@@ -13,29 +13,33 @@ ctx.vocab = ["goroutine", "nil", "golang", "waitgroup"]
 
 ctx.keymap(
     {
-        "state any": ["any()", Key("left")],
-        "pirate": "return ",
+        GO_ALIAS + "pirate": "return ",
         # Symbols
-        "coal sign": " := ",
+        GO_ALIAS + " sign": " := ",
         GO_ALIAS + " chan": "chan ",
         GO_ALIAS + " var": "var ",
         GO_ALIAS + " make": ["make()", Key("left")],
         GO_ALIAS + " print": ["fmt.Println()", Key("left")],
-        GO_ALIAS + " log": ["log.Println()", Key("left")],
-        GO_ALIAS + " fee print": ["fmt.Printf()", Key("left")],
+        GO_ALIAS + " log": ["log.Printf()", Key("left")],
         GO_ALIAS + " amp": "&",
-        GO_ALIAS + " format": "fmt",
+        GO_ALIAS + " format": ["fmt.Sprintf()", Key('left')],
         GO_ALIAS + " range": "range ",
         GO_ALIAS + " arrow": " <- ",
         GO_ALIAS + " arrow short": "<-",
         GO_ALIAS + " map": ["map[]", Key("left")],
-        # Goroutines
-        GO_ALIAS + " go [<dgndictation>]": ["go ", text],
+
+        # Keywords
+        GO_ALIAS + " true": "true",
+        GO_ALIAS + " false": "false",
+
+
         # Structures
         GO_ALIAS + " struct <dgndictation> over": ["type ", caps_text, " struct {"],
+
         # Interfaces
         GO_ALIAS
         + " interface <dgndictation> over": ["type ", caps_text, " interface {"],
+
         # Logic and control flow
         GO_ALIAS + " if [<dgndictation>] ": ["if ", camel_case, " {"],
         GO_ALIAS + " set": "=",
@@ -43,5 +47,6 @@ ctx.keymap(
         GO_ALIAS
         + " ( funk | fuck | fox ) <dgndictation>": ["func ", camel_case, "() {",],
         GO_ALIAS + "funk": "func ",
+        GO_ALIAS + "defer": "defer ",
     }
 )

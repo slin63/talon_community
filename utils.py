@@ -323,6 +323,14 @@ def is_vim(app, win):
     return False
 
 
+def is_terminal(app, win):
+    if is_in_bundles(TERMINAL_BUNDLES)(app, win):
+        return True
+    return False
+
+def is_not_terminal(app, win):
+    return not is_terminal(app, win)
+
 def is_not_vim(app, win):
     return not is_vim(app, win)
 

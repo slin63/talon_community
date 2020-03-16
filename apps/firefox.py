@@ -38,7 +38,6 @@ def forward(m):
 
 
 def link(m):
-    refocus_page(None)
     press("cmd-l")
     press("cmd-c")
 
@@ -88,7 +87,6 @@ ctx.keymap(
         # "[refocus] dev tools": open_focus_devtools,
         # Clipboard
         "cut": Key("cmd-x"),
-        "copy": Key("cmd-c"),
         "paste": Key("cmd-v"),
         "paste same style": Key("cmd-alt-shift-v"),
         # extensions
@@ -103,6 +101,6 @@ ctx.keymap(
             "composite get_current_url | tabopen -c personal"
         ),
         "show add-ons": Key("cmd-shift-a"),
-        "copy link": link,
+        "copy link": [Key("cmd-l"), Key("cmd-c")],
     }
 )

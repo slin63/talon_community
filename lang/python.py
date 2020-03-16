@@ -132,6 +132,7 @@ ctx.keymap(
         PYTHON_ALIAS + " break": Key("ctrl-shift-b "),
         PYTHON_ALIAS + " block": ["()", Key("left enter enter shift-tab up tab")],
         PYTHON_ALIAS + " argument": [Key("cmd-right"), ",", Key("enter")],
-        PYTHON_ALIAS + " dock": ["\"\"\"\"\"\"", Key("left left left")]
+        PYTHON_ALIAS + " dock": ["\"\"\"\"\"\"", Key("left left left")],
+        PYTHON_ALIAS + " print": ["print()", Key("left")]
     }
 )

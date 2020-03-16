@@ -15,6 +15,11 @@ ctx.vocab = [
     "async",
     "alembic",
     "kubernetes",
+    "mutex",
+    "semaphore",
+    "recurse",
+    "fuck", "fucking", "fucked",
+    "spotify"
 ]
 
 ctx.keymap(
@@ -45,8 +50,6 @@ ctx.keymap(
         "word (lynn | lin)": "Lin",
         "word my name": "Shean Lin",
         # Python library specific
-        "word dbs": "DBSession",
-        "word nosetest": "nosetests",
         "word canonical": "canonical",
         "word dockshell": "dockshell",
         "word (bullying | boolean)": "boolean",
@@ -61,7 +64,6 @@ ctx.keymap(
         "word pie test": "pytest ",
         "word pippinv": "pipenv ",
         "word daytime": "datetime",
-        "word brock db": "brocdb",
         "word delete": "delete",
         "word oopsy": "error",
         "( word counsel | word consul )": "console",
@@ -72,5 +74,11 @@ ctx.keymap(
         "word goday": "golang",
         "word string": "string",
         "word bite": "byte",
+        "word rpc": "RPC",
+        "word pid": "PID",
+        "word (indy | index)": "index",
+        "word riff": "raft",
+        "word cord": "chord",
+        "word noppers": "knoppers",
     }
 )

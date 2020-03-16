@@ -1,5 +1,11 @@
 from talon.voice import Context, Key, press, Str
-from ..utils import parse_words_as_integer, repeat_function, optional_numerals, text
+from ..utils import (
+    parse_words_as_integer,
+    repeat_function,
+    optional_numerals,
+    text,
+    camel_case,
+)
 from datetime import datetime
 
 context = Context("VSCode", bundle="com.microsoft.VSCode")
@@ -100,7 +106,7 @@ context.keymap(
         "command [<dgndictation>]": [Key("cmd-shift-p"), text],
         "extensions tab": Key("shift-cmd-x"),
         "go to file <dgndictation>": [Key("cmd-p"), text],
-        "go to ( thing | think ) [<dgndictation>]": [Key("cmd-shift-o"), text],
+        "go to ( thing | think ) [<dgndictation>]": [Key("cmd-shift-o"), camel_case],
         "master [<dgndictation>]": [Key("cmd-p"), text],
         # Workspaces
         "workspaces": Key("cmd-f1"),
@@ -113,7 +119,7 @@ context.keymap(
         "last tab": Key("cmd-alt-left"),
         "new tab": Key("cmd-n"),
         "jay" + optional_numerals: jump_tabs,
-        "screen go": Key("ctrl-1"),
+        "screen swap": Key("ctrl-1"),
         "screen alone": Key("ctrl-cmd-="),
         "screen split": Key("ctrl-cmd--"),
         "screen right": Key("ctrl-cmd-backspace"),
@@ -140,6 +146,7 @@ context.keymap(
         "(drop cursor | cursor drop)": Key("alt-cmd-down"),
         "(drop cursor | cursor drop) up": Key("alt-cmd-up"),
         "fold all": [Key("cmd-k"), Key("cmd-0")],
+        "fold": [Key("cmd-k"), Key("cmd-[")],
         "unfold all": [Key("cmd-k"), Key("cmd-j")],
         "unfold": [Key("cmd-k"), Key("cmd-]")],
         # various
@@ -147,7 +154,7 @@ context.keymap(
             Key("cmd-/"),
             "TODO (",
             str(datetime.now().strftime("%m/%d @ %H:%M")),
-            "):",
+            "): ",
         ],
         "search all": Key("cmd-shift-f"),
         "(drop-down | drop)": Key("ctrl-space"),

@@ -47,9 +47,10 @@ directory_shortcuts = {
     "talon user": TALON_USER,
     "talon plug-ins": TALON_PLUGINS,
     "community": "~/.talon/user/talon_community",
-    "grep": "~/projects/go/distributedgrep",
-    "go": "/Users/seanlin/projects/go",
-    "chord": "~/projects/go/chord-dfs",
+    "grep": "~/projects/go/src/distributedgrep",
+    "draft": "/Users/seanlin/projects/go/src/github.com/slin63/raft-consensus",
+    "cord": "/Users/seanlin/projects/go/src/github.com/slin63/chord-dfs",
+    "go": "/Users/seanlin/projects/go/src",
 }
 
 
@@ -98,10 +99,22 @@ keymap = {
     "shell Whereami": "pwd ",
     "shell home": "~/",
     "shell history": ["fc -l", Key("enter")],
+
+    # generic editor stuff
     "lefty": Key("ctrl-a"),
-    # "ricky": Key("ctrl-e"),
-    "shell left": Key("ctrl-left"),
-    "shell right": Key("ctrl-right"),
+    "ricky": Key("ctrl-e"),
+    "snip": Key("ctrl-u"),
+    "snip right": Key("ctrl-k"),
+    "fame": Key("ctrl-left"),
+    "famie": Key("ctrl-w"),
+    "fish": Key("ctrl-right"),
+    "(clip cut | snatch)": Key("cmd-x"),
+    "(clip copy | stish)": Key("cmd-c"),
+    "(clip paste | spark)": Key("cmd-v"),
+        "(select all | olly | ali)": Key("cmd-a"),
+
+
+
     "fuck this": Key("ctrl-d"),
     "(pain new | split vertical)": Key("cmd-d"),
     "new {global_terminal.servers}": new_server,
@@ -190,7 +203,6 @@ keymap = {
     "pee socks": "ps aux ",
     "vi": "vim ",
     # python
-    "pip": "pip",
     "piepie": "pipenv",
     "piepie run": "pipenv run",
     "piepie deploy": "pipenv run deploy/tools/server",
@@ -285,6 +297,12 @@ keymap = {
     # Docker
     "docker compose [<dgndictation>]": ["docker-compose ", text],
     "docker [<dgndictation>]": ["docker ", text],
+    #sublime
+    "sub": ["subl .", Key('enter')],
+
+    "shell get directory": ["echo $(pwd)| pbcopy", Key('enter')],
+    "shell google": ["google $(pbpaste)",Key('enter')],
+    "shell rebuild": [Key('ctrl-c'), Key('up'),Key('enter')]
 }
 
 for action in ("get", "delete", "describe"):
@@ -341,3 +359,4 @@ global_ctx.set_list("servers", servers.keys())
 #   "enter": "ag -l | entr "
 #   "enter to": "ag -l . ../.. | entr "
 # }
+

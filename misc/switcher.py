@@ -47,6 +47,9 @@ ctx.keymap(
         PREFIX + " audacity": lambda x: switch_app(x, "Audacity"),
         PREFIX + " outlook": lambda x: switch_app(x, "Outlook"),
         PREFIX + " slack": lambda x: switch_app(x, "Slack"),
+        PREFIX + " zulip": lambda x: switch_app(x, "Zulip"),
+        PREFIX + " ableton": lambda x: switch_app(x, "Live "),
+        PREFIX + " quiver": lambda x: switch_app(x, "Quiver "),
         PREFIX
         + " (console | counsel | consul | term | terminal)": lambda x: switch_app(
             x, "iTerm2"
@@ -74,6 +77,14 @@ ctx.keymap(
             Key("cmd-s"),
             lambda x: switch_app(x, "iTerm2"),
             utils.delay(0.1),
+            Key("up enter"),
+        ],
+        PREFIX
+        + " micky": [
+            Key("cmd-s"),
+            lambda x: switch_app(x, "iTerm2"),
+            utils.delay(0.1),
+            Key('ctrl-c'),
             Key("up enter"),
         ],
     }
