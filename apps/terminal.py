@@ -302,7 +302,9 @@ keymap = {
 
     "shell get directory": ["echo $(pwd)| pbcopy", Key('enter')],
     "shell google": ["google $(pbpaste)",Key('enter')],
-    "shell rebuild": [Key('ctrl-c'), Key('up'),Key('enter')]
+    "shell rebuild": [Key('ctrl-c'), Key('up'),Key('enter')],
+    "shell echo": "echo ",
+    "shell gore": ["gore",Key('enter')],
 }
 
 for action in ("get", "delete", "describe"):

@@ -223,7 +223,7 @@ ctx.keymap(
         # selecting
         "(select find right | crew) <dgndictation>": select_text_to_right_of_cursor,
         "(select find left | trail) <dgndictation>": select_text_to_left_of_cursor,
-        "(grab this)": Key("alt-right shift-alt-left cmd-c"),
+        "(copy this)": Key("alt-right shift-alt-left cmd-c"),
         "(select this word | word this)": Key("alt-right shift-alt-left"),
         "(select this line | shackle)": Key("cmd-right shift-cmd-left"),
         # "(select above | shift home)": Key("shift-home"),

@@ -80,5 +80,6 @@ ctx.keymap(
         "word riff": "raft",
         "word cord": "chord",
         "word noppers": "knoppers",
+        "word gist": "gist",
     }
 )

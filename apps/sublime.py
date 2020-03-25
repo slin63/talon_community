@@ -108,13 +108,12 @@ context.keymap(
         # # Clipboard
         # "clone": Key("alt-shift-down"),
         # Navigation
-        "(lay | line | lie)" + optional_numerals + "[over]": jump_to_line,
+        "lie" + optional_numerals + "[over]": jump_to_line,
         "Go to line": Key("ctrl-g"),
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
         # # Navigating Interface
         # "explore tab": Key("shift-cmd-e"),
-        "search tab": Key("shift-cmd-f"),
         # "debug tab": Key("shift-cmd-d"),
         # "source control tab": Key("shift-ctrl-g"),
         # "extensions tab": Key("shift-cmd-x"),
@@ -126,7 +125,7 @@ context.keymap(
         # tabbing
         "screen alone": Key("alt-cmd-1"),
         "screen split": Key("alt-cmd-2"),
-        "search this": [Key("cmd-c"), Key("cmd-f"), Key("cmd-v")],
+
         "screen screen": Key("alt-k"),
         # "stiffy": Key("cmd-alt-left"),
         "next tab": Key("cmd-alt-right"),
@@ -138,8 +137,10 @@ context.keymap(
         # Menu
         "save": Key("cmd+s"),
         "open": Key("cmd+o"),
+
         # editing
-        "comment": [Key("cmd-/")],
+        "block": [" {", Key('enter')],
+        "comment": Key("cmd-/"),
         "help": Key("ctrl-space"),
         "open workspace": Key("ctrl-alt-o"),
         "save workspace": Key("ctrl-alt-shift-s"),
@@ -159,11 +160,16 @@ context.keymap(
         "toggle sidebar": [Key('cmd-k'), Key('cmd-b')],
         "toggle console": Key('ctrl-`'),
 
+        # Searching
+        "set case": Key('alt-cmd-c'),
+        "search tab": Key("shift-cmd-f"),
+        "search this": [Key("cmd-c"), Key("cmd-f"), Key("cmd-v")],
+
         # SendCode
         "sub send": Key('cmd-enter'),
 
         # Sublime Merge
-        "sub merge": [Key('cmd-shift-p'), "sublime merge open repository", Key('enter')],
+        "submerge": Key('cmd-alt-z'),
 
         # goguru because we live in the middle ages
         GOGURU + "describe ": [Key('cmd-shift-p'), "describe", Key('enter')],
