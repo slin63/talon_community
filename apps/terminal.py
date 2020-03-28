@@ -43,10 +43,10 @@ def jump_tab(m):
 KUBERNETES_PREFIX = "(cube | cube control)"
 
 directory_shortcuts = {
-    "talon home": TALON_HOME,
-    "talon user": TALON_USER,
-    "talon plug-ins": TALON_PLUGINS,
-    "community": "~/.talon/user/talon_community",
+    "town home": TALON_HOME,
+    "town user": TALON_USER,
+    "town plug-ins": TALON_PLUGINS,
+    "town community": "~/.talon/user/talon_community",
     "grep": "~/projects/go/src/distributedgrep",
     "draft": "/Users/seanlin/projects/go/src/github.com/slin63/raft-consensus",
     "cord": "/Users/seanlin/projects/go/src/github.com/slin63/chord-dfs",
@@ -96,6 +96,7 @@ def new_server(m):
 
 
 keymap = {
+    "town logs": "tail -f \"/Users/seanlin/.talon/talon.log\"",
     "shell Whereami": "pwd ",
     "shell home": "~/",
     "shell history": ["fc -l", Key("enter")],

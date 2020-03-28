@@ -11,7 +11,7 @@ from talon.voice import Context
 ctx = Context("last_phrase")
 
 path = os.path.join(TALON_HOME, "last_phrase")
-WEBVIEW = False
+WEBVIEW = True
 NOTIFY = True
 
 if WEBVIEW:

@@ -29,6 +29,7 @@ ctx.keymap(
         "zoom normal": Key("cmd-0"),
         # window control
         "(open | new) window": Key("cmd-n"),
+        "window close": Key("cmd-shift-w"),
         "" "([switch] window (next | right) | pop)": Key("cmd-`"),
         "([switch] window (left | previous | preev) )": Key("cmd-shift-`"),
         "[switch] space (right | next)": Key("ctrl-right"),

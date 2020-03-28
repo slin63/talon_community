@@ -24,7 +24,6 @@ spaghetti = {1: 'SLEEPING',
 3: 'DRAGON',
 4: 'DICTATION',}
 
-{}
 voice_type = VoiceType.TALON
 last_voice_type = VoiceType.TALON
 
@@ -57,7 +56,8 @@ def set_voice_type(type):
         dictation_group.enable()
 
 
-    app.notify(body="HELLO I'M " + spaghetti[type])
+    app.notify(body=spaghetti[type])
+
 sleepy.keymap(
     {
         "talon sleep": lambda m: set_voice_type(VoiceType.SLEEPING),

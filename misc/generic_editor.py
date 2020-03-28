@@ -199,33 +199,25 @@ ctx.keymap(
         "(clip paste | spark)": Key("cmd-v"),
         'copy all': [Key('cmd-a'), Key('cmd-c')],
         "paste all": [Key('cmd-a'), Key('cmd-v')],
-        # motions
-        "(go word left | fame | peg)": Key("alt-left"),
-        "(go word right | fish | fran)": Key("alt-right"),
 
-        "(go line after end | derek)": Key("cmd-right space"),
+        # motions
+        "(go word left | fame )": Key("alt-left"),
+        "(go word right | fish )": Key("alt-right"),
         "(go line start | lefty)": Key("cmd-left"),
         "(go line end | ricky)": Key("cmd-right"),
-        "(go line before end | smear)": Key("cmd-right left"),
-        # insertions
-        "([insert] line break | sky turn)": Key("shift-enter"),
-        "([insert] new line below | slap)": Key("cmd-right enter"),
-        "([insert] new line above | shocker)": Key("ctrl-a cmd-left enter up"),
-        "([insert] duplicate line | jolt)": Key(
-            "ctrl-a cmd-left shift-down cmd-c down cmd-v"
-        ),
+
         # deleting
         "(delete around this | slurp)": Key("backspace delete"),
         # "(delete word left | )": Key("shift-cmd-left delete"),
-        "(delete line left | snip left | snipple)": Key("shift-cmd-left delete"),
-        "(delete line right | snip right | snipper)": Key("shift-cmd-right delete"),
+        "(delete line left | snip left )": Key("shift-cmd-left delete"),
+        "(delete line right | snip right )": Key("shift-cmd-right delete"),
         "(delete line)" + optional_numerals: ["byebye", repeat_function(2, "cmd-right shift-cmd-left shift-cmd-left backspace backspace down", True)],
+
         # selecting
-        "(select find right | crew) <dgndictation>": select_text_to_right_of_cursor,
-        "(select find left | trail) <dgndictation>": select_text_to_left_of_cursor,
         "(copy this)": Key("alt-right shift-alt-left cmd-c"),
         "(select this word | word this)": Key("alt-right shift-alt-left"),
         "(select this line | shackle)": Key("cmd-right shift-cmd-left"),
+
         # "(select above | shift home)": Key("shift-home"),
         # "(select below | shift end)": Key("shift-end"),
 
@@ -234,18 +226,18 @@ ctx.keymap(
 
         "(select up )": Key("shift-up"),
         "(select down )": Key("shift-down"),
+
         'unindent': Key('shift-up cmd-shift-right backspace'),
-        "(select all | olly | ali)": Key("cmd-a"),
-        "(select left | shrim | shlicky)": Key("shift-left"),
-        "(select right | shrish | shricky)": Key("shift-right"),
-        # "(select word number {generic_editor.n}* above | wordpreev {generic_editor.n}*)": word_prev,
-        "big word preev {generic_editor.n}*": big_word_prev,
-        "big word neck {generic_editor.n}*": big_word_neck,
+        "(select all)": Key("cmd-a"),
+        "(select left )": Key("shift-left"),
+        "(select right )": Key("shift-right"),
+
         # "(select word number {generic_editor.n}* below | wordneck {generic_editor.n}*)": word_neck,
         "(select word left | scram)": Key("alt-shift-left"),
         "(select word right | scrash)": Key("alt-shift-right"),
         "(fishy)": Key("alt-shift-right delete"),
         "(famie)": Key("alt-shift-left delete"),
+
         "(select line left | lecksy)": Key("cmd-shift-left"),
         "(select line right | ricksy)": Key("cmd-shift-right"),
     }

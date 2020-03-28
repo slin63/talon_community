@@ -50,7 +50,6 @@ ctx.keymap(
         PREFIX + " slack": lambda x: switch_app(x, "Slack"),
         PREFIX + " zulip": lambda x: switch_app(x, "Zulip"),
         PREFIX + " ableton": lambda x: switch_app(x, "Live "),
-        PREFIX + " quiver": lambda x: switch_app(x, "Quiver "),
         PREFIX
         + " (console | counsel | consul | term | terminal)": lambda x: switch_app(
             x, "iTerm2"

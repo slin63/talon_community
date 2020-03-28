@@ -92,14 +92,13 @@ keymap = {
     "(dubclick | duke)": delayed_dubclick,
     "(see duke)": [delayed_dubclick, Key('cmd-c')],
     "(pee duke)": [delayed_dubclick, Key('cmd-v')],
-    "(tripclick | triplick)": delayed_tripclick,
     "drag": mouse_drag,
     "release": mouse_release,
     # jsc added
     "(shift click | shicks)": shift_click,
     "(command click | chom lick)": command_click,
-    "(muh | muck | wheel down)": mouse_scroll(500),
-    "(may | make | wheel up)": mouse_scroll(-500),
+    "(muh | muck )": mouse_scroll(500),
+    "(may | make )": mouse_scroll(-500),
 }
 
 ctx.keymap(keymap)

@@ -19,12 +19,16 @@ ctx.vocab = [
     "semaphore",
     "recurse",
     "fuck", "fucking", "fucked",
+    "shit",
     "spotify",
     "unix"
 ]
 
 ctx.keymap(
     {
+        # special words
+        "myemail": "shean.lin2018@gmail.com",
+
         "word queue": "queue",
         "word eye": "eye",
         "word bson": "bson",
@@ -52,7 +56,6 @@ ctx.keymap(
         "word my name": "Shean Lin",
         # Python library specific
         "word canonical": "canonical",
-        "word dockshell": "dockshell",
         "word (bullying | boolean)": "boolean",
         "word google calendar": "https://calendar.google.com/calendar/r",
         "word jason": "json",

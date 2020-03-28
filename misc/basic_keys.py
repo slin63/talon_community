@@ -9,16 +9,14 @@ f_keys = {f"F {i}": f"f{i}" for i in range(1, 13)}
 
 simple_keys = normalise_keys(
     {
-        "(cross | lloyd)": "left",
+        "(cross )": "left",
         "chris": "right",
         "jeep": "up",
-        "( june | doom )": "down",
-        # "( backspace | junk | die )": "backspace",
-        # "(delete | forward delete | scrap | spunk)": "delete",
+        "( june )": "down",
         "(pace | space)": "space",
-        "(tab | tarp)": "tab",
-        "(press enter | enter | shock )": "enter",
-        "( cancel | escape | randall )": "escape",
+        "(tab )": "tab",
+        "(press enter | enter )": "enter",
+        "( escape )": "escape",
         "home": "home",
         "pagedown": "pagedown",
         "pageup": "pageup",
@@ -36,13 +34,13 @@ symbols = normalise_keys(
         "(comma | ,)": ",",
         "(dot | period)": ".",
         "(semicolon | semi)": ";",
-        "(quote | quatchet)": "'",
+        "(quote )": "'",
         "(square | L square | left square | left square bracket)": "[",
         "(R square | right square | right square bracket)": "]",
         "(slash | forward slash)": "/",
         "backslash": "\\",
         "(minus | dash)": "-",
-        "(equals | smaqual)": "=",
+        "(equals )": "=",
     }
 )
 
@@ -123,12 +121,8 @@ ctx.keymap(
         "(go | {basic_keys.modifiers}+) {basic_keys.arrows}+": press_keys,
         "number {basic_keys.digits}+ [over]": press_keys,
         "diaper": [Key("backspace")] * 10,
-        "tarsh": Key("shift-tab"),
         "die " + optional_numerals: repeat_function(1, "backspace"),
         "(scrap | delete) " + optional_numerals: repeat_function(1, "delete"),
-        "tarpy": [Key("tab"), Key("tab")],
-        "email": "shean.lin2018@gmail.com",
-        "apple demo": "ga-appledemo@granular.ag",
         "tabback": Key("shift-tab"),
     }
 )

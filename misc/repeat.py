@@ -22,7 +22,6 @@ def repeat(m):
 ctx.keymap(
     {
         "wink": Rep(1),
-        "( creek | poe )": RepPhrase(1),
         "soup": Rep(2),
         "trace": Rep(3),
         "(fard | fart)": Rep(4),

@@ -3,7 +3,7 @@ Docker commands
 """
 
 from talon.voice import Context, Key
-from ..utils import word
+from ..utils import word, text
 
 ctx = Context("docker")
 
