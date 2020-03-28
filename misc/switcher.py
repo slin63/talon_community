@@ -41,6 +41,7 @@ ctx.keymap(
         # custom switchers here
         "madam": lambda x: switch_app(x, "Atom"),
         PREFIX + " chrome": lambda x: switch_app(x, "Google Chrome"),
+        PREFIX + " type": lambda x: switch_app(x, "Typora"),
         PREFIX + " kay": lambda x: switch_app(x, "Firefox"),
         # PREFIX + " kay": lambda x: switch_app(x, "Google Chrome"),
         PREFIX + " spotify": lambda x: switch_app(x, "Spotify"),

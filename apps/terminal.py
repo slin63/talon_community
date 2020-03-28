@@ -294,17 +294,19 @@ keymap = {
     "gogo [<dgndictation>]": ["go ", text],
     "gogo run [<dgndictation>]": ["go run ", text],
     "sequel csv": "sqltocsv ",
-    # Docker
-    "docker compose [<dgndictation>]": ["docker-compose ", text],
-    "docker [<dgndictation>]": ["docker ", text],
-    #sublime
+
+    # sublime
     "sub": ["subl .", Key('enter')],
+
+    # hugo
+    "hugo [<dgndictation>]": ["hugo ", text],
 
     "shell get directory": ["echo $(pwd)| pbcopy", Key('enter')],
     "shell google": ["google $(pbpaste)",Key('enter')],
     "shell rebuild": [Key('ctrl-c'), Key('up'),Key('enter')],
     "shell echo": "echo ",
     "shell gore": ["gore",Key('enter')],
+
 }
 
 for action in ("get", "delete", "describe"):

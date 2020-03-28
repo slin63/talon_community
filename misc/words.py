@@ -19,7 +19,8 @@ ctx.vocab = [
     "semaphore",
     "recurse",
     "fuck", "fucking", "fucked",
-    "spotify"
+    "spotify",
+    "unix"
 ]
 
 ctx.keymap(

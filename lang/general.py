@@ -88,8 +88,6 @@ ctx.keymap(
         "(note | node) type": ["npm run typecheck-dev", Key('enter')],
         "screenshot": Key("ctrl-cmd-shift-4"),
         "vee eye ": "vim ",
-        "dips": "docker ps",
-        "drum (queue | kill)": "docker kill ",
         "make <dgnwords>": ["make ", word],
         "copy menu": Key('alt-cmd-c')
     }
