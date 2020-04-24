@@ -15,7 +15,7 @@ from ..utils import (
 )
 
 ctx = Context("generic_editor", func=is_not_terminal)
-ctx.set_list("n", numeral_list)
+# ctx.set_list("n", numeral_list)
 
 
 def find_next(m):

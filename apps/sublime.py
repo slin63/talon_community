@@ -102,38 +102,30 @@ context.keymap(
             Key("left"),
         ],
         "(select) many" + optional_numerals: [repeat_function(2, "shift-down", True),],
+
         # Finding text
         "find over": Key("cmd-f"),
         "find next": jump_to_next_word_instance,
-        # # Clipboard
-        # "clone": Key("alt-shift-down"),
+
         # Navigation
-        "lie" + optional_numerals + "[over]": jump_to_line,
+        "(lie | buy)" + optional_numerals + "[over]": jump_to_line,
         "Go to line": Key("ctrl-g"),
         "line up" + optional_numerals: repeat_function(2, "alt-up"),
         "line down" + optional_numerals: repeat_function(2, "alt-down"),
-        # # Navigating Interface
-        # "explore tab": Key("shift-cmd-e"),
-        # "debug tab": Key("shift-cmd-d"),
-        # "source control tab": Key("shift-ctrl-g"),
-        # "extensions tab": Key("shift-cmd-x"),
         "(go to file|master) <dgndictation>": [Key("cmd-p"), text],
         "go to ( thing | think ) [<dgndictation>]": [Key("cmd-r"), text],
-        "master": Key("cmd-p"),
         "command [<dgndictation>]": [Key("cmd-shift-p"), text],
-        # "tab clean": [Key("cmd-shift-p"), Str("file: close all"), Key("enter")],
+
         # tabbing
         "screen alone": Key("alt-cmd-1"),
         "screen split": Key("alt-cmd-2"),
-
         "screen screen": Key("alt-k"),
-        # "stiffy": Key("cmd-alt-left"),
         "next tab": Key("cmd-alt-right"),
-        # "stippy": Key("cmd-alt-right"),
         "last tab": Key("cmd-alt-left"),
         "new tab": Key("cmd-n"),
         "jay" + optional_numerals: jump_tabs,
         "screen" + optional_numerals: jump_screens,
+
         # Menu
         "save": Key("cmd+s"),
         "open": Key("cmd+o"),
@@ -141,19 +133,10 @@ context.keymap(
         # editing
         "block": [" {", Key('enter')],
         "comment": Key("cmd-/"),
-        "help": Key("ctrl-space"),
         "open workspace": Key("ctrl-alt-o"),
         "save workspace": Key("ctrl-alt-shift-s"),
-        # "bracken": [Key("cmd-shift-ctrl-right")],
-        # various
-        # "search all": Key("cmd-shift-f"),
-        # "(drop-down | drop)": Key("ctrl-space"),
-        # view
-        # ""
         "fold": Key("cmd-alt-["),
         "unfold": Key("cmd-alt-]"),
-        "bee mar": Key("ctrl-shift-r"),
-        "bee bar": Key("ctrl-r"),
         "drop cursor": Key("cmd-shift-alt-down"),
         "sub packages add": [Key("cmd-shift-p"), "package install", Key("enter")],
         "sub packages": [Key("cmd-shift-p"), "package "],
@@ -170,6 +153,9 @@ context.keymap(
 
         # Sublime Merge
         "submerge": Key('cmd-alt-z'),
+
+        # Opening finder
+        "open finder": [Key('cmd-shift-p'), "finder open here", Key('enter')],
 
         # goguru because we live in the middle ages
         GOGURU + "describe ": [Key('cmd-shift-p'), "describe", Key('enter')],

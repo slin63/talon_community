@@ -42,26 +42,6 @@ def jump_tab(m):
 
 KUBERNETES_PREFIX = "(cube | cube control)"
 
-directory_shortcuts = {
-    "town home": TALON_HOME,
-    "town user": TALON_USER,
-    "town plug-ins": TALON_PLUGINS,
-    "town community": "~/.talon/user/talon_community",
-    "grep": "~/projects/go/src/distributedgrep",
-    "draft": "/Users/seanlin/projects/go/src/github.com/slin63/raft-consensus",
-    "cord": "/Users/seanlin/projects/go/src/github.com/slin63/chord-dfs",
-    "go": "/Users/seanlin/projects/go/src",
-}
-
-
-def cd_directory_shortcut(m):
-    directory = directory_shortcuts[m[1]]
-    insert(f"cd {directory}; ls")
-    press("enter")
-    # for _ in range(4):
-    #     press("left")
-
-
 try:
     servers = json.load(resource.open("servers.json"))
 except Exception as e:
@@ -144,7 +124,6 @@ keymap = {
         Key("left"),
         text,
     ],
-    "cd {terminal.directory_shortcuts}": cd_directory_shortcut,
     "(ls | run ellis | run alice)": "ls\n",
     "(la | run la)": "ls -la\n",
     # "durrup": "cd ..; ls\n",
@@ -307,7 +286,7 @@ keymap = {
     "shell rebuild": [Key('ctrl-c'), Key('up'),Key('enter')],
     "shell echo": "echo ",
     "shell gore": ["gore",Key('enter')],
-
+    "shell noise": ["noise",Key('enter')],
 }
 
 for action in ("get", "delete", "describe"):
@@ -321,8 +300,6 @@ for action in ("get", "delete", "describe"):
 keymap.update({"(pain | bang) " + str(i): Key("alt-" + str(i)) for i in range(10)})
 
 ctx.keymap(keymap)
-ctx.set_list("directory_shortcuts", directory_shortcuts.keys())
-# ctx.set_list("servers", servers.keys())
 
 
 def shell_rerun(m):

@@ -42,7 +42,8 @@ formatters = normalise_keys(
         # PREFIX + "pathway": (True, lambda i, word, _: word if i == 0 else "/" + word),
         # PREFIX + "dotsway": (True, lambda i, word, _: word if i == 0 else "." + word),
         # PREFIX + "yellsmash": (True, lambda i, word, _: word.upper()),
-        PREFIX + "(allcaps | yeller)": (False, lambda i, word, _: word.upper()),
+        PREFIX + "(yeller)": (False, lambda i, word, _: word.upper()),
+        PREFIX + "(lower)": (False, lambda i, word, _: word.lower()),
         # PREFIX + "yellsnik": (
         #     True,
         #     lambda i, word, _: word.upper() if i == 0 else "_" + word.upper(),

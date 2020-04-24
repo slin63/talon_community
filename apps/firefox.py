@@ -69,7 +69,8 @@ ctx.keymap(
         "refresh": Key("cmd-r"),
         "hard refresh": Key("cmd-shift-r"),
         "(last | prevous)": Key("cmd-shift-g"),
-        "toggle dev tools": Key("cmd-alt-i"),
+        "toggle tools": Key("cmd-alt-i"),
+        "toggle inspect": Key("shift-cmd-c"),
         "command menu": Key("cmd-shift-p"),
         "(reopen | unclose) tab": Key("cmd-shift-t"),
         # "next panel": next_panel,
@@ -91,16 +92,6 @@ ctx.keymap(
         "paste same style": Key("cmd-alt-shift-v"),
         # extensions
         "mendeley": Key("cmd-shift-m"),
-        # TODO: this should probably bem specific to the page
-        "submit": Key("cmd-enter"),
-        # t
-        "switch mode": Key("ctrl-alt-escape"),
-        # tridactyl
-        "new personal tab": command_line("tabopen -c personal"),
-        "(switch to personal [container] | personal container)": command_line(
-            "composite get_current_url | tabopen -c personal"
-        ),
-        "show add-ons": Key("cmd-shift-a"),
         "copy link": [Key("cmd-l"), Key("cmd-c")],
     }
 )

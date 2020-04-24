@@ -90,8 +90,8 @@ keymap = {
     "righty": delayed_right_click,
     "(click | joe)": delayed_click,
     "(dubclick | duke)": delayed_dubclick,
-    "(see duke)": [delayed_dubclick, Key('cmd-c')],
-    "(pee duke)": [delayed_dubclick, Key('cmd-v')],
+    "(ci duke)": [delayed_dubclick, Key("cmd-c")],
+    "(fi duke)": [delayed_dubclick, Key("cmd-v")],
     "drag": mouse_drag,
     "release": mouse_release,
     # jsc added
