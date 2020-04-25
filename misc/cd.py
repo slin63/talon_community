@@ -100,7 +100,6 @@ def close_directories():
 def make_selection(m):
     cron.after("0s", close_directories)
     words = m._words
-    print(words)
     d = None
     if len(words) == 1:
         d = int(parse_word(words[0]))
@@ -147,9 +146,10 @@ def raise_directories(force_raise=False):
     pick_context.keymap(keymap)
     pick_context.load()
 
+PREFIX = "(a | 8)"
 context.keymap(
     {
-        "cd cd": raise_directories,
-        "cd edit": [f"subl {cwd}/cd.py:20", Key('enter')],
+        f"{PREFIX} cd": raise_directories,
+        f"{PREFIX} edit": [f"subl {cwd}/cd.py:20", Key('enter')],
     }
 )

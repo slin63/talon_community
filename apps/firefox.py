@@ -1,6 +1,6 @@
 import time
 
-from ..utils import parse_words_as_integer
+from ..utils import parse_words_as_integer, delay
 from talon.voice import Context, Key, Str, press
 
 ctx = Context("firefox", bundle="org.mozilla.firefox")
@@ -91,7 +91,6 @@ ctx.keymap(
         "paste": Key("cmd-v"),
         "paste same style": Key("cmd-alt-shift-v"),
         # extensions
-        "mendeley": Key("cmd-shift-m"),
-        "copy link": [Key("cmd-l"), Key("cmd-c")],
+        "copy link": [delay(0.05), Key("cmd-l"), delay(0.05), Key("cmd-c")],
     }
 )

@@ -128,6 +128,7 @@ ctx.keymap(
         "period <dgndictation> [over]": [". ", sentence_text],
         "word <dgnwords>": word,
         "slash <dgnwords>": ["/", word],
+        "dot <dgnwords>": [".", word],
         "dash <dgnwords>": ["-", word],
         "snake <dgndictation>": snake_text,
         "camel <dgndictation>": camel_case,
