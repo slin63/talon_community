@@ -1,7 +1,8 @@
 from talon.voice import Context, ContextGroup
 from talon.engine import engine
 from talon_plugins import speech
-from talon import app
+from talon import app, tap, ui
+from .. import utils
 
 
 sleep_group = ContextGroup("sleepy")
@@ -19,10 +20,13 @@ class VoiceType:
     DRAGON = 3
     DICTATION = 4
 
-spaghetti = {1: 'SLEEPING',
-2: 'TALON',
-3: 'DRAGON',
-4: 'DICTATION',}
+
+spaghetti = {
+    1: "💤",
+    2: "✅",
+    3: "💬 Dragon Mode",
+    4: "DICTATION",
+}
 
 voice_type = VoiceType.TALON
 last_voice_type = VoiceType.TALON
@@ -55,8 +59,10 @@ def set_voice_type(type):
         # Without postponing this "go to sleep" will be printed
         dictation_group.enable()
 
+    if voice_type != VoiceType.SLEEPING:
+        return app.notify(body=spaghetti[type], sound=True)
+    return app.notify(body=spaghetti[type], sound=False)
 
-    app.notify(body=spaghetti[type])
 
 sleepy.keymap(
     {
@@ -68,3 +74,16 @@ sleepy.keymap(
     }
 )
 sleep_group.load()
+
+
+def sleep_hotkey(typ, e):
+    global voice_type
+    if e == "ctrl-alt-cmd-.":
+        if e.down:
+            if voice_type != VoiceType.SLEEPING:
+                set_voice_type(VoiceType.SLEEPING)
+        if e.up:
+            set_voice_type(VoiceType.TALON)
+
+
+tap.register(tap.HOOK | tap.KEY, sleep_hotkey)

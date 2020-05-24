@@ -14,6 +14,8 @@ path = os.path.join(TALON_HOME, "last_phrase")
 WEBVIEW = False
 NOTIFY = True
 
+IGNORE_PHRASES = ["notify toggle", "talon mode", "talon sleep", "dragon mode"]
+
 if WEBVIEW:
     webview = webview.Webview()
     webview.body = "<i>[waiting&nbsp;for&nbsp;phrase]</i>"
@@ -38,8 +40,8 @@ def on_phrase(j):
         else:
             webview.render("{{ phrase }}", phrase=body)
 
-    if NOTIFY and cmd == "p.end" and phrase:
-        app.notify(body=phrase)
+    if NOTIFY and cmd == "p.end" and phrase and phrase not in IGNORE_PHRASES:
+        app.notify(title="🐦", body=phrase)
 
 
 engine.register("phrase", on_phrase)
@@ -48,7 +50,10 @@ engine.register("phrase", on_phrase)
 def toggle_notify(m):
     global NOTIFY
     NOTIFY = not NOTIFY
-    app.notify(body="Notifications: {}".format(NOTIFY))
+    icon = "✅"
+    if not NOTIFY:
+        icon = "❌"
+    app.notify(body=f"{icon}: notifs")
 
 
 ctx.keymap({"notify toggle": toggle_notify})
