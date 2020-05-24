@@ -90,15 +90,15 @@ keymap = {
     "righty": delayed_right_click,
     "(click | joe)": delayed_click,
     "(dubclick | duke)": delayed_dubclick,
-    "(ci duke)": [delayed_dubclick, Key("cmd-c")],
+    "(sigh duke)": [delayed_dubclick, Key("cmd-c")],
     "(fi duke)": [delayed_dubclick, Key("cmd-v")],
     "drag": mouse_drag,
     "release": mouse_release,
     # jsc added
     "(shift click | shicks)": shift_click,
     "(command click | chom lick)": command_click,
-    "(muh | muck )": mouse_scroll(500),
-    "(may | make )": mouse_scroll(-500),
+    "(muck )": mouse_scroll(500),
+    "(make )": mouse_scroll(-500),
 }
 
 ctx.keymap(keymap)

@@ -41,15 +41,14 @@ def on_phrase(j):
     if NOTIFY and cmd == "p.end" and phrase:
         app.notify(body=phrase)
 
+
 engine.register("phrase", on_phrase)
+
 
 def toggle_notify(m):
     global NOTIFY
     NOTIFY = not NOTIFY
     app.notify(body="Notifications: {}".format(NOTIFY))
 
-ctx.keymap(
-    {
-        "notify toggle": toggle_notify
-    }
-)
+
+ctx.keymap({"notify toggle": toggle_notify})

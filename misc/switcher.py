@@ -56,7 +56,9 @@ ctx.keymap(
         ),
         PREFIX + " messages": lambda x: switch_app(x, "Messages"),
         PREFIX + " (sub|sublime)": lambda x: switch_app(x, "Sublime Text"),
+        PREFIX + " numbers": lambda x: switch_app(x, "Numbers"),
         PREFIX + " skype": lambda x: switch_app(x, "Skype for Business"),
+        PREFIX + " marta": lambda x: switch_app(x, "Marta"),
         PREFIX + " signal": lambda x: switch_app(x, "Signal"),
         PREFIX + " messenger": lambda x: switch_app(x, "Messenger"),
         PREFIX + " quicktime": lambda x: switch_app(x, "QuickTime"),
@@ -84,7 +86,7 @@ ctx.keymap(
             Key("cmd-s"),
             lambda x: switch_app(x, "iTerm2"),
             utils.delay(0.1),
-            Key('ctrl-c'),
+            Key("ctrl-c"),
             Key("up enter"),
         ],
     }

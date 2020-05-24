@@ -5,6 +5,6 @@ ctx = Context("system")
 
 ctx.keymap(
     {
-        "(prefies | preferences)": Key("cmd-,"),
+        # "(prefies | preferences)": Key("cmd-,"),
     }
 )

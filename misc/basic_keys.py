@@ -17,10 +17,10 @@ simple_keys = normalise_keys(
         "(tab )": "tab",
         "(press enter | enter )": "enter",
         "( escape )": "escape",
-        "home": "home",
+        # "home": "home",
         "pagedown": "pagedown",
         "pageup": "pageup",
-        "end": "end",
+        # "end": "end",
     }
 )
 
@@ -32,7 +32,7 @@ symbols = normalise_keys(
         # ``text/symbol.py``.
         "(tick | back tick)": "`",
         "(comma | ,)": ",",
-        "(dot | period)": ".",
+        # "(dot | period)": ".",
         "(semicolon | semi)": ";",
         "(quote )": "'",
         "(square | L square | left square | left square bracket)": "[",
@@ -114,14 +114,13 @@ def press_keys(m):
 ctx = Context("basic_keys")
 ctx.keymap(
     {
-        "(uppercase | ship | sky) {basic_keys.alphabet}+ [(lowercase | sunk)]": uppercase_letters,
+        "sky {basic_keys.alphabet}+ [(lowercase | sunk)]": uppercase_letters,
         "{basic_keys.modifiers}* {basic_keys.alphabet}+": press_keys,
         "{basic_keys.modifiers}* {basic_keys.digits}+": press_keys,
         "{basic_keys.modifiers}* {basic_keys.keys}+": press_keys,
         "(go | {basic_keys.modifiers}+) {basic_keys.arrows}+": press_keys,
         "number {basic_keys.digits}+ [over]": press_keys,
-        "diaper": [Key("backspace")] * 10,
-        "die " + optional_numerals: repeat_function(1, "backspace"),
+        "day " + optional_numerals: repeat_function(1, "backspace"),
         "(scrap | delete) " + optional_numerals: repeat_function(1, "delete"),
         "tabback": Key("shift-tab"),
     }

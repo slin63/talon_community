@@ -1,32 +1,32 @@
-import os
-import json
+# import os
+# import json
 
-from talon import ui, resource
-from talon.voice import Key, Context
+# from talon import ui, resource
+# from talon.voice import Key, Context
 
-from .. import utils
+# from .. import utils
 
 
-single_digits = "123456789"
-NAMED_DESKTOPS = {digit: int(digit) for digit in single_digits}
-desktops_filename = utils.local_filename(__file__, "named_desktops.json")
-NAMED_DESKTOPS.update(json.load(resource.open(desktops_filename)))
+# single_digits = "123456789"
+# NAMED_DESKTOPS = {digit: int(digit) for digit in single_digits}
+# desktops_filename = utils.local_filename(__file__, "named_desktops.json")
+# NAMED_DESKTOPS.update(json.load(resource.open(desktops_filename)))
 
-ctx = Context("spaces")
+# ctx = Context("spaces")
 
-keymap = {}
-keymap.update(
-    {
-        "buy %s" % name: Key("ctrl-alt-%s" % NAMED_DESKTOPS[name])
-        for name in NAMED_DESKTOPS.keys()
-    }
-)
+# keymap = {}
+# keymap.update(
+#     {
+#         "buy %s" % name: Key("ctrl-alt-%s" % NAMED_DESKTOPS[name])
+#         for name in NAMED_DESKTOPS.keys()
+#     }
+# )
 
-keymap.update(
-    {
-        "window move desk %s" % name: Key("ctrl-alt-shift-%s" % NAMED_DESKTOPS[name])
-        for name in NAMED_DESKTOPS.keys()
-    }
-)
+# keymap.update(
+#     {
+#         "window move desk %s" % name: Key("ctrl-alt-shift-%s" % NAMED_DESKTOPS[name])
+#         for name in NAMED_DESKTOPS.keys()
+#     }
+# )
 
-ctx.keymap(keymap)
+# ctx.keymap(keymap)

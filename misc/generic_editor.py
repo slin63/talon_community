@@ -11,7 +11,7 @@ from ..utils import (
     numeral_list,
     extract_num_from_m,
     optional_numerals,
-    repeat_function
+    repeat_function,
 )
 
 ctx = Context("generic_editor", func=is_not_terminal)
@@ -194,50 +194,50 @@ ctx.keymap(
         "redo " + optional_numerals: repeat_function(1, "cmd-shift-z"),
         # "(redo it | rabbit)": Key("cmd-shift-z"),
         # clipboard
-        "(clip cut | snatch)": Key("cmd-x"),
-        "(clip copy | stish)": Key("cmd-c"),
-        "(clip paste | spark)": Key("cmd-v"),
-        'copy all': [Key('cmd-a'), Key('cmd-c')],
-        "paste all": [Key('cmd-a'), Key('cmd-v')],
-
+        "(snatch)": Key("cmd-x"),
+        "(stish)": Key("cmd-c"),
+        "(spark)": Key("cmd-v"),
+        "(spark mat)": Key("cmd-alt-shift-v"),
+        "copy all": [Key("cmd-a"), Key("cmd-c")],
+        "paste all": [Key("cmd-a"), Key("cmd-v")],
         # motions
         "(go word left | fame )": Key("alt-left"),
         "(go word right | fish )": Key("alt-right"),
         "(go line start | lefty)": Key("cmd-left"),
         "(go line end | ricky)": Key("cmd-right"),
-
         # deleting
         "(delete around this | slurp)": Key("backspace delete"),
         # "(delete word left | )": Key("shift-cmd-left delete"),
         "(delete line left | snip left )": Key("shift-cmd-left delete"),
         "(delete line right | snip right )": Key("shift-cmd-right delete"),
-        "(delete line)" + optional_numerals: ["byebye", repeat_function(2, "cmd-right shift-cmd-left shift-cmd-left backspace backspace down", True)],
-
+        "(delete line)"
+        + optional_numerals: [
+            "byebye",
+            repeat_function(
+                2,
+                "cmd-right shift-cmd-left shift-cmd-left backspace backspace down",
+                True,
+            ),
+        ],
         # selecting
         "(copy this)": Key("alt-right shift-alt-left cmd-c"),
-        "(select this word | word this)": Key("alt-right shift-alt-left"),
+        # "(select this word | word this)": Key("alt-right shift-alt-left"),
         "(select this line | shackle)": Key("cmd-right shift-cmd-left"),
-
         # "(select above | shift home)": Key("shift-home"),
         # "(select below | shift end)": Key("shift-end"),
-
         "(select above | shift home)": Key("cmd-shift-up"),
         "(select below | shift end)": Key("cmd-shift-down"),
-
         "(select up )": Key("shift-up"),
         "(select down )": Key("shift-down"),
-
-        'unindent': Key('shift-up cmd-shift-right backspace'),
+        "unindent": Key("shift-up cmd-shift-right backspace"),
         "(select all)": Key("cmd-a"),
         "(select left )": Key("shift-left"),
         "(select right )": Key("shift-right"),
-
         # "(select word number {generic_editor.n}* below | wordneck {generic_editor.n}*)": word_neck,
         "(select word left | scram)": Key("alt-shift-left"),
         "(select word right | scrash)": Key("alt-shift-right"),
         "(fishy)": Key("alt-shift-right delete"),
         "(famie)": Key("alt-shift-left delete"),
-
         "(select line left | lecksy)": Key("cmd-shift-left"),
         "(select line right | ricksy)": Key("cmd-shift-right"),
     }

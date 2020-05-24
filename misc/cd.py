@@ -18,12 +18,13 @@ pick_context = Context("pickcd")
 
 dirs = {
     "talon community": "$HOME/.talon/user/talon_community",
-    "leetcode": "$HOME/projects/cake",
+    "leetcode": "$HOME/projects/cake/lc",
     "golang directory": "$HOME/projects/go/src/github.com/slin63",
     "chronic pizza": "$HOME/projects/go/src/github.com/slin63/quickstart",
     "knoppers.icu": "$HOME/projects/go/src/github.com/slin63/knoppers.icu",
     "* projects": "$HOME/projects",
     "* downloads": "$HOME/Downloads",
+    "* screenshots": "$HOME/Documents/Screenshots",
     "* desktop": "$HOME/Desktop",
     "* photos": "$HOME/Pictures",
 }
@@ -137,19 +138,17 @@ def raise_directories(force_raise=False):
     keymap = {"(cancel | 0)": lambda x: close_directories()}
 
     keymap.update(
-        {
-            "[pick] %s" % (i + 1): lambda m: make_selection(m)
-            for i in valid_indices
-        }
+        {"[pick] %s" % (i + 1): lambda m: make_selection(m) for i in valid_indices}
     )
 
     pick_context.keymap(keymap)
     pick_context.load()
 
+
 PREFIX = "(a | 8)"
 context.keymap(
     {
         f"{PREFIX} cd": raise_directories,
-        f"{PREFIX} edit": [f"subl {cwd}/cd.py:20", Key('enter')],
+        f"{PREFIX} edit": [f"subl {cwd}/cd.py:20", Key("enter")],
     }
 )

@@ -89,10 +89,10 @@ keymap = {
     "fame": Key("ctrl-left"),
     "famie": Key("ctrl-w"),
     "fish": Key("ctrl-right"),
-    "(clip cut | snatch)": Key("cmd-x"),
-    "(clip copy | stish)": Key("cmd-c"),
-    "(clip paste | spark)": Key("cmd-v"),
-        "(select all | olly | ali)": Key("cmd-a"),
+    "(snatch)": Key("cmd-x"),
+    "(stish)": Key("cmd-c"),
+    "(spark)": Key("cmd-v"),
+    "(select all | olly | ali)": Key("cmd-a"),
 
 
 
@@ -287,6 +287,10 @@ keymap = {
     "shell echo": "echo ",
     "shell gore": ["gore",Key('enter')],
     "shell noise": ["noise",Key('enter')],
+
+    # Pretty && Rich History
+    "pretty drum": ["dh", Key('enter')],
+    "pretty harp": ["ph", Key('enter')]
 }
 
 for action in ("get", "delete", "describe"):

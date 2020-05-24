@@ -1,8 +1,5 @@
 from talon.voice import Context, press, Key
 
-"""
-
-"""
 
 from talon.voice import Context
 
@@ -12,6 +9,7 @@ ctx.vocab = [
     "liveness",
     "uncomment",
     "mock",
+    "toph",
     "async",
     "alembic",
     "kubernetes",
@@ -27,14 +25,24 @@ ctx.vocab = [
     "linux",
     "inline",
     "crontab",
+    "birding",
+    "warframe",
+    "regex",
+    "leet",
+    "leetcode",
+    "destructure",
+    "destructured",
+    "destructuring",
+    "newline",
 ]
 
 PREFIX = "(word | bit)"
 
 ctx.keymap(
     {
-        # special {PREFIX}
+        # special
         "myemail": "shean.lin2018@gmail.com",
+        f"{PREFIX} asink": "async",
         f"{PREFIX} lynnex": "linux",
         f"{PREFIX} cron": "crontab",
         f"{PREFIX} (in 1 | in 9)": "inline",
@@ -50,6 +58,7 @@ ctx.keymap(
         f"{PREFIX} talon": "talon",
         f"{PREFIX} eye pie": "ipython",
         f"{PREFIX} pie": "python",
+        f"4 pipe": "python3.7",
         f"{PREFIX} pie 3": "python3.7 ",
         f"{PREFIX} eye pie": "ipython",
         f"{PREFIX} reddit": "reddit",
@@ -80,6 +89,7 @@ ctx.keymap(
         f"{PREFIX} pippinv": "pipenv ",
         f"{PREFIX} daytime": "datetime",
         f"{PREFIX} delete": "delete",
+        f"{PREFIX} reg ex": "regex",
         f"{PREFIX} oopsy": "error",
         "( {PREFIX} counsel | {PREFIX} consul )": "console",
         f"{PREFIX} olympic": "alembic",

@@ -85,6 +85,7 @@ def comment_lines_function(m):
         press("shift-down")
     press("cmd-/")
 
+
 GOGURU = "goo"
 
 context.keymap(
@@ -94,19 +95,10 @@ context.keymap(
         + optional_numerals
         + "until"
         + optional_numerals: select_lines_function,
-        "(die line)" + optional_numerals: [repeat_function(2, "ctrl-shift-k", True)],
-        "(comment | comma) many"
-        + optional_numerals: [
-            repeat_function(2, "shift-down", True),
-            Key("cmd-/"),
-            Key("left"),
-        ],
-        "(select) many" + optional_numerals: [repeat_function(2, "shift-down", True),],
-
+        "(day line)" + optional_numerals: [repeat_function(2, "ctrl-shift-k", True)],
         # Finding text
         "find over": Key("cmd-f"),
         "find next": jump_to_next_word_instance,
-
         # Navigation
         "(lie | buy)" + optional_numerals + "[over]": jump_to_line,
         "Go to line": Key("ctrl-g"),
@@ -115,7 +107,6 @@ context.keymap(
         "(go to file|master) [<dgndictation>]": [Key("cmd-p"), text],
         "go to ( thing | think ) [<dgndictation>]": [Key("cmd-r"), text],
         "command [<dgndictation>]": [Key("cmd-shift-p"), text],
-
         # tabbing
         "screen alone": Key("alt-cmd-1"),
         "screen split": Key("alt-cmd-2"),
@@ -125,14 +116,12 @@ context.keymap(
         "new tab": Key("cmd-n"),
         "jay" + optional_numerals: jump_tabs,
         "screen" + optional_numerals: jump_screens,
-
         # Menu
         "save": Key("cmd+s"),
         "open": Key("cmd+o"),
-
         # editing
-        "block": [" {", Key('enter')],
-        "comment": Key("cmd-/"),
+        "block": [" {", Key("enter")],
+        "commy": Key("cmd-/"),
         "open workspace": Key("ctrl-alt-o"),
         "save workspace": Key("ctrl-alt-shift-s"),
         "fold": Key("cmd-alt-["),
@@ -140,35 +129,30 @@ context.keymap(
         "drop cursor": Key("cmd-shift-alt-down"),
         "sub packages add": [Key("cmd-shift-p"), "package install", Key("enter")],
         "sub packages": [Key("cmd-shift-p"), "package "],
-        "toggle sidebar": [Key('cmd-k'), Key('cmd-b')],
-        "toggle console": Key('ctrl-`'),
-
+        "toggle sidebar": [Key("cmd-k"), Key("cmd-b")],
+        "toggle console": Key("ctrl-`"),
         # Searching
-        "set case": Key('alt-cmd-c'),
+        "set case": Key("alt-cmd-c"),
         "search tab": Key("shift-cmd-f"),
         "search this": [Key("cmd-c"), Key("cmd-f"), Key("cmd-v")],
-
         # SendCode
-        "sub send": Key('cmd-enter'),
-
+        "sub send": Key("cmd-enter"),
         # Sublime Merge
-        "submerge": Key('cmd-alt-z'),
-
+        "submerge": Key("cmd-alt-z"),
         # Opening finder
-        "open finder": [Key('cmd-shift-p'), "finder open here", Key('enter')],
-
+        "open finder": [Key("cmd-shift-p"), "finder open here", Key("enter")],
+        # Insert debugging print
+        "pie bug": Key("alt-x"),
         # goguru because we live in the middle ages
-        GOGURU + "describe ": [Key('cmd-shift-p'), "describe", Key('enter')],
-        GOGURU + "definition ": [Key('cmd-shift-p'), "jump to definition", Key('enter')],
-        GOGURU + "referrences ": [Key('cmd-shift-p'), "referrers", Key('enter')],
-
-
-# Macro for TODO:
-        "remind": [
-            Key("cmd-/"),
-            "TODO (",
-            str(datetime.now().strftime("%m/%d @ %H:%M")),
-            "): ",
-        ],
+        GOGURU + "describe ": [Key("cmd-shift-p"), "describe", Key("enter")],
+        GOGURU
+        + "definition ": [Key("cmd-shift-p"), "jump to definition", Key("enter")],
+        GOGURU + "referrences ": [Key("cmd-shift-p"), "referrers", Key("enter")],
+        # Built in definition navigator
+        "sub ref": Key("shift-f12"),
+        "sub def": Key("alt-cmd-down"),
+        # TODO 05/13@14:57:
+        # Macro for TODO:
+        "remind": [Key("cmd-/"), "TODO ", str(datetime.now().strftime("%m/%d")), ": ",],
     }
 )

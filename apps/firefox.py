@@ -88,7 +88,7 @@ ctx.keymap(
         # "[refocus] dev tools": open_focus_devtools,
         # Clipboard
         "cut": Key("cmd-x"),
-        "paste": Key("cmd-v"),
+        # "paste": Key("cmd-v"),
         "paste same style": Key("cmd-alt-shift-v"),
         # extensions
         "copy link": [delay(0.05), Key("cmd-l"), delay(0.05), Key("cmd-c")],
