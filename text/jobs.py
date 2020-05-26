@@ -50,7 +50,7 @@ css_template = """
 body {
     padding: 0;
     margin: 0;
-    font-size: 160%;
+    font-size: 18px;
     min-width: 600px;
 }
 

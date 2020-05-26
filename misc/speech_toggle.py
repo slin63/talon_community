@@ -22,9 +22,9 @@ class VoiceType:
 
 
 spaghetti = {
-    1: "💤",
-    2: "✅",
-    3: "💬 Dragon Mode",
+    1: "💤 Sleeping . . .",
+    2: "✅ Dictation enabled",
+    3: "💬 Dragon mode",
     4: "DICTATION",
 }
 
@@ -69,7 +69,7 @@ sleepy.keymap(
         "talon sleep": lambda m: set_voice_type(VoiceType.SLEEPING),
         "talon wake": lambda m: set_voice_type(last_voice_type),
         "dragon mode": lambda m: set_voice_type(VoiceType.DRAGON),
-        "dictation mode": lambda m: set_voice_type(VoiceType.DICTATION),
+        # "dictation mode": lambda m: set_voice_type(VoiceType.DICTATION),
         "talon mode": lambda m: set_voice_type(VoiceType.TALON),
     }
 )
@@ -78,12 +78,15 @@ sleep_group.load()
 
 def sleep_hotkey(typ, e):
     global voice_type
-    if e == "ctrl-alt-cmd-.":
-        if e.down:
-            if voice_type != VoiceType.SLEEPING:
-                set_voice_type(VoiceType.SLEEPING)
-        if e.up:
-            set_voice_type(VoiceType.TALON)
+    if e == "ctrl-alt-cmd-,":
+        set_voice_type(VoiceType.SLEEPING)
+    elif e == "ctrl-alt-cmd-.":
+        set_voice_type(VoiceType.TALON)
+    # elif e == "ctrl-alt-cmd-/":
+    #     # set_voice_type(VoiceType.SLEEPING)
+    #     set_voice_type(VoiceType.DRAGON)
+
+    return True
 
 
 tap.register(tap.HOOK | tap.KEY, sleep_hotkey)

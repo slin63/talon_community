@@ -36,7 +36,7 @@ ctx.vocab = [
     "newline",
 ]
 
-PREFIX = "(word | bit)"
+PREFIX = "(word | poo)"
 
 ctx.keymap(
     {
