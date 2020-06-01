@@ -32,6 +32,7 @@ ctx.vocab = [
     "leetcode",
     "destructure",
     "destructured",
+    "redis",
     "destructuring",
     "newline",
 ]
@@ -101,7 +102,7 @@ ctx.keymap(
         f"{PREFIX} bite": "byte",
         f"{PREFIX} rpc": "RPC",
         f"{PREFIX} pid": "PID",
-        f"{PREFIX} (indy | index)": "index",
+        # f"{PREFIX} (indy | index)": "index",
         f"{PREFIX} riff": "raft",
         f"{PREFIX} cord": "chord",
         f"{PREFIX} noppers": "knoppers",

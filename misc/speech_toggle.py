@@ -22,8 +22,8 @@ class VoiceType:
 
 
 spaghetti = {
-    1: "💤 Sleeping . . .",
-    2: "✅ Dictation enabled",
+    1: "💤 Sleeping...",
+    2: "✅ Awake!",
     3: "💬 Dragon mode",
     4: "DICTATION",
 }

@@ -17,7 +17,7 @@ ctx.keymap(
         # Completed matchables
         "call": ["()", Key("left")],
         "call brace": ["{}", Key("left")],
-        "index": ["[]", Key("left")],
+        "indy": ["[]", Key("left")],
         # Statements
         "state (def | deaf | deft)": "def ",
         "state if": "if ",

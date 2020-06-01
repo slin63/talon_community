@@ -114,6 +114,7 @@ ctx = Context("window_management")
 ctx.keymap(
     {
         "snap left": grid(1, 1, 2, 1),
+        "snap middle": grid(2, 2, 10, 11, colspan=8, rowspan=9),
         "snap right": grid(2, 1, 2, 1),
         "snap top": grid(1, 1, 1, 2),
         "snap bottom": grid(1, 2, 1, 2),

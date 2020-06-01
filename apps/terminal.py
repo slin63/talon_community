@@ -6,7 +6,7 @@ from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 from talon import ctrl, ui, resource
 import string
 
-from ..utils import numerals, parse_words, text, is_in_bundles, insert, snake_text
+from ..utils import numerals, parse_words, text, is_in_bundles, insert, snake_text, word
 from ..bundle_groups import TERMINAL_BUNDLES
 
 # TODO: move application specific commands into their own files: apt-get, etc
@@ -41,6 +41,7 @@ def jump_tab(m):
 
 
 KUBERNETES_PREFIX = "(cube | cube control)"
+SHELL_PREFIX = "she"
 
 try:
     servers = json.load(resource.open("servers.json"))
@@ -76,11 +77,10 @@ def new_server(m):
 
 
 keymap = {
-    "town logs": "tail -f \"/Users/seanlin/.talon/talon.log\"",
-    "shell Whereami": "pwd ",
-    "shell home": "~/",
-    "shell history": ["fc -l", Key("enter")],
-
+    "town logs": 'tail -f "/Users/seanlin/.talon/talon.log"',
+    "SHE Whereami": "pwd ",
+    "SHE home": "~/",
+    "SHE history": ["fc -l", Key("enter")],
     # generic editor stuff
     "lefty": Key("ctrl-a"),
     "ricky": Key("ctrl-e"),
@@ -93,9 +93,6 @@ keymap = {
     "(stish)": Key("cmd-c"),
     "(spark)": Key("cmd-v"),
     "(select all | olly | ali)": Key("cmd-a"),
-
-
-
     "fuck this": Key("ctrl-d"),
     "(pain new | split vertical)": Key("cmd-d"),
     "new {global_terminal.servers}": new_server,
@@ -105,7 +102,15 @@ keymap = {
     # some habits die hard
     "troll char": Key("ctrl-c"),
     "reverse": Key("ctrl-r"),
-    "change": ["cd ; ls", Key("left"), Key("left"), Key("left"), Key("left")],
+    "change [<dgnwords>]": [
+        "cd ",
+        word,
+        "; ls",
+        Key("left"),
+        Key("left"),
+        Key("left"),
+        Key("left"),
+    ],
     "change up": ["cd ..; ls", Key("enter")],
     "cd wild": [
         "cd **; ls",
@@ -136,34 +141,34 @@ keymap = {
         "sudo ",
         Key("enter"),
     ],
-    "shell C H mod": "chmod ",
-    "shell clear": [Key("ctrl-c"), "clear\n"],
-    # "shell copy [<dgndictation>]": ["cp ", text],
-    # "shell copy (recursive | curse) [<dgndictation>]": ["cp -r", text],
-    "shell kill": Key("ctrl-c"),
-    "shell list [<dgndictation>]": ["ls ", text],
-    "shell list all [<dgndictation>]": ["ls -la ", text],
-    "shell make (durr | dear | directory) [<dgndictation>]": ["mkdir ", text],
-    "shell mipple [<dgndictation>]": ["mkdir -p ", text],
-    "shell move [<dgndictation>]": ["mv ", text],
-    "shell remove [<dgndictation>]": ["rm ", text],
-    "shell remove (recursive | curse) [<dgndictation>]": ["rm -rf ", text],
-    "shell enter": "ag -l | entr ",
-    "shell enter 1": "ag -l . .. | entr ",
-    "shell enter 2": "ag -l . ../.. | entr ",
-    "shell less [<dgndictation>]": ["less ", text],
-    "shell cat [<dgndictation>]": ["cat ", text],
-    "shell X args [<dgndictation>]": ["xargs ", text],
-    "shell mosh": "mosh ",
-    "shell mosh {global_terminal.servers}": mosh_servers,
-    "shell SSH {global_terminal.servers}": ssh_servers,
-    # "shell server {terminal.servers}": name_servers,
-    "shell SSH copy id {global_terminal.servers}": ssh_copy_id_servers,
-    "shell M player": "mplayer ",
-    "shell nvidia S M I": "nvidia-smi ",
-    "shell R sync": "./src/dotfiles/sync_rsync ",
-    "shell tail": "tail ",
-    "shell tail follow": "tail -f ",
+    "SHE C H mod": "chmod ",
+    "SHE clear": [Key("ctrl-c"), "clear\n"],
+    # "SHE copy [<dgndictation>]": ["cp ", text],
+    # "SHE copy (recursive | curse) [<dgndictation>]": ["cp -r", text],
+    "SHE kill": Key("ctrl-c"),
+    "SHE list [<dgndictation>]": ["ls ", text],
+    "SHE list all [<dgndictation>]": ["ls -la ", text],
+    "SHE make (durr | dear | directory) [<dgndictation>]": ["mkdir ", text],
+    "SHE mipple [<dgndictation>]": ["mkdir -p ", text],
+    "SHE move [<dgndictation>]": ["mv ", text],
+    "SHE remove [<dgndictation>]": ["rm ", text],
+    "SHE remove (recursive | curse) [<dgndictation>]": ["rm -rf ", text],
+    "SHE enter": "ag -l | entr ",
+    "SHE enter 1": "ag -l . .. | entr ",
+    "SHE enter 2": "ag -l . ../.. | entr ",
+    "SHE less [<dgndictation>]": ["less ", text],
+    "SHE cat [<dgndictation>]": ["cat ", text],
+    "SHE X args [<dgndictation>]": ["xargs ", text],
+    "SHE mosh": "mosh ",
+    "SHE mosh {global_terminal.servers}": mosh_servers,
+    "SHE SSH {global_terminal.servers}": ssh_servers,
+    # "SHE server {terminal.servers}": name_servers,
+    "SHE SSH copy id {global_terminal.servers}": ssh_copy_id_servers,
+    "SHE M player": "mplayer ",
+    "SHE nvidia S M I": "nvidia-smi ",
+    "SHE R sync": "./src/dotfiles/sync_rsync ",
+    "SHE tail": "tail ",
+    "SHE tail follow": "tail -f ",
     "shall count lines": "wc -l ",
     # python
     "create virtual environment": ["virtualenv -p python3 venv", Key("enter")],
@@ -197,7 +202,7 @@ keymap = {
     "pip uninstall": "pip uninstall ",
     "pip list": "pip list",
     "toolbelt": Key("cmd-shift-b"),
-    "shell top": ["htop", Key("enter")],
+    "SHE top": ["htop", Key("enter")],
     "fuck him up": [Key("f9"), Key("enter")],
     # kubectl
     KUBERNETES_PREFIX + "control": "kubectl ",
@@ -251,13 +256,13 @@ keymap = {
     "T mux new session": "tmux ",
     "T mux scroll": [Key("ctrl-b"), Key("[")],
     # other
-    "shell make": "make\n",
-    "shell jobs": "jobs\n",
-    "shell copy": "| pbcopy",
-    "shell paste": "pbpaste >> ",
-    "shell copy last": "echo !! | pbcopy",
-    "shell again": [Key("up enter")],
-    "shell code": ["code .", Key("enter")],
+    "SHE make": "make\n",
+    "SHE jobs": "jobs\n",
+    "SHE copy": "| pbcopy",
+    "SHE paste": "pbpaste >> ",
+    "SHE copy last": "echo !! | pbcopy",
+    "SHE again": [Key("up enter")],
+    "SHE code": ["code .", Key("enter")],
     "swampy": Key("cmd-left"),
     # sql
     "pity [<dgndictation>]": ["\d+ ", snake_text],
@@ -274,23 +279,21 @@ keymap = {
     "gogo [<dgndictation>]": ["go ", text],
     "gogo run [<dgndictation>]": ["go run ", text],
     "sequel csv": "sqltocsv ",
-
     # sublime
-    "sub": ["subl .", Key('enter')],
-
+    "sub": ["subl .", Key("enter")],
     # hugo
     "hugo [<dgndictation>]": ["hugo ", text],
-
-    "shell get directory": ["echo $(pwd)| pbcopy", Key('enter')],
-    "shell google": ["google $(pbpaste)",Key('enter')],
-    "shell rebuild": [Key('ctrl-c'), Key('up'),Key('enter')],
-    "shell echo": "echo ",
-    "shell gore": ["gore",Key('enter')],
-    "shell noise": ["noise",Key('enter')],
-
+    "SHE get directory": ["echo $(pwd)| pbcopy", Key("enter")],
+    "SHE google": ["google $(pbpaste)", Key("enter")],
+    "SHE rebuild": [Key("ctrl-c"), Key("up"), Key("enter")],
+    "SHE echo": "echo ",
+    "SHE gore": ["gore", Key("enter")],
+    "SHE noise": ["noise", Key("enter")],
     # Pretty && Rich History
-    "pretty drum": ["dh", Key('enter')],
-    "pretty harp": ["ph", Key('enter')]
+    "pretty drum": ["dh", Key("enter")],
+    "pretty harp": ["ph", Key("enter")],
+    # Other stuff
+    SHELL_PREFIX + " curl": ["curl ",],
 }
 
 for action in ("get", "delete", "describe"):
@@ -317,7 +320,7 @@ def shell_rerun(m):
 
 global_ctx = Context("global_terminal")
 global_ctx.keymap(
-    {"shell rerun": shell_rerun, "shell server {global_terminal.servers}": name_servers}
+    {"SHE rerun": shell_rerun, "SHE server {global_terminal.servers}": name_servers}
 )
 global_ctx.set_list("servers", servers.keys())
 # module.exports = {
@@ -345,4 +348,3 @@ global_ctx.set_list("servers", servers.keys())
 #   "enter": "ag -l | entr "
 #   "enter to": "ag -l . ../.. | entr "
 # }
-

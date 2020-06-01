@@ -18,7 +18,7 @@ pick_context = Context("pickcd")
 
 dirs = {
     "talon community": "$HOME/.talon/user/talon_community",
-    "leetcode": "$HOME/projects/cake/lc",
+    "docknkub": "$HOME/projects/docknkub",
     "golang directory": "$HOME/projects/go/src/github.com/slin63",
     "chronic pizza": "$HOME/projects/go/src/github.com/slin63/quickstart",
     "knoppers.icu": "$HOME/projects/go/src/github.com/slin63/knoppers.icu",

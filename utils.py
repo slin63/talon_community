@@ -90,12 +90,20 @@ def insert(s):
 
 
 def camel_case(m):
-    output = ''.join(x for x in join_words(parse_words(m)).title() if x.isalnum())
+    output = "".join(x for x in join_words(parse_words(m)).title() if x.isalnum())
     return insert(output[0].lower() + output[1:])
 
 
 def text(m):
     insert(join_words(parse_words(m)).lower())
+
+
+def text_padded(m):
+    words = join_words(parse_words(m)).lower()
+    if not words:
+        insert(" ")
+    else:
+        insert(" " + join_words(parse_words(m)).lower() + " ")
 
 
 def snake_text(m):
@@ -328,8 +336,10 @@ def is_terminal(app, win):
         return True
     return False
 
+
 def is_not_terminal(app, win):
     return not is_terminal(app, win)
+
 
 def is_not_vim(app, win):
     return not is_vim(app, win)

@@ -9,20 +9,17 @@ ctx = Context("jobs")
 pick_context = Context("jobspick")
 date = datetime.now().strftime("%m/%d/%Y")
 
-recurse = """
-- Studied distributed systems, Golang, and concurrency at self-directed programming sabbatical.
+recurse = """- Studied distributed systems, Golang, and concurrency at self-directed programming sabbatical.
 - Implemented a distributed file system, consensus module, and membership system, while also blogging about their mechanics and the process of implementing them.
 - Created AWS-hosted programmatically generated web gallery (knoppers.icu) to host photography, as well as a blog (chronicpizza.net) to host technical and creative writing projects.
 - Presented project progress and interesting findings to peers at weekly talks.
 """
-granular = """
-- Separated legacy Python2.7 codebase into Python3.7 microservices, allowing teams to work on individual dockerized services without building a monolithic codebase, saving many hours of wasted developer time.
-- Created a Google- maps style landing page, replacing the functionality of several legacy pages and streamlining user experience.
+granular = """- Separated legacy Python2.7 codebase into Python3.7 microservices, allowing teams to work on individual dockerized services without building a monolithic codebase, saving many hours of wasted developer time.
+- Created a Google-maps style landing page, replacing the functionality of several legacy pages and streamlining user experience.
 - Reused or built Python / Flask APIs and React components and their accompanying unit tests.
 - Wrote and explained SQL queries to product managers to quantify user behaviors and prioritize new feature development.
 """
-dod = """
-- Converted storm modeling codebase from Excel VBA to C# and reduced runtime by 93%.
+dod = """- Converted storm modeling codebase from Excel VBA to C# and reduced runtime by 93%.
 - Redesigned SQL schema to implement web caching for C#-Silverlight application.
 - Created Python scripts for trend analysis of arbitrarily large time-series datasets.
 """

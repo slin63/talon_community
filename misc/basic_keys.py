@@ -17,10 +17,10 @@ simple_keys = normalise_keys(
         "(tab )": "tab",
         "(press enter | enter )": "enter",
         "( escape )": "escape",
-        # "home": "home",
+        "go home": "home",
+        "go end": "end",
         "pagedown": "pagedown",
         "pageup": "pageup",
-        # "end": "end",
     }
 )
 

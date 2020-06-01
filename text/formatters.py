@@ -15,7 +15,7 @@ from ..utils import (
     spoken_text,
     snake_text,
     dot_text,
-    caps_text
+    caps_text,
 )
 
 PREFIX = ""
@@ -122,7 +122,6 @@ ctx = Context("formatters")
 ctx.keymap(
     {
         "(phrase | say) <dgndictation> [over]": text,
-        # "saturn <dgndictation> waffle stomp": text,
         "sentence <dgndictation> [over]": sentence_text,
         "(comma | ,) <dgndictation> [over]": [", ", spoken_text],
         "period <dgndictation> [over]": [". ", sentence_text],
@@ -130,6 +129,8 @@ ctx.keymap(
         "slash <dgnwords>": ["/", word],
         "dot [<dgnwords>]": [".", word],
         "dash <dgnwords>": ["-", word],
+        "colon [<dgnwords>]": [":", word],
+        "crunder [<dgnwords>]": ["_", word],
         "snake <dgndictation>": snake_text,
         "camel <dgndictation>": camel_case,
         # "point <dgndictation>": dot_text,
