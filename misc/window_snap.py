@@ -1,6 +1,6 @@
 import time
 
-from talon import ui
+from talon import ui, tap
 from talon.voice import Context
 
 from ..config import config
@@ -129,3 +129,23 @@ ctx.keymap(
         "window preev screen": previous_screen,
     }
 )
+
+
+def snap_hotkey(typ, e):
+    # Snap screen
+    if e == "ctrl-shift-alt-cmd-s" and e.down:
+        grid(1, 1, 1, 1)(None)
+    # Snap left
+    elif e == "ctrl-shift-alt-cmd-l" and e.down:
+        grid(1, 1, 2, 1)(None)
+    # Snap right
+    elif e == "ctrl-shift-alt-cmd-r" and e.down:
+        grid(2, 1, 2, 1)(None)
+    # Snap next
+    elif e == "ctrl-shift-alt-cmd-n" and e.down:
+        move_screen(1)
+
+    return True
+
+
+tap.register(tap.HOOK | tap.KEY, snap_hotkey)
