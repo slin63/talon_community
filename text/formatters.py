@@ -67,21 +67,23 @@ formatters = normalise_keys(
     }
 )
 
-# surrounders = normalise_keys(
-#     {
-#         PREFIX + "(dubstring | coif)": (False, surround('"')),
-#         PREFIX + "(string | posh)": (False, surround("'")),
-#         PREFIX + "(tics | glitch)": (False, surround("`")),
-#         PREFIX + "padded": (False, surround(" ")),
-#         PREFIX + "dunder": (False, surround("__ ")),
-#          + "brax": (False, surround("[", "]")),
-#         PREFIX + "kirk": (False, surround("{", "}")),
-#         PREFIX + "precoif": (False, surround('("', '")')),
-#         PREFIX + "(prex | args)": (False, surround("(", ")")),
-#     }
-# )
+surrounders = normalise_keys(
+    {
+        #         PREFIX + "(dubstring | coif)": (False, surround('"')),
+        #         PREFIX + "(string | posh)": (False, surround("'")),
+        PREFIX + "(tics | glitch)": (False, surround("`")),
+        PREFIX + "(stars)": (False, surround("*")),
+        PREFIX + "(tilde)": (False, surround("~")),
+        #         PREFIX + "padded": (False, surround(" ")),
+        #         PREFIX + "dunder": (False, surround("__ ")),
+        #          + "brax": (False, surround("[", "]")),
+        #         PREFIX + "kirk": (False, surround("{", "}")),
+        #         PREFIX + "precoif": (False, surround('("', '")')),
+        #         PREFIX + "(prex | args)": (False, surround("(", ")")),
+    }
+)
 
-# formatters.update(surrounders)
+formatters.update(surrounders)
 
 
 def FormatText(m):
@@ -103,7 +105,7 @@ def FormatText(m):
 
     smash = False
     for i, w in enumerate(words):
-        word = parse_word(w, True)
+        word = parse_word(w, False)
         for name in reversed(fmt):
             smash, func = formatters[name]
             word = func(i, word, i == len(words) - 1)

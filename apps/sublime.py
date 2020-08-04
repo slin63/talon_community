@@ -110,7 +110,7 @@ context.keymap(
         # tabbing
         "screen alone": Key("alt-cmd-1"),
         "screen split": Key("alt-cmd-2"),
-        "screen screen": Key("alt-k"),
+        "screen screen": Key("alt-shift-cmd-ctrl-k"),
         "next tab": Key("cmd-alt-right"),
         "last tab": Key("cmd-alt-left"),
         "new tab": Key("cmd-n"),
@@ -123,7 +123,7 @@ context.keymap(
         "block": [" {", Key("enter")],
         "commy": Key("cmd-/"),
         "open workspace": Key("ctrl-alt-o"),
-        "save workspace": Key("ctrl-alt-shift-s"),
+        "save workspace": Key("ctrl-alt-s"),
         "fold": Key("cmd-alt-["),
         "unfold": Key("cmd-alt-]"),
         "drop cursor": Key("cmd-shift-alt-down"),

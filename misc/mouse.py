@@ -35,7 +35,8 @@ def delayed_click(m, button=0, times=1):
     # eye.config.control_mouse = False
     # x, y = click_pos(m)
     # ctrl.mouse(x, y)
-    ctrl.mouse_click(x, y, button=button, times=times, wait=2000)
+    ctrl.mouse_click(x, y, button=button, times=times, wait=20)
+    # ctrl.mouse_click(x, y, button=button, times=times, wait=2000)
     # time.sleep(0.032)
     # eye.config.control_mouse = old
 

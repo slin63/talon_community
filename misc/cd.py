@@ -18,16 +18,22 @@ pick_context = Context("pickcd")
 
 dirs = {
     "talon community": "$HOME/.talon/user/talon_community",
-    "docknkub": "$HOME/projects/docknkub",
-    "golang directory": "$HOME/projects/go/src/github.com/slin63",
+    # "docknkub": "$HOME/projects/docknkub",
+    # "golang directory": "$HOME/projects/go/src/github.com/slin63",
     "chronic pizza": "$HOME/projects/go/src/github.com/slin63/quickstart",
     "knoppers.icu": "$HOME/projects/go/src/github.com/slin63/knoppers.icu",
+    "granular": "$HOME/projects/g",
+    # work stuff
+    "g-insights": "$HOME/projects/g/insights-ui",
+    "analysis-api": "$HOME/projects/g/analysis-api",
     "* projects": "$HOME/projects",
     "* downloads": "$HOME/Downloads",
     "* screenshots": "$HOME/Documents/Screenshots",
-    "* desktop": "$HOME/Desktop",
-    "* photos": "$HOME/Pictures",
+    # "* desktop": "$HOME/Desktop",
+    "* pictures": "$HOME/Pictures",
 }
+
+project_dirs = {}
 
 active_word_list = None
 
@@ -145,7 +151,7 @@ def raise_directories(force_raise=False):
     pick_context.load()
 
 
-PREFIX = "(a | 8)"
+PREFIX = "(go)"
 context.keymap(
     {
         f"{PREFIX} cd": raise_directories,

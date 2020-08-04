@@ -1,12 +1,15 @@
 from talon.voice import Key, press, Str, Context
 from talon.webview import Webview
 from talon import app, clip, cron, resource
-from ..utils import parse_word, optional_numerals, parse_words_as_integer
+from ..utils import parse_word
 
-ctx = Context("clipboard")
-pick_context = Context("clipboardpick")
+from datetime import datetime
 
-CLIPBOARD_DEFAULT = ["crontab"]
+ctx = Context("precommit")
+pick_context = Context("precommitpick")
+date = datetime.now().strftime("%m/%d/%Y")
+
+CLIPBOARD_DEFAULT = ["prettier $(git diff --name-only --cached) --write"]
 CLIPBOARD = CLIPBOARD_DEFAULT.copy()
 
 webview = Webview()
@@ -15,7 +18,7 @@ css_template = """
 body {
     padding: 0;
     margin: 0;
-    font-size: 110%;
+    font-size: 18px;
     min-width: 600px;
 }
 
@@ -46,6 +49,7 @@ table .count {
 .pick {
     font-weight: normal;
     font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cancel {
@@ -62,7 +66,7 @@ template = (
 <h3>clipboard</h3>
 <table>
 {% for v in data %}
-<tr class="count"><td class="pick">🔊 </td><td><code>{{ v }}</code></td></tr>
+<tr class="count"><td class="pick">🔊 </td><td>{{ v[0:50] }}</td></tr>
 {% endfor %}
 <tr><td colspan="2" class="pick cancel">🔊 cancel</td></tr>
 </table>
@@ -97,17 +101,12 @@ def make_selection(m):
         d = int(parse_word(words[1]))
     w = CLIPBOARD[d - 1]
 
+    Key("ctrl-c")(None)
     Str(w)(None)
+    press("enter")()
 
 
 def get_selection(m):
-    line_number = parse_words_as_integer(m._words[1:])
-
-    if line_number is not None:
-        # print(CLIPBOARD[line_number - 1])
-        Str(CLIPBOARD[line_number - 1])(None)
-        return
-
     valid_indices = range(len(CLIPBOARD))
 
     webview.render(template, data=CLIPBOARD)
@@ -128,13 +127,9 @@ def clear_clipboard(_):
     CLIPBOARD = CLIPBOARD_DEFAULT.copy()
 
 
-PREFIX = "(a | 8)"
+PREFIX = "(pre)"
 keymap = {
-    f"{PREFIX} paste " + optional_numerals: get_selection,
-    f"{PREFIX} paste ": get_selection,
     f"{PREFIX} paste": get_selection,
-    f"{PREFIX} clip": set_selection,
-    f"{PREFIX} clear": clear_clipboard,
 }
 
 ctx.keymap(keymap)

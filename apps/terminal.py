@@ -1,4 +1,5 @@
 import time
+import time
 import json
 
 from talon.voice import Word, Key, Context, Str, press
@@ -182,9 +183,7 @@ keymap = {
     "apt get update": "apt-get update ",
     "apt get upgrade": "apt-get upgrade ",
     # Tools
-    # "(grep | grip)": ["grep  .", Key("left left")],
-    "(grep | grip)": "grep ",
-    # "gripper": ["grep -r  .", Key("left left")],
+    "SHE (grep | grip)": "grep ",
     "pee socks": "ps aux ",
     "vi": "vim ",
     # python
@@ -293,6 +292,7 @@ keymap = {
     "pretty drum": ["dh", Key("enter")],
     "pretty harp": ["ph", Key("enter")],
     # Other stuff
+    SHELL_PREFIX + " tomato": ["nohup pomo -g  &> /dev/null &", Key("left " * 15)],
     SHELL_PREFIX + " curl": ["curl ",],
 }
 

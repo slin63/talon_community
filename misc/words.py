@@ -35,6 +35,7 @@ ctx.vocab = [
     "redis",
     "destructuring",
     "newline",
+    "credstash",
 ]
 
 PREFIX = "(word | poo)"

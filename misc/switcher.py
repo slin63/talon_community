@@ -15,6 +15,7 @@ def switch_app(m=None, name=None):
     if name is None:
         name = str(m["switcher.running"][0])
 
+    print(running)
     full = running.get(name)
     if not full:
         return
@@ -39,7 +40,6 @@ ctx.keymap(
         "focus {switcher.running}": switch_app,
         "launch {switcher.launch}": launch_app,
         # custom switchers here
-        "madam": lambda x: switch_app(x, "Atom"),
         PREFIX + " chrome": lambda x: switch_app(x, "Google Chrome"),
         PREFIX + " type": lambda x: switch_app(x, "Typora"),
         PREFIX + " kay": lambda x: switch_app(x, "Firefox"),
@@ -50,12 +50,14 @@ ctx.keymap(
         PREFIX + " slack": lambda x: switch_app(x, "Slack"),
         PREFIX + " zulip": lambda x: switch_app(x, "Zulip"),
         PREFIX + " ableton": lambda x: switch_app(x, "Live "),
+        PREFIX + " (fusion | fuse)": lambda x: switch_app(x, "Fusion 360"),
         PREFIX
         + " (console | counsel | consul | term | terminal)": lambda x: switch_app(
             x, "iTerm2"
         ),
         PREFIX + " messages": lambda x: switch_app(x, "Messages"),
         PREFIX + " (sub|sublime)": lambda x: switch_app(x, "Sublime Text"),
+        PREFIX + " noshe": lambda x: switch_app(x, "Notion"),
         PREFIX + " numbers": lambda x: switch_app(x, "Numbers"),
         PREFIX + " skype": lambda x: switch_app(x, "Skype for Business"),
         PREFIX + " marta": lambda x: switch_app(x, "Marta"),

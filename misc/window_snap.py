@@ -130,20 +130,28 @@ ctx.keymap(
     }
 )
 
+LEFT = True
+
 
 def snap_hotkey(typ, e):
+    global LEFT
     # Snap screen
     if e == "ctrl-shift-alt-cmd-s" and e.down:
         grid(1, 1, 1, 1)(None)
+
     # Snap left
     elif e == "ctrl-shift-alt-cmd-l" and e.down:
-        grid(1, 1, 2, 1)(None)
-    # Snap right
-    elif e == "ctrl-shift-alt-cmd-r" and e.down:
-        grid(2, 1, 2, 1)(None)
+        if LEFT:
+            grid(1, 1, 2, 1)(None)
+        else:
+            grid(2, 1, 2, 1)(None)
+        LEFT = not LEFT
     # Snap next
     elif e == "ctrl-shift-alt-cmd-n" and e.down:
         move_screen(1)
+    # Snap center
+    elif e == "ctrl-shift-alt-cmd-c" and e.down:
+        grid(2, 2, 10, 11, colspan=8, rowspan=9)(None)
 
     return True
 

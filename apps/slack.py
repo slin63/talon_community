@@ -7,7 +7,7 @@ ctx = Context("slack", bundle="com.tinyspeck.slackmacgap")
 keymap = {
     # Channel
     # "channel": Key("cmd-k"),
-    # "draft": [Key("cmd-k"), delay(0.1), "Shean Lin", Key("enter")],
+    "draft": [Key("cmd-k"), delay(0.1), "Shean Lin", Key("enter")],
     "master [<dgndictation>]": [Key("cmd-k"), text],
     # "channel last": Key("alt-up"),
     # "([channel] unread last | gopreev)": Key("alt-shift-up"),
@@ -59,7 +59,7 @@ keymap = {
     # "clear": [Key("cmd-a"), Key("backspace")],
     # # Files and Snippets
     # "upload": Key("cmd-u"),
-    # "snippet": Key("cmd-shift-enter"),
+    "snippet": Key("cmd-shift-enter"),
     # # Calls
     # "([toggle] mute | unmute)": Key("m"),
     # "([toggle] video)": Key("v"),
